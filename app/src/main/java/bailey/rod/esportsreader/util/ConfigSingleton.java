@@ -58,6 +58,10 @@ public class ConfigSingleton {
         return getStringProperty("LocalAtomServiceDocument");
     }
 
+    public String localAtomCollectionDocument() {
+        return getStringProperty("LocalAtomCollectionDocument");
+    }
+
     private boolean getBoolProperty(String propertyName) {
         Assertive.require(initialized);
         Assertive.require(propertyName != null);

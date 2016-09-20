@@ -7,13 +7,14 @@ package bailey.rod.esportsreader.xml.atom;
  *
  * See http://www.atomenabled.org/developers/protocol/#collection
  */
-public class AtomServiceCollection {
+public final class AtomServiceCollection {
 
     private final String title;
 
     private final String collectionDocumentHref;
 
     /**
+     * Constructs an immutable AtomServiceCollection.
      *
      * @param title Title of the collection, which corresponds to the name of an eSport
      * @param collectionDocumentHref URL to the Atom Collection Document

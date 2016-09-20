@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+                                           xmlns:content="http://purl.org/rss/1.0/modules/content/"
+                                           xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+                                           xmlns:dc="http://purl.org/dc/elements/1.1/"
+                                           xmlns:atom="http://www.w3.org/2005/Atom"
+                                           xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+                                           xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+>
+
+    <channel>
+        <title>Counter-Strike: Global Offensive</title>
+        <atom:link href="http://blog.counter-strike.net/index.php/feed/" rel="self" type="application/rss+xml" />
+        <link>http://blog.counter-strike.net</link>
+        <description></description>
+        <lastBuildDate>Sat, 17 Sep 2016 00:05:04 +0000</lastBuildDate>
+        <language>en-US</language>
+        <sy:updatePeriod>hourly</sy:updatePeriod>
+        <sy:updateFrequency>1</sy:updateFrequency>
+        <generator>https://wordpress.org/?v=4.5.4</generator>
+        <item>
+            <title>Release Notes for 9/16/2016</title>
+            <link>http://blog.counter-strike.net/index.php/2016/09/16029/</link>
+            <pubDate>Sat, 17 Sep 2016 00:02:37 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_ido]]></dc:creator>
+            <category><![CDATA[Updates]]></category>
+            <category><![CDATA[csgo]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=16029</guid>
+            <description><![CDATA[[Gameplay] – The first-person camera of players, spectators, and demo-viewers is no longer allowed to rise higher than their third-person head. This should prevent first-person players from being able to see from perspectives where their third-person head is not also exposed. – When a player’s first-person camera is adjusted, bullets fired from both their client [&#8230;]]]></description>
+            <content:encoded><![CDATA[<p>[Gameplay]<br />
+– The first-person camera of players, spectators, and demo-viewers is no longer allowed to rise higher than their third-person head. This should prevent first-person players from being able to see from perspectives where their third-person head is not also exposed.<br />
+– When a player’s first-person camera is adjusted, bullets fired from both their client and server-side locations are also adjusted to emit from the corrected position.<br />
+– If for any reason the third-person player animation lowers a player’s head beneath the client’s first-person camera, the client’s first-person camera is lowered to stay at or under the height of their third-person head. This means that the third-person motion of the player is now represented more accurately from the first-person perspective.<br />
+– Third-person landing recovery animations are now weighted based on altitude traversed and duration in-air. Players landing from small jumps or falling from lesser heights will play more subtle landing animations.<br />
+– The anti-crouch-spam system has been changed to use degrading speed, instead of logging keypress-count. As before, the more often players crouch, the slower they will rise or lower. But this should now prevent bugs where players would instantly stand, or lose their crouch-spam penalty by moving a tiny amount. If players crouch even more, eventually they will just stay standing up.<br />
+– First-person and third-person crouch speed is now more closely related. The third-person player lowers more quickly to match the first-person representation.<br />
+– Players landing in crouch positions play a more subtle landing animation that raises their third-person head less noticeably.<br />
+&#8211; Molotovs are no longer extinguished by smokes that are significantly below them, so now it is possible to smoke inside hut on Nuke and throw a molotov on top of hut, or smoke under palace balcony on Mirage and throw a molotov on balcony floor.<br />
+&#8211; Molotovs are no longer extinguished by smokes that are above the fire height.<br />
+&#8211; Molotovs no longer spread under closed doors.<br />
+&#8211; Smoke grenades no longer get stuck in player clips when they extinguish flames upon bouncing off a wall.</p>
+<p>[Sound]<br />
+&#8211; Increased fidelity and reduced distortion for fire sounds for AWP, SSG 08, G3SG1 and SCAR-20.<br />
+&#8211; Added unique reload, distant and draw sounds for SSG 08, G3SG1 and SCAR-20.<br />
+&#8211; Gunshot tails for AWP, SSG 08, G3SG1 and SCAR-20 no longer remain at the position they were fired, and instead more accurately spread over the environment.</p>
+<p>[Maps]<br />
+– Latest version of de_cache, minor bug fixes.</p>
+<p>[Misc]<br />
+– Lag compensation system will now reliably restore pose parameters responsible for animation layering which makes server-side hitboxes for lag compensated players better match client-side rendered models. (Thanks, /u/Spurks)<br />
+– Fixed a bug where player body pitch could improperly rotate the entire player entity inside lag compensation processing.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Pre-Release Notes for 9/14/2016</title>
+            <link>http://blog.counter-strike.net/index.php/2016/09/16008/</link>
+            <pubDate>Wed, 14 Sep 2016 21:01:01 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_ido]]></dc:creator>
+            <category><![CDATA[Updates]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=16008</guid>
+            <description><![CDATA[The following changes are in the &#8220;1.35.4.7rc2&#8221; CS:GO Beta depot. [Misc] &#8211; Fixed firstperson/thirdperson desync during crouch-spam cooldown. &#8211; Fixed firstperson camera jolts during grenade throws and strafing. &#8211; Fixed ‘jittery’ players when viewed from thirdperson camera.]]></description>
+            <content:encoded><![CDATA[<p>The following changes are in the &#8220;1.35.4.7rc2&#8221; CS:GO Beta depot.</p>
+<p>[Misc]<br />
+&#8211; Fixed firstperson/thirdperson desync during crouch-spam cooldown.<br />
+&#8211; Fixed firstperson camera jolts during grenade throws and strafing.<br />
+&#8211; Fixed ‘jittery’ players when viewed from thirdperson camera.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Pre-Release Notes for 9/09/2016</title>
+            <link>http://blog.counter-strike.net/index.php/2016/09/15820/</link>
+            <pubDate>Fri, 09 Sep 2016 22:30:04 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_ido]]></dc:creator>
+            <category><![CDATA[Updates]]></category>
+            <category><![CDATA[csgo]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=15820</guid>
+            <description><![CDATA[The following changes are in the &#8220;1.35.4.7rc&#8221; CS:GO Beta depot. [Gameplay] &#8211; The first-person camera of players, spectators, and demo-viewers is no longer allowed to rise higher than their third-person head. This should prevent first-person players from being able to see from perspectives where their third-person head is not also exposed. &#8211; When a player&#8217;s [&#8230;]]]></description>
+            <content:encoded><![CDATA[<p>The following changes are in the &#8220;1.35.4.7rc&#8221; CS:GO Beta depot.</p>
+<p>[Gameplay]<br />
+&#8211; The first-person camera of players, spectators, and demo-viewers is no longer allowed to rise higher than their third-person head. This should prevent first-person players from being able to see from perspectives where their third-person head is not also exposed.<br />
+&#8211; When a player&#8217;s first-person camera is adjusted, bullets fired from both their client and server-side locations are also adjusted to emit from the corrected position.<br />
+&#8211; If for any reason the third-person player animation lowers a player’s head beneath the client’s first-person camera, the client&#8217;s first-person camera is lowered to stay at or under the height of their third-person head. This means that the third-person motion of the player is now represented more accurately from the first-person perspective.<br />
+&#8211; Third-person landing recovery animations are now weighted based on altitude traversed and duration in-air. Players landing from small jumps or falling from lesser heights will play more subtle landing animations.<br />
+&#8211; The anti-crouch-spam system has been changed to use degrading speed, instead of logging keypress-count. As before, the more often players crouch, the slower they will rise or lower. But this should now prevent bugs where players would instantly stand, or lose their crouch-spam penalty by moving a tiny amount. If players crouch even more, eventually they will just stay standing up.<br />
+&#8211; First-person and third-person crouch speed is now more closely related. The third-person player lowers more quickly to match the first-person representation.<br />
+&#8211; Players landing in crouch positions play a more subtle landing animation that raises their third-person head less noticeably.</p>
+<p>[Misc]<br />
+&#8211; Lag compensation system will now reliably restore pose parameters responsible for animation layering which makes server-side hitboxes for lag compensated players better match client-side rendered models. (Thanks, /u/Spurks)<br />
+&#8211; Fixed a bug where player body pitch could improperly rotate the entire player entity inside lag compensation processing.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Double Exposure</title>
+            <link>http://blog.counter-strike.net/index.php/2016/08/15510/</link>
+            <pubDate>Fri, 19 Aug 2016 01:03:56 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_brian]]></dc:creator>
+            <category><![CDATA[Home]]></category>
+            <category><![CDATA[csgo]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=15510</guid>
+            <description><![CDATA[Today&#8217;s update includes a new spectator feature, upgraded weapon sounds, and the new Gamma 2 Case. Jump into a game and check it out!]]></description>
+            <content:encoded><![CDATA[<p><a href="http://blog.counter-strike.net/index.php/2016/08/15517/">Today&#8217;s update</a> includes a new spectator feature, upgraded weapon sounds, and the new Gamma 2 Case. Jump into a game and check it out!</p>
+<style type="text/css">
+.ssArrowLeft {
+	cursor:pointer;
+	position:absolute;
+	bottom:6px;
+	left:7px;
+	width:30px;
+	height:30px;
+	background-image:url('http://media.steampowered.com/apps/csgo/blog/images/arrows.png');
+	background-position:bottom left;
+	z-index:100;
+}
+.ssArrowLeft:hover {
+	background-position:top left;
+}
+.ssArrowRight {
+	cursor:pointer;
+	position:absolute;
+	bottom:6px;
+	right:6px;
+	width:30px;
+	height:30px;
+	background-image:url('http://media.steampowered.com/apps/csgo/blog/images/arrows.png');
+	background-position:bottom right;
+	z-index:100;
+}
+.ssArrowRight:hover {
+	background-position:top right;
+}
+.sliderContainer {
+	position:relative;
+	width:490px;
+	height:358px;
+	margin-bottom:7px;
+	overflow:hidden;
+}
+</style>
+<div style="width:490px; padding:15px; background-color:#bfbfbf; line-height:0px;">
+<div class="sliderContainer">
+<div id="comm3_left" class="ssArrowLeft"><img src="http://media.steampowered.com/apps/csgo/images/trans.gif" width="30" height="30" border="0" /></div>
+<div id="comm3_right" class="ssArrowRight"><img src="http://media.steampowered.com/apps/csgo/images/trans.gif" width="30" height="30" border="0" /></div>
+<div id="comm3_slider" class="picslide" style="z-index:1"><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_02.png?v=2" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_01.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_03.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_04.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_05.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_06.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_07.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_08.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_09.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_10.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_11.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_12.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_13.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_14.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_15.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_16.png" alt="" width="490" height="358" /><img src="http://media.steampowered.com/apps/csgo/blog/images/gamma_2_case/14_17.png" alt="" width="490" height="358" /></div>
+</div>
+</div>
+<p><script language="javascript">
+$j(window).load(function () {
+	$j('#comm3_slider').cycle({
+	    fx:     'fade',
+	    speed:  300,
+	    next:   '#comm3_right',
+	    prev:		'#comm3_left',
+	    timeout: 0
+	});
+	$j('#bank_slider').cycle({
+	    fx:     'fade',
+	    speed:  300,
+	    next:   '#bank_right',
+	    prev:		'#bank_left',
+	    timeout: 0
+	});
+	$j('#sticker_slider').cycle({
+	    fx:     'fade',
+	    speed:  300,
+	    next:   '#sticker_right',
+	    prev:		'#sticker_left',
+	    timeout: 0
+	});
+});
+</script></p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Release Notes for 8/18/2016</title>
+            <link>http://blog.counter-strike.net/index.php/2016/08/15517/</link>
+            <pubDate>Fri, 19 Aug 2016 01:03:11 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_brian]]></dc:creator>
+            <category><![CDATA[Updates]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=15517</guid>
+            <description><![CDATA[[CSGO] &#8211; Added the Gamma 2 Case. [SERVERS] &#8211; Added official game servers in Peru. [SPECTATOR] &#8211; Player xray glow now dims when player is not making any audible sound. Several convars are available to tweak this behavior; &#8220;find spec_glow&#8221; for a list. [MISC] &#8211; Restored availability of cl_avatar_convert_rgb command used by tournament organizers. [LINUX] [&#8230;]]]></description>
+            <content:encoded><![CDATA[<p>[CSGO]<br />
+&#8211; Added the Gamma 2 Case.</p>
+<p>[SERVERS]<br />
+&#8211; Added official game servers in Peru.</p>
+<p>[SPECTATOR]<br />
+&#8211; Player xray glow now dims when player is not making any audible sound.  Several convars are available to tweak this behavior; &#8220;find spec_glow&#8221; for a list.</p>
+<p>[MISC]<br />
+&#8211; Restored availability of cl_avatar_convert_rgb command used by tournament organizers.</p>
+<p>[LINUX]<br />
+&#8211; Fix a bug where some users would have a bad mem_level set which would cause poor performance.</p>
+<p>[SOUND]<br />
+&#8211; Increased fidelity and reduced distortion for fire sounds of the Glock, HKP2000, USP-S and Deagle.<br />
+&#8211; Unique distant, reload and draw sounds for Glock, HKP2000, USP-S and Deagle</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Release Notes for 8/5/2016</title>
+            <link>http://blog.counter-strike.net/index.php/2016/08/15381/</link>
+            <pubDate>Fri, 05 Aug 2016 22:14:50 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_brian]]></dc:creator>
+            <category><![CDATA[Updates]]></category>
+            <category><![CDATA[csgo]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=15381</guid>
+            <description><![CDATA[[MISC] &#8211; Weapon recoil now resets on reload &#8211; Players should no longer accidentally run into server DOS protections.]]></description>
+            <content:encoded><![CDATA[<p>[MISC]<br />
+&#8211; Weapon recoil now resets on reload<br />
+&#8211; Players should no longer accidentally run into server DOS protections.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Release Notes for 8/3/2016</title>
+            <link>http://blog.counter-strike.net/index.php/2016/08/15308/</link>
+            <pubDate>Wed, 03 Aug 2016 22:48:18 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_brian]]></dc:creator>
+            <category><![CDATA[Updates]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=15308</guid>
+            <description><![CDATA[[GAMEPLAY] &#8211; New accuracy recovery method and new recovery rates for the M4A1-S, M4A4, and AK-47. See details HERE. [SOUND] &#8211; Increased fidelity of firing sounds for P250, Five-Seven, Tec-9, CZ75-Auto, and Dual Berettas. &#8211; Added unique reload and distant sounds for P250, Five-Seven, Tec-9, and Dual Berettas. [MISC] &#8211; Added defusekit player state to [&#8230;]]]></description>
+            <content:encoded><![CDATA[<p>[GAMEPLAY]<br />
+&#8211; New accuracy recovery method and new recovery rates for the M4A1-S, M4A4, and AK-47. See details <a href="http://blog.counter-strike.net/index.php/second-shot/">HERE</a>.</p>
+<p>[SOUND]<br />
+&#8211; Increased fidelity of firing sounds for P250, Five-Seven, Tec-9, CZ75-Auto, and Dual Berettas.<br />
+&#8211; Added unique reload and distant sounds for  P250, Five-Seven, Tec-9, and Dual Berettas.</p>
+<p>[MISC]<br />
+&#8211; Added defusekit player state to game state integration support.<br />
+&#8211; cl_weapon_debug_print_accuracy 2 is now a tab delimited formatted output of information.<br />
+&#8211; Fix a bug that rarely caused a player to be on the wrong team in competitive mode.<br />
+&#8211; Fix a bug that allowed players to spawn in unexpected (invalid) locations on various maps.<br />
+&#8211; Added logic to prevent airstalling (where a player appears to float in midair by disrupting their network stream).<br />
+&#8211; Added sv_clamp_unsafe_velocities convar (default: 1) that community servers can disable to support surfing, etc.<br />
+&#8211; Misc security improvements.<br />
+&#8211; Modified report and commend GC logic to clearly signal failure in the case of spoofed reports.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Second Shot</title>
+            <link>http://blog.counter-strike.net/index.php/2016/08/15304/</link>
+            <pubDate>Wed, 03 Aug 2016 22:47:52 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_brian]]></dc:creator>
+            <category><![CDATA[Home]]></category>
+            <category><![CDATA[csgo]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=15304</guid>
+            <description><![CDATA[Today we&#8217;re shipping a new accuracy recovery method and new recovery rates for the AK-47, M4A1-S, and M4A4. The goal is to allow players to develop and express their skill using a variety of methods of firing a weapon, by increasing the effectiveness of tapping/bursting relative to that of spraying. For details on the specific [&#8230;]]]></description>
+            <content:encoded><![CDATA[<p>Today we&#8217;re shipping a new accuracy recovery method and new recovery rates for the AK-47, M4A1-S, and M4A4. The goal is to allow players to develop and express their skill using a variety of methods of firing a weapon, by increasing the effectiveness of tapping/bursting relative to that of spraying.</p>
+<p>For details on the specific changes in this update, click <a href="http://blog.counter-strike.net/index.php/second-shot/">here</a>.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Release Notes for 7/27/2016</title>
+            <link>http://blog.counter-strike.net/index.php/2016/07/15283/</link>
+            <pubDate>Thu, 28 Jul 2016 00:00:40 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_brian]]></dc:creator>
+            <category><![CDATA[Updates]]></category>
+            <category><![CDATA[csgo]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=15283</guid>
+            <description><![CDATA[[UI] &#8211; Radar is no longer hidden when win panel comes up. &#8211; Shipping changes to how some UI elements are implemented in preparation for a move to Panorama UI. This should have no noticeable change in UI functionality, but is the first step in moving to the new system. &#8212; Please report any UI [&#8230;]]]></description>
+            <content:encoded><![CDATA[<p>[UI]<br />
+&#8211; Radar is no longer hidden when win panel comes up.<br />
+&#8211; Shipping changes to how some UI elements are implemented in preparation for a move to Panorama UI. This should have no noticeable change in UI functionality, but is the first step in moving to the new system.<br />
+&#8212; Please report any UI regressions to csgoteamfeedback@valvesoftware.com and include #UIFeedback in the subject heading.</p>
+<p>[SOUNDS]<br />
+&#8211; Increased fidelity of firing sounds for P90, MP7 and MP9<br />
+&#8211; Added unique reload and draw sounds for P90, MP7 and MP9<br />
+&#8211; Slightly reduced volume of firing for recently changed weapon sounds<br />
+&#8211; Made headphones the default sound option instead of two-speaker. (If playing with headphones or sound cards with virtual 5.1/7.1 enabled, make sure 5.1 is selected in the CSGO audio settings menu instead.)</p>
+<p>[NETWORKING]<br />
+&#8211; Networked viewangle precision to other players is now lossless.</p>
+<p>[MINOR WEAPON BUGS]<br />
+&#8211; Updated the autobuy and rebuy scripts to support 2x flashbangs and reordered the purchasing order (in case of insufficient funds.)<br />
+&#8211; Added tracers to alt fire on Aug, Sg, Glock, and Famas.<br />
+&#8211; Set all shotguns except XM to semi-auto.<br />
+&#8211; AWP and SSG08 now also drop magazines<br />
+&#8211; (Thanks, SlothSquadron)</p>
+<p>[MISC]<br />
+&#8211; Fixed a server crash (Thanks, Gamemann, for the report)<br />
+&#8211; Fixed bug where non-Latin characters could not be stored in config files.</p>
+<p>[MAC/LINUX]<br />
+&#8211; Fixed bug where demoui, console, and other controls wouldn&#8217;t show an &#8216;X&#8217; to close the window.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title>Release Notes for 7/15/2016</title>
+            <link>http://blog.counter-strike.net/index.php/2016/07/15237/</link>
+            <pubDate>Fri, 15 Jul 2016 21:35:35 +0000</pubDate>
+            <dc:creator><![CDATA[csgo_brian]]></dc:creator>
+            <category><![CDATA[Updates]]></category>
+
+            <guid isPermaLink="false">http://blog.counter-strike.net/?p=15237</guid>
+            <description><![CDATA[[ Operation Wildfire ] &#8211; Operation Wildfire has come to a close. &#8211; The Operation Wildfire case is available for all players. [ Misc ] &#8211; Added ESL One Cologne 2016 tournament finalists and champions to the Major Trophy. [ Sound ] &#8211; Increased fidelity for Bizon, Mac10 and UMP45 weapons. &#8211; Unique reload and [&#8230;]]]></description>
+            <content:encoded><![CDATA[<p>[ Operation Wildfire ]<br />
+&#8211; Operation Wildfire has come to a close.<br />
+&#8211; The Operation Wildfire case is available for all players.</p>
+<p>[ Misc ]<br />
+&#8211; Added ESL One Cologne 2016 tournament finalists and champions to the Major Trophy.</p>
+<p>[ Sound ]<br />
+&#8211; Increased fidelity for Bizon, Mac10 and UMP45 weapons.<br />
+&#8211; Unique reload and draw sounds for Bizon, Mac10 and UMP45 weapons.<br />
+&#8211; New sound for C4 disarm start and disarm finish, more in line with C4 plant sounds.<br />
+&#8211; New sound for empty magazine impacting with ground.<br />
+&#8211; Lowered volume of low ammo sound and added unique sound.<br />
+&#8211; Lowered volume of smoke grenade tail.</p>
+<p>[ Maps ]<br />
+&#8211; Cache<br />
+&#8212; Added graffiti to commemorate ESL One Cologne 2016.</p>
+<p>[ Mac/Linux ]<br />
+&#8211; Fixed maps that use Squirrel scripting, including the Weapons Course map.<br />
+&#8211; Fixed a Linux memory leak.</p>
+]]></content:encoded>
+        </item>
+    </channel>
+</rss>
+
+    <!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+     Served from: blog.counter-strike.net @ 2016-09-20 04:39:42 by W3 Total Cache -->

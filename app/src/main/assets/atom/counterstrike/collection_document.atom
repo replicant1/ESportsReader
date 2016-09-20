@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--suppress ALL -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>counterstrikego</id>
+    <title type="text">Counter-Strike: Global Offensive Sources</title>
+    <updated>2016-09-19T20:07:49.248+00:00</updated>
+    <link rel="self" href="http://feed.esportsreader.com/reader/sports/counterstrikego"/>
+
+    <author>
+
+        <name>eSportsReader (contactesportsreader@gmail.com)</name>
+    </author>
+
+    <category term="counterstrike" />
+
+    <generator uri="http://feed.esportsreader.com" version="1.0">eSportsReader</generator>
+
+
+    <contributor>
+        <name type="text">Counter-Strike: Global Offensive</name>
+        <uri>http://blog.counter-strike.net/index.php/feed/</uri>
+    </contributor>
+    <contributor>
+        <name type="text">theScore CSGO</name>
+        <uri>http://feeds.thescoreesports.com/csgo.rss</uri>
+    </contributor>
+
+
+    <entry>
+        <id>counterstrikegoblog</id>
+        <title type="text">Counter-Strike: Global Offensive</title>
+        <updated>2016-09-19T20:07:49.248+00:00</updated>
+
+        <summary type="text">Valve&#x27;s Official CS:GO Blog</summary>
+
+        <link rel="via" href="http://blog.counter-strike.net/index.php/feed/"/>
+        <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/counterstrikego/counterstrikegoblog" />
+        <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/counterstrikego/counterstrikegoblog/icon" />
+
+        <source>
+            <id>http://blog.counter-strike.net/index.php/feed/</id>
+            <title>Counter-Strike: Global Offensive</title>
+
+
+            <updated>2016-09-17T00:05:04.000+00:00</updated>
+            <rights>(c) Valve Corporation</rights>
+        </source>
+
+    </entry><entry>
+    <id>thescorecsgo</id>
+    <title type="text">theScore CSGO</title>
+    <updated>2016-09-19T20:07:49.248+00:00</updated>
+
+    <summary type="text">CSGO news from theScore</summary>
+
+    <link rel="via" href="http://feeds.thescoreesports.com/csgo.rss"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/counterstrikego/thescorecsgo" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/counterstrikego/thescorecsgo/icon" />
+
+    <source>
+        <id>http://feeds.thescoreesports.com/csgo.rss</id>
+        <title>theScore CSGO</title>
+
+
+        <updated>2016-09-20T12:00:01.485+00:00</updated>
+        <rights>(c) Score Media Ventures Inc.</rights>
+    </source>
+
+</entry>
+
+</feed>

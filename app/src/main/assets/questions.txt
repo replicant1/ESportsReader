@@ -1,0 +1,28 @@
+To what extent can the "official" eSportsReader app available through Google Play be considered a
+good solution to this problem? Is there anything wrong with it, that you know of?
+
+USER STORY 3: "As a user I want to minimise data usage so that I don't burn through my data quota"
+===========================
+Possible strategies to implement:
+
+(1) Don't eagerly load all entries for all feeds for all sports at startup time. Just lazily load
+    entries as needed (when clicked upon by user).
+(2) Just having a cache (also needed for USER STORY 4) could be viewed as satisfying this story,
+    as it means I can review an entry as many times as I want, though it will only be loaded
+    over the network once (into the app's persistent cache).
+(3) Don't load images unless the user specifies to (e.g. replace with [Touch image to load], as
+    per the "official" ESR app).
+(4) Use conditional GET requests ("If-Modified-Since" header) when retrieving XML, so that we
+    don't unnecessarily load data that is identical to what we already have stored locally.
+
+USER STORY 1: "As a user I want to pick the Sport/Source/Entries" that interest me so that I can
+read news that I care about".
+=============================
+
+Possible strategies to implement:
+
+(1) Don't display all entries at once. Provide user navigation between sport, source and entries
+    so that users can select what interests them (as you would expect from any feed reader).
+
+(2) Have a "favourites" facility, that can be applied to entries sports, blogs, or just individual
+    feeds. Let the user display/refresh "favouries only".

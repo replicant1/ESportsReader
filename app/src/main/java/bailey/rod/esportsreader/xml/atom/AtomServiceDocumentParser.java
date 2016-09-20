@@ -107,7 +107,7 @@ public class AtomServiceDocumentParser {
      */
     private AtomServiceDocument parseService(XmlPullParser parser)
             throws XmlPullParserException, IOException {
-        List<AtomServiceCollection> collectionList = new LinkedList<AtomServiceCollection>();
+        List<AtomServiceCollection> collectionList = new LinkedList<>();
         String workspaceTitle;
 
         // Skip the <xml> tag, advancing to the <service> tag
@@ -126,7 +126,7 @@ public class AtomServiceDocumentParser {
 
         // Advance through all the <collection> tags until end of document
         while (XPPUtils.skipToNextStartTag(parser, "collection")) {
-            parseCollection(parser);
+            collectionList.add(parseCollection(parser));
         }
 
         Log.i(TAG, "Finished parsing AtomServiceDocument");

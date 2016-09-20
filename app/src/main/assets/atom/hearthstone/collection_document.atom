@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--suppress ALL -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>hearthstone</id>
+  <title type="text">Hearthstone Sources</title>
+  <updated>2016-09-17T19:17:24.970+00:00</updated>
+  <link rel="self" href="http://feed.esportsreader.com/reader/sports/hearthstone"/>
+
+  <author>
+    
+    <name>eSportsReader (contactesportsreader@gmail.com)</name>
+  </author>
+
+  <category term="hearthstone" />
+
+  <generator uri="http://feed.esportsreader.com" version="1.0">eSportsReader</generator>
+
+  
+  <contributor>
+  <name type="text">Hearthstone</name>
+  <uri>http://us.battle.net/hearthstone/en/feed/news</uri>
+</contributor>
+<contributor>
+  <name type="text">Hearthstone Pwn</name>
+  <uri>http://www.hearthpwn.com/news.rss?cookieTest=1</uri>
+</contributor>
+<contributor>
+  <name type="text">BlizzPro&#x27;s Hearthstone News</name>
+  <uri>http://hearthstone.blizzpro.com/category/news/feed/</uri>
+</contributor>
+<contributor>
+  <name type="text">GosuGamers Hearthstone</name>
+  <uri>http://www.gosugamers.net/hearthstone/news/rss</uri>
+</contributor>
+<contributor>
+  <name type="text">I Hearth U</name>
+  <uri>http://ihearthu.com/feed/</uri>
+</contributor>
+<contributor>
+  <name type="text">theScore Hearthstone</name>
+  <uri>http://feeds.thescoreesports.com/hearthstone.rss</uri>
+</contributor>
+
+
+  <entry>
+    <id>hearthstoneblog</id>
+    <title type="text">Hearthstone</title>
+    <updated>2016-09-17T19:17:24.970+00:00</updated>
+
+    <summary type="text">Blizzard&#x27;s Official Hearthstone Blog</summary>
+
+    <link rel="via" href="http://us.battle.net/hearthstone/en/feed/news"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/hearthstone/hearthstoneblog" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/hearthstone/hearthstoneblog/icon" />
+
+    <source>
+  <id>http://us.battle.net/hearthstone/en/feed/news</id>
+  <title>Hearthstone</title>
+
+  
+  <updated>2016-09-16T19:33:03.000+00:00</updated>
+  <rights>(c) Blizzard</rights>
+</source>
+
+  </entry><entry>
+    <id>hearthstonepwn</id>
+    <title type="text">Hearthstone Pwn</title>
+    <updated>2016-09-17T19:17:24.970+00:00</updated>
+
+    <summary type="text">Hearthstone News from HearthPwn</summary>
+
+    <link rel="via" href="http://www.hearthpwn.com/news.rss?cookieTest=1"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/hearthstone/hearthstonepwn" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/hearthstone/hearthstonepwn/icon" />
+
+    <source>
+  <id>http://www.hearthpwn.com/news.rss?cookieTest=1</id>
+  <title>Hearthstone Pwn</title>
+
+  
+  <updated>2016-09-18T10:00:36.453+00:00</updated>
+  <rights>(c) hearthstonepwn.com</rights>
+</source>
+
+  </entry><entry>
+    <id>hearthstoneblizzardpro</id>
+    <title type="text">BlizzPro&#x27;s Hearthstone News</title>
+    <updated>2016-09-17T19:17:24.970+00:00</updated>
+
+    <summary type="text">Hearthstone News from HearthPwn</summary>
+
+    <link rel="via" href="http://hearthstone.blizzpro.com/category/news/feed/"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/hearthstone/hearthstoneblizzardpro" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/hearthstone/hearthstoneblizzardpro/icon" />
+
+    <source>
+  <id>http://hearthstone.blizzpro.com/category/news/feed/</id>
+  <title>BlizzPro&#x27;s Hearthstone News</title>
+
+  
+  <updated>2016-09-15T19:26:38.000+00:00</updated>
+  <rights>(c) hearthstonepwn.com</rights>
+</source>
+
+  </entry><entry>
+    <id>gosugamershearthstone</id>
+    <title type="text">GosuGamers Hearthstone</title>
+    <updated>2016-09-17T19:17:24.970+00:00</updated>
+
+    <summary type="text">GosuGamers Hearthstone News</summary>
+
+    <link rel="via" href="http://www.gosugamers.net/hearthstone/news/rss"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/hearthstone/gosugamershearthstone" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/hearthstone/gosugamershearthstone/icon" />
+
+    <source>
+  <id>http://www.gosugamers.net/hearthstone/news/rss</id>
+  <title>GosuGamers Hearthstone</title>
+
+  
+  <updated>2016-09-18T09:46:45.000+00:00</updated>
+  <rights>(c) GosuGamers</rights>
+</source>
+
+  </entry><entry>
+    <id>hsihearthu</id>
+    <title type="text">I Hearth U</title>
+    <updated>2016-09-17T19:17:24.970+00:00</updated>
+
+    <summary type="text">Community site dedicated to Hearthstone</summary>
+
+    <link rel="via" href="http://ihearthu.com/feed/"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/hearthstone/hsihearthu" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/hearthstone/hsihearthu/icon" />
+
+    <source>
+  <id>http://ihearthu.com/feed/</id>
+  <title>I Hearth U</title>
+
+  
+  <updated>2016-09-18T10:00:02.160+00:00</updated>
+  <rights>(c) iheathu.com</rights>
+</source>
+
+  </entry><entry>
+    <id>thescorehearthstone</id>
+    <title type="text">theScore Hearthstone</title>
+    <updated>2016-09-17T19:17:24.970+00:00</updated>
+
+    <summary type="text">Hearthstone news from theScore</summary>
+
+    <link rel="via" href="http://feeds.thescoreesports.com/hearthstone.rss"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/hearthstone/thescorehearthstone" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/hearthstone/thescorehearthstone/icon" />
+
+    <source>
+  <id>http://feeds.thescoreesports.com/hearthstone.rss</id>
+  <title>theScore Hearthstone</title>
+
+  
+  <updated>2016-09-18T10:00:40.822+00:00</updated>
+  <rights>(c) Score Media Ventures Inc.</rights>
+</source>
+
+  </entry>
+
+</feed>

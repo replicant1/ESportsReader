@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+xmlns:rawvoice="http://www.rawvoice.com/rawvoiceRssModule/"
+xmlns:googleplay="http://www.google.com/schemas/play-podcasts/1.0"
+>
+
+<channel>
+	<title>News &#8211; BlizzPro&#039;s Hearthstone</title>
+	<atom:link href="http://hearthstone.blizzpro.com/category/news/feed/" rel="self" type="application/rss+xml" />
+	<link>http://hearthstone.blizzpro.com</link>
+	<description>Just another Blizzpro.com Sites site</description>
+	<lastBuildDate>Thu, 15 Sep 2016 19:26:38 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6.1</generator>
+<!-- podcast_generator="Blubrry PowerPress/6.3.3" mode="advanced" -->
+	<itunes:summary>Well Met! is a Hearthstone Podcast brought to you by Blizzpro.com. Experienced hosts bring you in-depth analysis of the game Hearthstone while conversing, debating, and having a lot of fun! Join us as we dive in to everything that is Hearthstone!</itunes:summary>
+	<itunes:author>John Horstmann, Kevin Hovdestad, J. R. Cook</itunes:author>
+	<itunes:image href="http://www.blizzpromedia.com/Podcasts/WellMetPodcast/well-met-itunes.png" />
+	<itunes:owner>
+		<itunes:name>John Horstmann, Kevin Hovdestad, J. R. Cook</itunes:name>
+		<itunes:email>jrcook@blizzpro.com</itunes:email>
+	</itunes:owner>
+	<managingEditor>jrcook@blizzpro.com (John Horstmann, Kevin Hovdestad, J. R. Cook)</managingEditor>
+	<copyright>Copyright &#xA9; BlizzPro&#039;s Hearthstone 2015</copyright>
+	<itunes:subtitle>#1 Podcast for everything Hearthstone: Heroes of Warcraft related</itunes:subtitle>
+	<image>
+		<title>News &#8211; BlizzPro&#039;s Hearthstone</title>
+		<url>http://www.blizzpromedia.com/Podcasts/WellMetPodcast/well-met-itunes.png</url>
+		<link>http://hearthstone.blizzpro.com/category/news/</link>
+	</image>
+	<itunes:category text="Games &amp; Hobbies">
+		<itunes:category text="Video Games" />
+	</itunes:category>
+	<item>
+		<title>Hearthstone Patch Day (September 15th, 2016): Welcome Bundle, Arena Bans and Tyrande</title>
+		<link>http://hearthstone.blizzpro.com/2016/09/15/hearthstone-patch-day-september-15th-2016/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/09/15/hearthstone-patch-day-september-15th-2016/#respond</comments>
+		<pubDate>Thu, 15 Sep 2016 19:26:01 +0000</pubDate>
+		<dc:creator><![CDATA[OtakuMZ]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[6.1.1.1.14406]]></category>
+		<category><![CDATA[card backs]]></category>
+		<category><![CDATA[hero]]></category>
+		<category><![CDATA[patch]]></category>
+		<category><![CDATA[priest]]></category>
+		<category><![CDATA[Promotion]]></category>
+		<category><![CDATA[september]]></category>
+		<category><![CDATA[tyrande]]></category>
+		<category><![CDATA[welcome bundle]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17493</guid>
+		<description><![CDATA[Blizzard pushed a new patch live today, September 15th, 2016.  For those who do not want to read the full blue post below I will give you a short on the most important item items version 6.1.1.1.14406 includes: Welcome Bundle ($ 4.99) 10 packs one guaranteed class legendary Tyrande Whisperwind (Priest Hero) plus card back, obtainable in an upcoming promotion September and October card backs Arena bans Bug fixes Anybody curious what Tyrande will be available through? What Legendary did you get? Leave a comment below or a tweet @BlizzPro / @OtakuMZ1978]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/09/15/hearthstone-patch-day-september-15th-2016/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		
+		<item>
+		<title>Karazhan Welcome Bundle &#8211; A Good Deal for Players Old and New</title>
+		<link>http://hearthstone.blizzpro.com/2016/09/12/karazhan-welcome-bundle-a-good-deal-for-players-old-and-new/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/09/12/karazhan-welcome-bundle-a-good-deal-for-players-old-and-new/#comments</comments>
+		<pubDate>Mon, 12 Sep 2016 19:59:56 +0000</pubDate>
+		<dc:creator><![CDATA[OtakuMZ]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[blue post]]></category>
+		<category><![CDATA[card packs karazhan]]></category>
+		<category><![CDATA[deal]]></category>
+		<category><![CDATA[discount]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17484</guid>
+		<description><![CDATA[Today, Blizzard announced a special deal to celebrate the full release of One Night in Karazhan. All players new and old can grab 10 Classic packs with a guaranteed (non-golden) class Legendary for just $ 4.99, € 4.99 or £ 3.99 respectively. For full details, continue reading the official post below.]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/09/12/karazhan-welcome-bundle-a-good-deal-for-players-old-and-new/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>Upcoming Arena Balance Changes</title>
+		<link>http://hearthstone.blizzpro.com/2016/09/12/upcoming-arena-balance-changes/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/09/12/upcoming-arena-balance-changes/#respond</comments>
+		<pubDate>Mon, 12 Sep 2016 19:49:00 +0000</pubDate>
+		<dc:creator><![CDATA[OtakuMZ]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[Arena]]></category>
+		<category><![CDATA[balance]]></category>
+		<category><![CDATA[ban]]></category>
+		<category><![CDATA[blue post]]></category>
+		<category><![CDATA[patch]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17479</guid>
+		<description><![CDATA[After a lot of community discussion Blizzard reacted quite rapidly and announced Arena balance changes a few days ago. As a first step, they announced to ban a total of 45 cards from Arena. All classes with the exception of Paladin will get cards removed. In Mage and Rogue, overpowered cards like Faceless Summoner or Goblin Auto Barber will leave the game. Paladin seems to be in the right spot with no changes scheduled. All of the other classes should improve with the changes as poor performing cards are pulled out of the format. Overall, this seems to be a step in the right direction but I am sure it is only the beginning of a ongoing initiative to improve Arena. For full details continue reading the whole blue post below.]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/09/12/upcoming-arena-balance-changes/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Hearthstone September 2016 Card Back: The Burning Legion</title>
+		<link>http://hearthstone.blizzpro.com/2016/09/01/hearthstone-september-2016-card-back-the-burning-legion/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/09/01/hearthstone-september-2016-card-back-the-burning-legion/#respond</comments>
+		<pubDate>Thu, 01 Sep 2016 12:46:10 +0000</pubDate>
+		<dc:creator><![CDATA[OtakuMZ]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[2016]]></category>
+		<category><![CDATA[blue post]]></category>
+		<category><![CDATA[Card Back]]></category>
+		<category><![CDATA[ranked]]></category>
+		<category><![CDATA[september]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17466</guid>
+		<description><![CDATA[September season has started and Blizzard revealed a new card back we can collect by finishing rank 20 or above in this month ranked play mode, either Standard or Wild. The demon theme is totally in line with World of Warcraft&#8217;s newest expansion &#8220;Legion&#8221;. Go grab it you demon-lovers! With the 4th and last wing of &#8220;One Night in Karazhan&#8221; (ONiK) right around the corner, Blizzard might also suggest to play a totally negelected card: Pit Lord.  Perhaps this demon is viable if played alongside Violet Illusionist, which you can unlock tonight&#8230; To read the full blue post, continue below.]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/09/01/hearthstone-september-2016-card-back-the-burning-legion/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Karazhan Wing 4 &#8211; The Spire: Preview &#038; Predictions</title>
+		<link>http://hearthstone.blizzpro.com/2016/08/30/karazhan-wing-4-the-spire-preview-predictions/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/08/30/karazhan-wing-4-the-spire-preview-predictions/#comments</comments>
+		<pubDate>Tue, 30 Aug 2016 14:05:02 +0000</pubDate>
+		<dc:creator><![CDATA[OtakuMZ]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[4th wing]]></category>
+		<category><![CDATA[adventure]]></category>
+		<category><![CDATA[Karazhan]]></category>
+		<category><![CDATA[OtakuMZ]]></category>
+		<category><![CDATA[speculation]]></category>
+		<category><![CDATA[Spire]]></category>
+		<category><![CDATA[Theorycrafting]]></category>
+		<category><![CDATA[wing 4]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17454</guid>
+		<description><![CDATA[Introduction / Genreral Information The Spire is the fourth and last wing of One Night in Karazhan (ONiK). It will open its doors for NA Hearthstone players this  tomorrow, Thursday, September 1st. The rest of the world will have to wait a few hours longer, normally around 4-8 hours which is about the time of midnight to early morning CET. If you want to buy the wing, it will cost you 700 gold or 7 US$. Let&#8217;s take a look at this week&#8217;s cards&#8230; Cards of &#8220;The Spire&#8221; Card Predictions I kindly invite you to take a look back at our Karazhan Card Evaluation #1 to #7 articles or to head to my Karazhan Power Rankings. The 4th and last wing of the Karazhan adventure has IMHO the most difficult card yet to be evaluated. Nevertheless, there is a lot of exiting stuff and a lot of unknown variables associated with the cards. Let’s do not linger ]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/08/30/karazhan-wing-4-the-spire-preview-predictions/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>One Night in Karazan Weeks 1 and 2 Review</title>
+		<link>http://hearthstone.blizzpro.com/2016/08/24/one-night-in-karazan-weeks-1-and-2-review/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/08/24/one-night-in-karazan-weeks-1-and-2-review/#respond</comments>
+		<pubDate>Thu, 25 Aug 2016 06:59:37 +0000</pubDate>
+		<dc:creator><![CDATA[dannydonuts]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[1st wing]]></category>
+		<category><![CDATA[2nd wing]]></category>
+		<category><![CDATA[Karazhan]]></category>
+		<category><![CDATA[One Night in Karazhan]]></category>
+		<category><![CDATA[ONiK]]></category>
+		<category><![CDATA[opera]]></category>
+		<category><![CDATA[Parlor]]></category>
+		<category><![CDATA[Review]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17432</guid>
+		<description><![CDATA[Hi Danny Donuts here again. Right now we are halfway through the release of the new cards from ONiK. This article will be a recap of what has happened in the past few weeks as the Wings of Karazan have released. It is really interesting to see some of the decks that have been made viable by the new cards introduced, and how the meta changes week by week. These comments that I am making should be taken with a grain of salt, as the meta is currently in flux, and these decks that are currently good may not be as the meta is shaken more by the next two weeks, or as it settles down in the upcoming months. Week 1 Great Priest of the Feast I believe that everyone complaining about Purify really led to this card being underestimated. At this point, it has been extremely powerful in ]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/08/24/one-night-in-karazan-weeks-1-and-2-review/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Kharazan Wing 3 &#8211; The Menagerie: Preview and Predictions</title>
+		<link>http://hearthstone.blizzpro.com/2016/08/24/kharazan-wing-3-the-menagerie-preview-and-predictions/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/08/24/kharazan-wing-3-the-menagerie-preview-and-predictions/#respond</comments>
+		<pubDate>Wed, 24 Aug 2016 14:00:14 +0000</pubDate>
+		<dc:creator><![CDATA[OtakuMZ]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[3rd wing]]></category>
+		<category><![CDATA[Karazhan]]></category>
+		<category><![CDATA[One Night in Karazhan]]></category>
+		<category><![CDATA[opera]]></category>
+		<category><![CDATA[OtakuMZ]]></category>
+		<category><![CDATA[precitions]]></category>
+		<category><![CDATA[Theorycrafting]]></category>
+		<category><![CDATA[wing 3]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17420</guid>
+		<description><![CDATA[Introduction The Menagerie, the third wing of One Night in Karazhan (ONiK) will open its doors for NA Hearthstone players later today, the rest of the world will have to wait a litlle longer, most likely about 4-8 hours past the initial NA release. If you want to buy the wing, it will cost you 700 gold or 7 US$. Let&#8217;s take a look at this week&#8217;s cards&#8230; Cards of &#8220;The Menagerie&#8221; Card Predictions As in last week’s preview, I will not talk about every single card in this article again, as we already did individual initial reviews. I kindly invite you to take a look back at our Karazhan Card Evaluation #1 to #7 articles or to head to my Karazhan Power Rankings. Some predictions of these reviews already were proven wrong (hello Wicked Witchdoctor) but most were on point or really close. Today, I will provide a look at the actual state of ]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/08/24/kharazan-wing-3-the-menagerie-preview-and-predictions/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>The Opera Heroic Deck Lists and Videos</title>
+		<link>http://hearthstone.blizzpro.com/2016/08/18/the-opera-heroic-deck-lists-and-videos/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/08/18/the-opera-heroic-deck-lists-and-videos/#respond</comments>
+		<pubDate>Thu, 18 Aug 2016 23:48:34 +0000</pubDate>
+		<dc:creator><![CDATA[JR Cook]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[Heroic Boss Guides]]></category>
+		<category><![CDATA[One Night in Karazhan]]></category>
+		<category><![CDATA[ONIK Boss Guides]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17412</guid>
+		<description><![CDATA[The 2nd wing for One Night in Karazhan has been released and I think this week you&#8217;ll find yourself taking a lot less time navigating through this wing as last week&#8217;s took. In fact, these deck lists should not only get you to one shot them on normal, but there&#8217;s a good chance you&#8217;ll one shot them on heroic as well. It might take a couple extra tries but for the most part, this week was fairly easy. Julianne Julianne is invincible for as long as Romulo is on the board. Her hero power brings back Romulo who is a 4/2 minion. She plays a lot of taunt minions and goes face a lot. The strategy here is to control the board as much as possible, keep yourself healed up and kill Romulo when you have additional minions to hit her face. For this fight I went with a Reno ]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/08/18/the-opera-heroic-deck-lists-and-videos/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Karazhan Wing 2 &#8211; The Opera: What to Expect</title>
+		<link>http://hearthstone.blizzpro.com/2016/08/18/karazhan-wing-2-the-opera-what-to-expect/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/08/18/karazhan-wing-2-the-opera-what-to-expect/#comments</comments>
+		<pubDate>Thu, 18 Aug 2016 12:49:21 +0000</pubDate>
+		<dc:creator><![CDATA[OtakuMZ]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[2nd wing]]></category>
+		<category><![CDATA[Karazhan]]></category>
+		<category><![CDATA[One Night in Karazhan]]></category>
+		<category><![CDATA[opera]]></category>
+		<category><![CDATA[OtakuMZ]]></category>
+		<category><![CDATA[precitions]]></category>
+		<category><![CDATA[Theorycrafting]]></category>
+		<category><![CDATA[wing 2]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17396</guid>
+		<description><![CDATA[Introduction The Opera will open its doors for NA Hearthstone players later today, the rest of the world will have to wait a litlle longer, most likely about 4-8 hours past the initial NA release. If you want to buy the wing, it will cost you 700 gold or 7 US$. Let&#8217;s take a look at this week&#8217;s cards&#8230; &#8220;The Opera&#8221; Cards &#8211; One Night in Karazhan, 2nd Wing Card Predictions I will not talk about every single card in this article again, as we already did individual initial reviews. I kindly invite you to take a look back at our Karazhan Card Evaluation #1 to #7 articles or to head to my Karazhan Power Rankings. The Interesting One week in with experimentation on new cards, we once more saw that cards are not easy to predict. In the upcoming release, there are quite a few of these cards that might turn out to ]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/08/18/karazhan-wing-2-the-opera-what-to-expect/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Prologue and Parlor Heroic Deck Lists and Videos</title>
+		<link>http://hearthstone.blizzpro.com/2016/08/11/prologue-and-parlor-heroic-deck-lists-and-videos/</link>
+		<comments>http://hearthstone.blizzpro.com/2016/08/11/prologue-and-parlor-heroic-deck-lists-and-videos/#respond</comments>
+		<pubDate>Fri, 12 Aug 2016 02:57:22 +0000</pubDate>
+		<dc:creator><![CDATA[JR Cook]]></dc:creator>
+				<category><![CDATA[News]]></category>
+		<category><![CDATA[Videos]]></category>
+		<category><![CDATA[Heroic Boss Guides]]></category>
+		<category><![CDATA[One Night in Karazhan]]></category>
+		<category><![CDATA[ONIK Boss Guides]]></category>
+
+		<guid isPermaLink="false">http://hearthstone.blizzpro.com/?p=17387</guid>
+		<description><![CDATA[One Night in Karazhan has dropped and the Prologue mission (free) and the The Parlor (first wing) is now open. Two of the boss battles on these use pre-constructed decks and I provided some videos below of the heroic versions. The other two heroic bosses require you to develop your own decks, and in this instance I found I could use the same deck list with ease for both encounters. If you&#8217;d like to see what cards you get for completing the wings this week make sure to check our spoiler list. Prologue &#8211; Prince Malchezaar This fight is all about recycling your spells and trying to get really big turns where you can pop off spells, get a ton of spell damage and just destroy your opponent. You can be more selective of getting certain spells back than I was, but it still seemed to work. Silverware Golem He ]]></description>
+		<wfw:commentRss>http://hearthstone.blizzpro.com/2016/08/11/prologue-and-parlor-heroic-deck-lists-and-videos/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

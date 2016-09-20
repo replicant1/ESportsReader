@@ -1,0 +1,1452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-us">
+	<author>
+		<name>Blizzard Entertainment</name>
+	</author>
+	<title type="text">Hearthstone®</title>
+	<updated>2016-09-16T19:33:03.400Z</updated>
+	<id>22</id>
+	<entry>
+		<title type="text">Paid BattleTag® Changes Now Available</title>
+		<published>2016-09-16T17:00:00.000Z</published>
+		<updated>2016-09-16T17:02:30.849Z</updated>
+		<id>20285860</id>
+		<!-- link tag leads to the full text of the entry in the context of the original web site e.g. "Visit website" -->
+		<link href="http://us.battle.net//heroes/en/blog/20285860"/>
+		<!-- The summary appears in a list of summaries. Clicking on it leads to a new list on a new sreen. -->
+		<summary type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">Want to change your BattleTag® to something new? Every Battle.net account gets one free change-but if you've already used yours, you now have the option to purchase additional BattleTag changes.
+			</div>
+		</summary>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml">
+			<!-- Title: Paid BattleTag® Changes Now Available
+Summary: Want to change your BattleTag® to something new? Every Battle.net account gets one free change-but if you've already used yours, you now have the option to purchase additional BattleTag changes.
+-->
+<p>Looking to change up how you identify yourself in the Blizzard online community? The BattleTag® you originally chose doesn’t have to be your nickname for all eternity—sometimes you want to switch to something more suited to the hero (or villain) you’ve become since you first arrived in the Blizzard universe.</p>
+
+<p>While we’ve always provided players with one free BattleTag change per account, now we’re pleased to offer an additional paid <a href="https://www.battle.net/shop/product/battle-tag-name-change" target="_blank">BattleTag change service</a> for those of you who would appreciate the opportunity to choose yet another new moniker.</p>
+
+<p style="text-align: center;"><img alt="" src="https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/AHESEMNR6BPO1446678694683.png"/></p>
+
+<h3><span style="color:#9933ff;">FREE FIRST CHANGE</span></h3>
+
+<p>If you’re ready for something new and haven’t already used your free BattleTag change, simply visit your <a href="https://us.battle.net/login/en/?ref=https://us.battle.net/account/management/&amp;app=bam&amp;cr=true" target="_blank"><strong>Account Management Dashboard</strong></a>, and click the Change link under your Account Details to the right of your current tag.</p>
+
+<p/>
+
+<p>If you haven’t used your free change yet, don’t worry—BattleTag changes don’t expire and yours will be waiting for you if and when you ever decide to use it.</p>
+
+<p/>
+
+<p>If you’ve already used your first free change and still feel like a new nickname would be a better fit, the option to purchase an additional change will be available within Account Management. Changes are available for $10 each, and your new moniker will be reflected on your friends list automatically after making the change.</p>
+
+<p/>
+
+<p>For more details on the feature, check out our <a href="https://us.battle.net/support/en/article/400005" target="_blank">support article</a> or visit the <a href="https://www.battle.net/shop/product/battle-tag-name-change" target="_blank">Shop page</a>.</p>
+
+<p style="text-align: center;"><img alt="" src="https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/AHESEMNR6BPO1446678694683.png"/></p>
+
+<h3><span style="color:#9933ff;">PAID BATTLETAG CHANGE FAQ</span></h3>
+
+<p><span style="color:#0099ff;"><strong>If I want to change my BattleTag, does it have to be something unique?</strong></span></p>
+
+<p>BattleTags do not need to be unique. You can use any name you want, as long as it follows our Naming Policy. Each BattleTag is assigned a numeric ID to create a unique identifier (for example, FallenSlayer#3592).</p>
+
+<p><span style="color:#0099ff;"><strong>Will changing my BattleTag affect my friends list?</strong></span></p>
+
+<p>Your friends will now automatically see you listed under your new BattleTag, but otherwise your friends list will not be affected by this change.</p>
+
+<p><span style="color:#0099ff;"><strong>Will new accounts still get a free name change upon creation?</strong></span></p>
+
+<p>Yes. All new Battle.net accounts will continue to receive one free BattleTag change upon creation.</p>
+
+<p style="text-align: center;"><img alt="" src="https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/g6/G6G0N80EOC941426801305139.png"/></p>
+
+<p style="text-align: center;"><img alt="InvisibleDividerLine_800x50.png" data-id="14509591" src="https://bnetcmsus-a.akamaihd.net/cms/content_folder_media/6VA2831Q81IU1403137406234.png"/></p>
+</div>
+		</content>
+	</entry>
+	<entry>
+		<title type="text">Hearthstone Update - September 15, 2016</title>
+		<published>2016-09-15T17:28:00.000Z</published>
+		<updated>2016-09-16T08:50:52.217Z</updated>
+		<id>20271422</id>
+		<link href="http://us.battle.net//hearthstone/en/blog/20271422"/>
+		<summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">In this Hearthstone update, we have added the Welcome Bundle and addressed some bugs! </div>
+		</summary>
+		<content type="xhtml">
+			<div xmlns="http://www.w3.org/1999/xhtml"><p><span style="line-height: 2;">In this Hearthstone update, we have added the Welcome Bundle and addressed some bugs!</span></p>
+
+<p>Read on for details!</p>
+
+<hr class="filigree"/>
+<p><strong>General</strong></p>
+
+<ul>
+	<li>The <a href="http://us.battle.net/hearthstone/en/blog/20271287/welcome-the-welcome-bundle-9-12-2016">Welcome Bundle</a> has arrived! Purchase this one-time only bundle to receive 10 Classic card packs and a random Classic Class Legendary!</li>
+	<li>Added the new Priest Hero: Tyrande Whisperwind. You will be able to add the new Hero and a new card back to your collection by participating in an upcoming special promotion.</li>
+</ul>
+
+<p style="text-align: center;"><img alt="Wide_Frame.gif" data-id="20288859" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/as/ASW0ZPKSGKG31473816308478.gif"/></p>
+
+<ul>
+	<li>The following card backs have been added:
+	<ul>
+		<li>Tyrande – Acquired via a special promotion</li>
+	</ul>
+	</li>
+</ul>
+
+<p style="text-align: center;"><img alt="NewHero_Tyrande_CardBack_500x345.png" data-id="20288858" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/b1/B18C9NLC4D551473815975009.png"/></p>
+
+<ul style="margin-left: 40px;">
+	<li>Legion – Acquired by achieving Rank 20 in Ranked Play for September 2016</li>
+</ul>
+
+<p style="text-align: center;"><img alt="S30_RankedSept2016_CardBack_500x345.png" data-id="20288856" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/5x/5X9NCDD18PRG1473815856608.png"/></p>
+
+<ul style="margin-left: 40px;">
+	<li>Pie – Acquired by achieving Rank 20 in Ranked Play for October 2016</li>
+</ul>
+
+<p style="text-align: center;"><img alt="S31_RankedOct2016_CardBack_500x345.png" data-id="20288857" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/bq/BQZLUON2S7TF1473815910276.png"/></p>
+
+<ul>
+	<li>A few deck recipes have been updated.</li>
+	<li><a href="http://us.battle.net/hearthstone/en/blog/20271286/hearthside-chat-upcoming-arena-changes-with-dean-ayala-9-8-2016" target="_blank">Certain cards</a> will no longer be selectable in the Arena.</li>
+	<li>If you accept a Friendly Challenge while editing a deck, your deck-building progress will now be saved.</li>
+	<li>Resolved an issue that could cause gameplay to slow down after using the new Adventure restart feature.</li>
+	<li>Golden C’Thun and Mounted Raptor can now be crafted or disenchanted.</li>
+	<li>Medivh’s Valet can now be properly crafted or disenchanted.</li>
+	<li>[Tablet] Resolved an issue that could prevent the on-screen keyboard from opening.</li>
+	<li>Fixed some audio, graphical, and UI issues.</li>
+</ul>
+
+<hr class="mana"/>
+<style type="text/css">/* Normal Lightbox */
+.imgborder {
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border-radius:4px;
+-moz-box-shadow:0 0 20px #000000;
+-webkit-box-shadow:0 0 20px #000000;
+box-shadow:0 0 20px #000000;
+border: 1px solid #372511;
+padding: 1px;
+}
+.imgborder:hover {
+border: 1px solid #CD9000;
+}
+/* Borderless PNGS */
+.imgnoborder {
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+-moz-box-shadow: 0 0 0px tranparent;
+-webkit-box-shadow: 0 0 0px tranparent;
+box-shadow: 0 0 0px transparent;
+border: 0px solid transparent;
+padding: 0px;
+}
+.imgnoborder, .imgnoborder:hover {
+border: 0px solid transparent;
+}
+/* HearthstoneDividerFiligree */
+#blog .detail hr.filigree {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79C1M3XMY0L31401477381292.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerWood */
+#blog .detail hr.wood {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79VCDJZ6362M1401477381334.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerManaCrystals */
+#blog .detail hr.mana {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/AYRLNZFG7ZCY1401477381322.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* StandardDivider */
+#blog .detail hr.standard {
+width:100%;
+height: 100px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/5e/5EATP35KLFOG1454297371918.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+</style>
+</div>
+		</content>
+	</entry>
+	<entry>
+		<title type="text">Get a Sneak Peek at the BlizzCon® 2016 In-Game Goodies</title>
+		<published>2016-09-15T17:00:00.000Z</published><updated>2016-09-16T00:58:13.362Z</updated><id>20288667</id><link href="http://us.battle.net///en/blog/20288667"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Take a look at the in-game goodies BlizzCon® 2016 attendees and Virtual Ticket holders will get when they join us for this year’s show. </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Every BlizzCon®, we give out a treasure trove of in-game goodies to attendees and Virtual Ticket holders to commemorate the occasion. Take a look at what you’ll get for your favorite Blizzard games when you join us for BlizzCon X.</p>
+
+<h5>World of Warcraft® – Legionnaire Murky &amp; Knight-Captain Murky</h5>
+
+<p><a class="lightbox" href="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/MGB6YIX9XVH71473865010467.jpg"><img alt="Blizzcon2016_Goodies_444x250_WoW.jpg" data-id="20291270" src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/MT87305NXS231473864988260.jpg"/></a></p>
+
+<p>There comes a time when every murloc must choose a side. Will you mrglgglllgl for the Horde alongside Legionnaire Murky, or dive into battle for the Alliance at Knight-Captain Murky’s command?</p>
+
+<h4/>
+
+<h5><strong>Overwatch® – BlizzCon 2016 Bastion Skin</strong></h5>
+
+<p><a class="lightbox" href="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/EV3HNL6HAL201473865010379.jpg"><img alt="Blizzcon2016_Goodies_444x250_OW.jpg" data-id="20291268" src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/O0N3690RBCUL1473864988246.jpg"/></a></p>
+
+<p>A curious automaton has been spotted exploring the halls of a local gaming convention. Cosplay as a BlizzCon-bound Bastion unit in your next match of Overwatch with this commemorative skin.*</p>
+
+<h5>Diablo® III – Diablo 20th Anniversary Pet</h5>
+
+<p><a class="lightbox" href="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/X012JE075C3H1473865010034.jpg"><img alt="Blizzcon2016_Goodies_444x250_D3.jpg" data-id="20291266" src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/F4K5HY0ABTAB1473864988166.jpg"/></a></p>
+
+<p>Celebrate two decades of terror with this anniversary-themed Diablo pet, based on the Dark Lord’s design from the original game.*</p>
+
+<h5>Hearthstone® – "Welcome Inn" Card Back</h5>
+
+<p><a class="lightbox" href="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/JNBKCFQRHQEY1473865010047.jpg"><img alt="Blizzcon2016_Goodies_444x250_HS.jpg" data-id="20291267" src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/5YK6ZQ83NFX91473864988172.jpg"/></a></p>
+
+<p>Pull up a chair by the fireside at BlizzCon’s Hearthstone Tavern, then play a few hands with this year’s convention-innspired card back.</p>
+
+<h5>Heroes of the Storm® – Nexus Tiger Mount</h5>
+
+<p><a class="lightbox" href="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/6QG9OXJYZ20V1473865010046.jpg"><img alt="Blizzcon2016_Goodies_444x250_HotS.jpg" data-id="20291265" src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/RYE4WLRFZ0C41473864988169.jpg"/></a></p>
+
+<p>Introducing the latest BlizzCon mount to add to your menagerie—the Nexus Tiger! Dash onto the Battlegrounds riding this ferocious beast and show the opposing team they’re in for a fight.</p>
+
+<h5>StarCraft® II – Mystery Goodies</h5>
+
+<p><a class="lightbox" href="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/XQZL6G8HRNN01473865010419.jpg"><img alt="Blizzcon2016_Goodies_444x250_SC2.jpg" data-id="20291269" src="https://bnetcmsus-a.akamaihd.net/cms/content_entry_media/IADM6BTKNX1X1473864988254.jpg"/></a></p>
+
+<p>Show your opponents you were at BlizzCon with a new portrait—and as a bonus, be among the first to unlock a fun new piece of upcoming StarCraft II content.† Stay tuned for more details!</p>
+
+<p>This cache of in-game goodies will be available to you when you join us for BlizzCon X via the Virtual Ticket or in person (just redeem the Digital Bonuses code you received when you purchased your tickets).</p>
+
+<p>They’ll be unlocked in-game closer to the show—stay tuned for more information, and we’ll see you at BlizzCon!</p>
+
+<h4 style="text-align: center;"><a href="http://blizz.ly/1WC0KWx" target="_blank"><u>Order BlizzCon Virtual Ticket</u></a></h4>
+
+<p><em>*Diablo III in-game content for PC/Mac version only. To redeem Overwatch in-game content for PlayStation 4 or Xbox One, players must link their Battle.net account to a PlayStation Network® account or Xbox Live® account respectively. For more information on account linking, visit </em><a href="https://us.battle.net/support/en/article/linking-your-battlenet-account-on-consoles" target="_blank"><em>https://us.battle.net/support/en/article/linking-your-battlenet-account-on-consoles</em></a><em>. </em></p>
+
+<p><sup>†</sup><em>Bonus StarCraft II goodie will also be available separately—more details to come.</em></p>
+</div></content></entry><entry><title type="text">BlizzCon® 2016 Opening Week – October 26–31</title><published>2016-09-15T14:00:00.000Z</published><updated>2016-09-16T19:33:03.400Z</updated><id>20271915</id><link href="http://us.battle.net///en/blog/20271915"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">The BlizzCon esports action is starting early again this year, and we don’t want you to miss a minute of it. </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>Elite esports players from across the globe will be traveling to North America next month to compete at BlizzCon Opening Week, all hoping to set themselves up for success on the BlizzCon stage on November 4–5. In addition to the early rounds of competition for World of Warcraft Arena, Heroes of the Storm, Hearthstone, and StarCraft II, this year’s Opening Week will host early group stage matches for the Overwatch World Cup—an international exhibition pitting nations and regions against one another.</p>
+
+<p>All of the action during Opening Week will be streamed live and free of charge on blizzcon.com, as detailed below:</p>
+
+<div class="table-responsive">
+<table border="1" cellpadding="1" cellspacing="1" class="table">
+	<thead>
+		<tr>
+			<th scope="row"><em>Times listed are PDT</em></th>
+			<th scope="col" style="text-align: center;"><strong>10/26</strong></th>
+			<th scope="col" style="text-align: center;"><strong>10/27</strong></th>
+			<th scope="col" style="text-align: center;"><strong>10/28</strong></th>
+			<th scope="col" style="text-align: center;"><strong>10/29</strong></th>
+			<th scope="col" style="text-align: center;"><strong>10/30*</strong></th>
+			<th scope="col" style="text-align: center;"><strong>10/31</strong></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><strong>WoW Arena</strong></th>
+			<td/>
+			<td/>
+			<td style="text-align: center; white-space: nowrap;">11:00 a.m.</td>
+			<td/>
+			<td/>
+			<td/>
+		</tr>
+		<tr>
+			<th scope="row"><strong>Heroes</strong></th>
+			<td style="text-align: center; white-space: nowrap;">9:00 a.m.  </td>
+			<td style="text-align: center;">9:00 a.m.</td>
+			<td style="text-align: center;">9:00 a.m.</td>
+			<td/>
+			<td/>
+			<td/>
+		</tr>
+		<tr>
+			<th scope="row"><strong>Overwatch</strong></th>
+			<td/>
+			<td/>
+			<td/>
+			<td style="text-align: center; white-space: nowrap;">12:00 p.m.</td>
+			<td style="text-align: center; white-space: nowrap;"><span style="text-align: center;">12:00 p.m.</span></td>
+			<td style="text-align: center; white-space: nowrap;"><span style="text-align: center;">12:00 p.m.</span></td>
+		</tr>
+		<tr>
+			<th scope="row"><strong>Hearthstone</strong></th>
+			<td style="text-align: center; white-space: nowrap;">9:00 a.m.  </td>
+			<td style="text-align: center;"><span style="text-align: center;">9:00 </span><span style="text-align: center;">a.m.</span></td>
+			<td style="text-align: center;"><span style="text-align: center;">9:00 </span><span style="text-align: center;">a.m.</span></td>
+			<td style="text-align: center;"><span style="text-align: center;">9:00 </span><span style="text-align: center;">a.m.</span></td>
+			<td style="text-align: center;"><span style="text-align: center;">9:00 </span><span style="text-align: center;">a.m.</span></td>
+			<td/>
+		</tr>
+		<tr>
+			<th scope="row"><strong>StarCraft II</strong></th>
+			<td/>
+			<td style="text-align: center;">8:30 a.m.</td>
+			<td style="text-align: center;">8:30 a.m.</td>
+			<td style="text-align: center;">8:30 a.m.</td>
+			<td style="text-align: center;">9:30 a.m.</td>
+			<td/>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<p><em>*Daylight Saving Time ends in EU.</em></p>
+
+<p><strong>World of Warcraft® Arena World Championship</strong><br/>
+<strong>Prize Pool:</strong> $250,000<br/>
+<strong>Number of Players:</strong> 8 Teams (3–4 players per team)<br/>
+<strong>Schedule:</strong> October 28, 11:00 a.m. PDT</p>
+
+<p><strong>Matches:</strong> Ahead of the Grand Finals on stage at BlizzCon, the top eight World of Warcraft Arena teams from around the world will play their first group stage matches on October 28. All eight teams will then travel to BlizzCon, where those who emerge victorious from the remaining group stages will do battle in a single-elimination bracket until the champions are crowned.</p>
+
+<hr/>
+<p><strong>Heroes of the Storm® Fall Global Championship</strong><br/>
+<strong>Prize Pool:</strong> $1,000,000<br/>
+<strong>Number of Players:</strong> 12 Teams (5 players per team)<br/>
+<strong>Schedule:</strong> October 26–28, 9:00 a.m. PDT</p>
+
+<p><strong>Matches:</strong> For three days during Opening Week, the 12 qualified teams will compete in the first of two dual-tournament group stages until only eight remain. The second group stage will get underway during Opening Week, but all eight teams will get to play on the BlizzCon stage before it concludes and the top four head into a single-elimination bracket.</p>
+
+<hr/>
+<p><strong>Overwatch® World Cup</strong><br/>
+<strong>Number of Players:</strong> 16 Teams (6 players per team)<br/>
+<strong>Schedule:</strong> October 29–31, 12:00 p.m. PDT</p>
+
+<p><strong>Matches:</strong> Following the online qualifiers, 16 teams representing nations and regions from around the globe will compete for glory during Opening Week. After three days of best-of-three, round-robin group stages, only eight teams will remain to compete in a single-elimination bracket in the BlizzCon arena.</p>
+
+<hr/>
+<p/>
+
+<p><strong>Hearthstone® World Championship<br/>
+Prize Pool: </strong>$1,000,000<br/>
+<strong>Number of Players: </strong>16<br/>
+<strong>Schedule: </strong>October 26–30, 9:00 a.m. PDT</p>
+
+<p><strong>Matches:</strong> Spread across no fewer than five days, this year’s Hearthstone World Championship group stages will all take place during Opening Week. Four groups of four players will compete in a dual-tournament format until only eight challengers remain, having earned the right to compete in the BlizzCon single-elimination bracket.</p>
+
+<hr/>
+<p><strong>StarCraft® II World Championship Series Global Finals<br/>
+Prize Pool: </strong>$500,000<br/>
+<strong>Number of Players: </strong>16<br/>
+<strong>Schedule: </strong>October 27–29, 8:30 a.m. PDT and October 30, 9:30 a.m. PDT</p>
+
+<p><strong>Matches:</strong> The top 16 players—seven major tournament winners plus nine based on WCS points—will compete in the Global Playoffs during Opening Week. Only the eight players who make it through the double-elimination group will advance to BlizzCon, where a single-elimination bracket incorporating best-of-five matches and a best-of-seven grand final will determine the WCS Global Champion.</p>
+
+<hr/>
+<p>We hope you can join us at blizzcon.com during Opening Week and, if you’re not attending BlizzCon in person this year, for the opening ceremony and throughout the event. Remember that while some BlizzCon streams are available only with a Virtual Ticket, all BlizzCon esports streams are <strong>free!</strong></p>
+<style type="text/css">#blog table {
+border: 0 none;
+border-color: rgb(41, 86, 123);
+}
+#blog table tr td, #blog table tr th {
+border: 1px solid rgb(41, 86, 123);
+    padding: .5em .3em;
+}
+</style>
+</div></content></entry><entry><title type="text">Buy WARCRAFT™ on Blu-Ray and DVD, Get Three Epic Digital Loot Drops</title><published>2016-09-12T20:00:00.000Z</published><updated>2016-09-12T20:02:43.491Z</updated><id>20272634</id><link href="http://us.battle.net///en/blog/20272634"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Get ready for WARCRAFT to invade your home! Buy the Blu-ray™ or DVD and get a free digital copy of World of Warcraft, plus some movie-themed digital extras for Hearthstone and Heroes of the Storm. </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>From Legendary and Universal Pictures Home Entertainment, WARCRAFT is preparing to invade homes worldwide, and it’s bringing a trio of movie-inspired digital extras from Blizzard Entertainment into battle!</p>
+
+<p>Inside select physical editions of WARCRAFT on Blu-ray™ and DVD, movie fans will find digital keys that unlock the following extras for a trio of Blizzard games:</p>
+
+<ul>
+	<li><strong>Medivh Hero in Hearthstone</strong> – Unleash your favorite Mage deck as the Guardian of Tirisfal.</li>
+	<li><strong>Gul’dan Hero in Heroes of the Storm – </strong>Rain fel fire down upon the Nexus as this twisted orc Assassin.</li>
+	<li><strong>Digital copy of World of Warcraft</strong> – Start your own adventure in Azeroth—or ask a friend to join you on your journey. Includes 30 days of game time for new players.</li>
+</ul>
+
+<p>These goodies are available inside select physical WARCRAFT Blu-ray™ and DVD editions only while supplies last. Be sure to pick up your copy wherever Blu-ray™ and DVDs are sold.</p>
+
+<p>WARCRAFT is available <strong>September 27</strong> in the U.S. and Canada, and throughout September and October worldwide. Check product and promotion availability with your local retailers, as extras may differ outside the U.S. and Canada.</p>
+</div></content></entry><entry><title type="text">Welcome the Welcome Bundle!</title><published>2016-09-12T17:00:00.000Z</published><updated>2016-09-13T07:42:11.610Z</updated><id>20271287</id><link href="http://us.battle.net//hearthstone/en/blog/20271287"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Krizgut, our goblin inventory manager, has managed to secure a special deal for new and old players alike in our next content update: the new Welcome Bundle! </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p><span style="line-height: 2;">Krizgut, our goblin inventory manager, has managed to secure a special deal for new and old players alike in our next content update: the new Welcome Bundle!</span></p>
+
+<hr class="filigree"/>
+<p><strong>For $4.99 USD, the Welcome Bundle contains:</strong></p>
+
+<p style="margin-left:.5in;"><strong>10 Classic Hearthstone packs!</strong></p>
+
+<p style="margin-left:.5in;"><strong>One random class Legendary card from the Classic set!*</strong></p>
+
+<p style="text-align: center;"><img alt="" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/QBCO175CFCP41473373368073.gif"/></p>
+
+<p>If you’re new to Hearthstone and wondering where to begin, the Welcome Bundle will set you well on your way to building a Classic deck recipe or creating an exciting new deck of your own. You’ll unwrap one of nine Classic class Legendaries, such as the mystical Mage card Archmage Antonidas, or the relentless Warrior card Grommash Hellscream!</p>
+
+<p>If you’re a veteran player looking to add more Classic cards to your collection, the Welcome Bundle is an incredible deal for the price!</p>
+
+<p>Welcome Bundles are available just once per account, for as long as Krizgut can keep the ethereal portal open! Grab yours soon and find out which Legendary is waiting for you!</p>
+
+<hr class="mana"/>
+<p><em>*Legendary cards included in the Welcome Bundle are not golden.</em></p>
+<style type="text/css">/* Normal Lightbox */
+.imgborder {
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border-radius:4px;
+-moz-box-shadow:0 0 20px #000000;
+-webkit-box-shadow:0 0 20px #000000;
+box-shadow:0 0 20px #000000;
+border: 1px solid #372511;
+padding: 1px;
+}
+.imgborder, .imgborder:hover {
+border: 1px solid #CD9000;
+}
+/* Borderless PNGS */
+.imgnoborder {
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+-moz-box-shadow: 0 0 0px tranparent;
+-webkit-box-shadow: 0 0 0px tranparent;
+box-shadow: 0 0 0px transparent;
+border: 0px solid transparent;
+padding: 0px;
+}
+.imgnoborder, .imgnoborder:hover {
+border: 0px solid transparent;
+}
+/* HearthstoneDividerFiligree */
+#blog .detail hr.filigree {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79C1M3XMY0L31401477381292.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerWood */
+#blog .detail hr.wood {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79VCDJZ6362M1401477381334.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerManaCrystals */
+#blog .detail hr.mana {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/AYRLNZFG7ZCY1401477381322.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* StandardDivider */
+#blog .detail hr.standard {
+width:100%;
+height: 100px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/5e/5EATP35KLFOG1454297371918.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+</style>
+</div></content></entry><entry><title type="text">Hearthstone® August 2016 Standard Ranked Play Season Final Rankings</title><published>2016-09-09T17:00:00.000Z</published><updated>2016-09-09T17:00:00.000Z</updated><id>20271793</id><link href="http://us.battle.net//hearthstone/en/blog/20271793"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Join us in congratulating the top ranked Standard players in the Americas region! </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p><span style="line-height: 2;">The final rankings from Standard Ranked Play Season 29: An Intriguing Invitation for the Americas region are in! These players have gone the extra mile and worked their way up the current ladder system to become some of the top ranked Hearthstone competitors.</span></p>
+
+<p>The players listed below have each earned <a href="http://us.battle.net/hearthstone/en/standings/#leaderboard">points</a> toward the <a href="http://us.battle.net/hearthstone/en/blog/19968666">Hearthstone Championship Tour</a>.</p>
+
+<p>Pull up a chair and join us in recognizing the top ranked Standard Hearthstone players in the Americas region!</p>
+
+<hr class="standard"/>
+<table border="0" cellpadding="0" cellspacing="0" class="rankTable" style="margin: 0px auto; width: 245px;" width="245">
+	<thead>
+		<tr height="17" style="background-color:#B88D5E;">
+			<td height="17" style="height:17px;color:#000000;width:108px;color:#ffffff;font-weight:bold;"><strong>Battle Tag</strong></td>
+			<td style="width:137px;color:#ffffff;font-weight:bold;"><strong>Rank</strong></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr height="17">
+			<td height="20" style="height:20px;width:99px;">APXVoiD</td>
+			<td style="color:#000000;">1</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Fishyyy</td>
+			<td style="color:#000000;">2</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Promise</td>
+			<td style="color:#000000;">3</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Fr0zen</td>
+			<td style="color:#000000;">4</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">sjow</td>
+			<td style="color:#000000;">5</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">muzzy</td>
+			<td style="color:#000000;">6</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Tyler</td>
+			<td style="color:#000000;">7</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">noblord</td>
+			<td style="color:#000000;">8</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Kjeks</td>
+			<td style="color:#000000;">9</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Nicslay</td>
+			<td style="color:#000000;">10</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">ImmortalLion</td>
+			<td style="color:#000000;">11</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">HotMEOWTH</td>
+			<td style="color:#000000;">12</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Lynnnnn</td>
+			<td style="color:#000000;">13</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Tansoku</td>
+			<td style="color:#000000;">14</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Napoleon</td>
+			<td style="color:#000000;">15</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Crane333</td>
+			<td style="color:#000000;">16</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">bloodyface</td>
+			<td style="color:#000000;">17</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Neobility</td>
+			<td style="color:#000000;">18</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Tortugar</td>
+			<td style="color:#000000;">19</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">HemiPowered</td>
+			<td style="color:#000000;">20</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">NaviOOT</td>
+			<td style="color:#000000;">21</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Zarathustra</td>
+			<td style="color:#000000;">22</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Bbgungun</td>
+			<td style="color:#000000;">23</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Hammerfeet</td>
+			<td style="color:#000000;">24</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Hoej</td>
+			<td style="color:#000000;">25</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">AlwaysLucky</td>
+			<td style="color:#000000;">26</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">TrickyHunter</td>
+			<td style="color:#000000;">27</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">emzeeshady</td>
+			<td style="color:#000000;">28</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">SilentStorm</td>
+			<td style="color:#000000;">29</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">rduong</td>
+			<td style="color:#000000;">30</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">AlwaysLucky</td>
+			<td style="color:#000000;">31</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Jasm</td>
+			<td style="color:#000000;">32</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">gcttirth</td>
+			<td style="color:#000000;">33</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Aaron</td>
+			<td style="color:#000000;">34</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">IrvinG</td>
+			<td style="color:#000000;">35</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Innate</td>
+			<td style="color:#000000;">36</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Pathra</td>
+			<td style="color:#000000;">37</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">cider</td>
+			<td style="color:#000000;">38</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">FR0G</td>
+			<td style="color:#000000;">39</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Lue</td>
+			<td style="color:#000000;">40</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">ProfessorOak</td>
+			<td style="color:#000000;">41</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Murtraz</td>
+			<td style="color:#000000;">42</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">JakePhinney</td>
+			<td style="color:#000000;">43</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Ellibereth</td>
+			<td style="color:#000000;">44</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Janetzky</td>
+			<td style="color:#000000;">45</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">zigerobot</td>
+			<td style="color:#000000;">46</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">hideo</td>
+			<td style="color:#000000;">47</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">leadpaint</td>
+			<td style="color:#000000;">48</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">IChooseDead</td>
+			<td style="color:#000000;">49</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Staz</td>
+			<td style="color:#000000;">50</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Thelastofus</td>
+			<td style="color:#000000;">51</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Nostam</td>
+			<td style="color:#000000;">52</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Casie</td>
+			<td style="color:#000000;">53</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">x420Blaziken</td>
+			<td style="color:#000000;">54</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">PaulBleeker</td>
+			<td style="color:#000000;">55</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">CommonNoodle</td>
+			<td style="color:#000000;">56</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">nerza</td>
+			<td style="color:#000000;">57</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">jermz</td>
+			<td style="color:#000000;">58</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Juise</td>
+			<td style="color:#000000;">59</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Lucky13200</td>
+			<td style="color:#000000;">60</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Viritas</td>
+			<td style="color:#000000;">61</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">ZagLoyyy</td>
+			<td style="color:#000000;">62</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">IcedPhat</td>
+			<td style="color:#000000;">63</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">LoneFire</td>
+			<td style="color:#000000;">64</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Timelord</td>
+			<td style="color:#000000;">65</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Maym</td>
+			<td style="color:#000000;">66</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Ant</td>
+			<td style="color:#000000;">67</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">twobird</td>
+			<td style="color:#000000;">68</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">David</td>
+			<td style="color:#000000;">69</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">EdwardElric</td>
+			<td style="color:#000000;">70</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">railgun</td>
+			<td style="color:#000000;">71</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Lumen</td>
+			<td style="color:#000000;">72</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">herusia</td>
+			<td style="color:#000000;">73</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">ankurg</td>
+			<td style="color:#000000;">74</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Transchaos19</td>
+			<td style="color:#000000;">75</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">aqua</td>
+			<td style="color:#000000;">76</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Nandieb</td>
+			<td style="color:#000000;">77</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Daniel</td>
+			<td style="color:#000000;">78</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">benyasu</td>
+			<td style="color:#000000;">79</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Pinche</td>
+			<td style="color:#000000;">80</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Qwerty97</td>
+			<td style="color:#000000;">81</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">BlueDew</td>
+			<td style="color:#000000;">82</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Chaoseven</td>
+			<td style="color:#000000;">83</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Lurenji</td>
+			<td style="color:#000000;">84</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">carrottopguy</td>
+			<td style="color:#000000;">85</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">vadernader</td>
+			<td style="color:#000000;">86</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">kingzilla</td>
+			<td style="color:#000000;">87</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Ownerism</td>
+			<td style="color:#000000;">88</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">G3nXsiS</td>
+			<td style="color:#000000;">89</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">LichKing9119</td>
+			<td style="color:#000000;">90</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">KAPOWWWWWWWW</td>
+			<td style="color:#000000;">91</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Elsa</td>
+			<td style="color:#000000;">92</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Fenom</td>
+			<td style="color:#000000;">93</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Ghosty</td>
+			<td style="color:#000000;">94</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">ZiweiToronto</td>
+			<td style="color:#000000;">95</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Maicon</td>
+			<td style="color:#000000;">96</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Tattie</td>
+			<td style="color:#000000;">97</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Nock</td>
+			<td style="color:#000000;">98</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">Magnus5557</td>
+			<td style="color:#000000;">99</td>
+		</tr>
+		<tr height="17">
+			<td height="17" style="height:17px;width:89px;">YAYtears</td>
+			<td style="color:#000000;">100</td>
+		</tr>
+	</tbody>
+</table>
+
+<p/>
+
+<hr class="mana"/>
+<style type="text/css">table.rankTable {
+border: 1px solid #8A6A46;
+font-size:95%;
+opacity: 0.8;
+filter: alpha(opacity=80);
+margin: 0 auto;
+}
+.rankTable tr td {padding:0 10px 0 10px;}
+.rankTable tr {background-color:#e6d4aa;}
+.rankTable tr td:hover, .rankTable tr:hover, .rankTable tr:nth-child(even):hover {
+cursor:pointer;
+background-color:#574128;
+}
+.rankTable tr:nth-child(even) {background-color: #d4c39b;}
+/* HearthstoneDividerFiligree */
+#blog .detail hr.filigree {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79C1M3XMY0L31401477381292.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+#blog .detail img {
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border-radius:4px;
+-moz-box-shadow:0 0 20px #000000;
+-webkit-box-shadow:0 0 20px #000000;
+box-shadow:0 0 20px #000000;
+border: 1px solid #372511;
+max-width: 570px !important;
+padding: 1px;
+}
+#blog .detail td:hover > a img, #blog .detail a img:hover {
+border: 1px solid #CD9000;
+}
+/* HearthstoneDividerFiligree */
+#blog .detail hr.filigree {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79C1M3XMY0L31401477381292.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerWood */
+#blog .detail hr.wood {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79VCDJZ6362M1401477381334.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerManaCrystals */
+#blog .detail hr.mana {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/AYRLNZFG7ZCY1401477381322.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* StandardDivider */
+#blog .detail hr.standard {
+width:100%;
+height: 100px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/5e/5EATP35KLFOG1454297371918.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+</style>
+</div></content></entry><entry><title type="text">Hearthside Chat: Upcoming Arena Changes with Dean Ayala</title><published>2016-09-08T17:00:00.000Z</published><updated>2016-09-08T17:50:53.253Z</updated><id>20271286</id><link href="http://us.battle.net//hearthstone/en/blog/20271286"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Today, I’d like to share what the Hearthstone team’s goals are for Arena and shed some additional light on where our overall focus is for the future. </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p><span style="line-height: 2;">There’s been a lot of internal and public discussion regarding the state of Arena recently. Today, I’d like to share what the Hearthstone team’s goals are for Arena and shed some additional light on where our overall focus is for the future.</span></p>
+
+<hr class="filigree"/>
+<p>Hearthstone has four major game modes right now: Constructed, Arena, Solo Adventures, and Tavern Brawl. One goal we have for Arena is that we want it to feel meaningfully different from any other way you might play Hearthstone. I think we’re hitting that goal now, but it’s important for us to keep that in mind when thinking about future changes. Variety among all game modes is important to us, but an equally important goal is to have a wide range of experiences <em>within</em> each game mode.</p>
+
+<p>This is an area where we feel Arena has some room for improvement. When you first enter Arena and are offered the choice of three different classes, our goal is that you can look at those choices and choose any class without feeling disadvantaged because of their difference in power level.</p>
+
+<p>Most of the feedback we’ve received on Arena is centered around class balance. For the last few content releases, Mage and Rogue have bounced back and forth as the top two most played and most powerful classes. Paladin has been in a tier by itself below Mage and Rogue, while the last six classes have done some shifting around in a tier below these three.</p>
+
+<p>So what are some ways we can address Arena balance? Tools that we have available immediately involve removing cards from Arena completely—C'Thun-synergy cards and Purify are examples of this. We’d like to avoid removing strong spells and weapons from the Arena, because they add to a lot of the unpredictability and excitement surrounding the possibilities outside the current board state. We’d also like to avoid removing iconic cards, since they are generally versatile and familiar tools to veteran and new Arena players alike. Additionally, we can remove lower-performing cards in order to make room for a class’ more commonly utilized cards to show up more often in your Arena draft.</p>
+
+<p>With those things in mind, we will be removing the following cards from the Arena draft in an upcoming patch:</p>
+
+<p><strong>Mage</strong></p>
+
+<ul>
+	<li>Forgotten Torch</li>
+	<li>Snowchugger</li>
+	<li>Faceless Summoner</li>
+</ul>
+
+<p/>
+
+<p><strong>Rogue</strong></p>
+
+<ul>
+	<li>Goblin Auto Barber</li>
+	<li>Undercity Valiant</li>
+</ul>
+
+<p/>
+
+<p><strong>Paladin </strong></p>
+
+<p>- No changes</p>
+
+<p><strong>Shaman</strong></p>
+
+<ul>
+	<li>Vitality Totem</li>
+	<li>Dust Devil</li>
+	<li>Totemic Might</li>
+	<li>Ancestral Healing</li>
+	<li>Dunemaul Shaman</li>
+	<li>Windspeaker</li>
+</ul>
+
+<p/>
+
+<p><strong>Warlock</strong></p>
+
+<ul>
+	<li>Anima Golem</li>
+	<li>Sacrificial Pact</li>
+	<li>Curse of Rafaam</li>
+	<li>Sense Demons</li>
+	<li>Void Crusher</li>
+	<li>Reliquary Seeker</li>
+	<li>Succubus</li>
+</ul>
+
+<p/>
+
+<p><strong>Druid</strong></p>
+
+<ul>
+	<li>Savagery</li>
+	<li>Poison Seeds</li>
+	<li>Soul of the Forest</li>
+	<li>Mark of Nature</li>
+	<li>Tree of Life</li>
+	<li>Astral Communion</li>
+</ul>
+
+<p/>
+
+<p><strong>Warrior</strong></p>
+
+<ul>
+	<li>Warsong Commander</li>
+	<li>Bolster</li>
+	<li>Charge</li>
+	<li>Bouncing Blade</li>
+	<li>Axe Flinger</li>
+	<li>Rampage</li>
+	<li>Ogre Warmaul</li>
+</ul>
+
+<p/>
+
+<p><strong>Hunter</strong></p>
+
+<ul>
+	<li>Starving Buzzard</li>
+	<li>Call Pet</li>
+	<li>Timber Wolf</li>
+	<li>Cobra Shot</li>
+	<li>Lock and Load</li>
+	<li>Dart Trap</li>
+	<li>Snipe</li>
+</ul>
+
+<p/>
+
+<p><strong>Priest</strong></p>
+
+<ul>
+	<li>Mind Blast</li>
+	<li>Shadowbomber</li>
+	<li>Lightwell</li>
+	<li>Power Word: Glory</li>
+	<li>Confuse</li>
+	<li>Convert</li>
+	<li>Inner Fire</li>
+</ul>
+
+<p/>
+
+<p>We're looking to develop additional solutions to balance Arena as well, such as the ability to adjust the rate that individual cards show up in your draft depending on a designer input value. If we pursue that route, there is still the matter of deciding on the best way to go about using that tool to achieve balance for each of the nine classes and still have Arena feel fun and different each run.</p>
+
+<p>Drafting by card rarity is another discussion that we’ve been hearing a lot. If it’s a matter of balance, we’re fairly confident the ability to adjust the “weights” of cards available can solve that.</p>
+
+<p>We think Arena is a fun environment that could use some overall balance tuning. We hope the above changes will help to address that, and we will be monitoring the Arena closely to see the impact of these changes. We also need your feedback to help us ensure that the Arena remains enjoyable for years to come, so let us know your thoughts!  </p>
+
+<hr class="mana"/>
+<p/>
+<style type="text/css">/* Normal Lightbox */
+.imgborder {
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border-radius:4px;
+-moz-box-shadow:0 0 20px #000000;
+-webkit-box-shadow:0 0 20px #000000;
+box-shadow:0 0 20px #000000;
+border: 1px solid #372511;
+padding: 1px;
+}
+.imgborder, .imgborder:hover {
+border: 1px solid #CD9000;
+}
+/* Borderless PNGS */
+.imgnoborder {
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+-moz-box-shadow: 0 0 0px tranparent;
+-webkit-box-shadow: 0 0 0px tranparent;
+box-shadow: 0 0 0px transparent;
+border: 0px solid transparent;
+padding: 0px;
+}
+.imgnoborder, .imgnoborder:hover {
+border: 0px solid transparent;
+}
+/* HearthstoneDividerFiligree */
+#blog .detail hr.filigree {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79C1M3XMY0L31401477381292.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerWood */
+#blog .detail hr.wood {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79VCDJZ6362M1401477381334.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerManaCrystals */
+#blog .detail hr.mana {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/AYRLNZFG7ZCY1401477381322.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* StandardDivider */
+#blog .detail hr.standard {
+width:100%;
+height: 100px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/5e/5EATP35KLFOG1454297371918.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+</style>
+</div></content></entry><entry><title type="text">Watch the Hearthstone Summer Championships!</title><published>2016-09-07T17:00:00.000Z</published><updated>2016-09-14T23:20:04.492Z</updated><id>20271792</id><link href="http://us.battle.net//hearthstone/en/blog/20271792"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">Tune in as we crown the Summer Champions over three consecutive weekends in September. </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p>With <strong><a href="https://blizzcon.com/en-us/">BlizzCon</a></strong> just around the corner, three players hope to secure their spot at the <strong><a href="https://blizzcon.com/en-us/esports">Hearthstone World Championship</a></strong> by winning one of the <strong><a href="http://us.battle.net/hearthstone/en/blog/19968666">Hearthstone Championship Tour</a></strong>’s Summer Championships! Across three consecutive weekends in September, we will host the Americas, Europe, and Asia-Pacific Summer Championships, all taking place at the Hollywood Riviera Studios in Torrance, California. Each weekend, the eight qualifying players from their respective region’s Preliminary event will be flown in to battle it out and stake their claim as that region’s Summer Champion. The winners will also earn a spot at this year’s Hearthstone World Championship at <strong><a href="https://blizzcon.com/en-us/">BlizzCon</a></strong>, as well as a share of each Championship’s $100,000 USD prize pool!</p>
+
+<hr class="filigree"/>
+<p><strong>Where to Watch</strong></p>
+
+<p>You can catch all of the exciting action on the <a href="http://twitch.tv/playhearthstone"><strong>official Hearthstone Twitch channel</strong></a>!</p>
+
+<p><strong>Americas Summer Championship: </strong>September 17–18 – 9 a.m. PDT<br/>
+<strong>Casters: </strong><a href="https://twitter.com/Frodan"><strong>Dan ‘Frodan’ Chou</strong></a>, <a href="https://twitter.com/bmkibler"><strong>Brian Kibler</strong></a>, <a href="https://twitter.com/Azumoqt"><strong>TJ ‘Azumo’ Sanders</strong></a>, <a href="https://twitter.com/Songbird_HS"><strong>Cora ‘Songbird’ Georgiou</strong></a>, <a href="https://twitter.com/thatsadmirable"><strong>Nathan 'ThatsAdmirable' Zamora</strong></a>, <a href="https://twitter.com/coL_Sottle"><strong>Simon ‘Sottle’ Welch</strong></a></p>
+
+<p><strong>Europe Summer Championship: </strong>September 24–25 – 9 a.m. PDT  (16:00 UTC, 18:00 CEST)<br/>
+<strong>Casters: </strong><a href="https://twitter.com/Frodan"><strong>Dan ‘Frodan’ Chou</strong></a>, <a href="https://twitter.com/bmkibler"><strong>Brian Kibler</strong></a>, <a href="https://twitter.com/Azumoqt"><strong>TJ ‘Azumo’ Sanders</strong></a>, <a href="https://twitter.com/RavenHSUK"><strong>Alexander ‘Raven’ Baguley</strong></a>, <strong><a href="https://twitter.com/LiquidSavjz">Janne ‘Savjz’ Mikkonen</a></strong>, <a href="https://twitter.com/coL_Sottle"><strong>Simon ‘Sottle’ Welch</strong></a></p>
+
+<p><strong>Asia-Pacific Summer Championship: </strong>September 30–October 1 – 9 p.m. PDT  (October 1-2 – 12:00 CST, 13:00 KST)<br/>
+<strong>Casters: </strong><a href="https://twitter.com/Frodan"><strong>Dan ‘Frodan’ Chou</strong></a>, <a href="https://twitter.com/RobertAWing"><strong>Robert ‘Whirthun’ Wing</strong></a>, <a href="https://twitter.com/Azumoqt"><strong>TJ ‘Azumo’ Sanders</strong></a>, <a href="https://twitter.com/RavenHSUK"><strong>Alexander ‘Raven’ Baguley</strong></a>, <strong><a href="https://twitter.com/DTwoHS">Daniel "DTwo" Ikuta</a></strong>,<strong> <a href="https://twitter.com/LiquidSavjz">Janne ‘Savjz’ Mikkonen</a></strong></p>
+
+<p><strong>Calling all Innkeepers!</strong></p>
+
+<p>The Summer Championships are an ideal time to host an exciting Fireside Gathering viewing party. Not an Innkeeper? No worries, just head on over to the official <a href="http://www.firesidegatherings.com/"><strong>Fireside Gatherings</strong></a> site to find an event near you, or better yet, learn how to host your own Summer Championship viewing party! Join some fellow gamers to watch the heated competition and perhaps partake in some friendly brawls yourself! </p>
+
+<p><strong>The Participants</strong></p>
+
+<p>Here are the participants for each region’s Championship:</p>
+
+<p><strong>Americas:</strong> Abar, Dude7597, HotMEOWTH, Monsanto, Pascoa, Rooftrellen, Tarei, Topopablo11</p>
+
+<ul>
+	<li><a href="http://blizz.ly/HCTAMSummerChampsBracket"><strong>Bracket</strong></a></li>
+</ul>
+
+<p><strong>Europe:</strong> Dizdemon, DrHippi, Georgec, Grayj, Likeaßawse, Ikealyou, Tvist, Viper</p>
+
+<p><strong>Asia-Pacific: </strong>TBD</p>
+
+<p><strong>The Format</strong></p>
+
+<p>For each Championship, the players will face off in a best-of-seven single-elimination bracket using the <a href="https://www.youtube.com/watch?v=_hfGtSMPUMg">Conquest</a> match format with a ban. The winner will claim the Summer Championship title, the $25,000 first place prize, and their spot at the 2016 Hearthstone World Championship.</p>
+
+<hr class="standard"/>
+<p>Don’t miss any of the action! Join in on the conversation by tweeting <a href="https://twitter.com/playhearthstone">@PlayHearthstone</a> with the #HCT hashtag.</p>
+
+<hr class="mana"/>
+<style type="text/css">/* Normal Lightbox */
+.imgborder {
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border-radius:4px;
+-moz-box-shadow:0 0 20px #000000;
+-webkit-box-shadow:0 0 20px #000000;
+box-shadow:0 0 20px #000000;
+border: 1px solid #372511;
+padding: 1px;
+}
+.imgborder:hover {
+border: 1px solid #CD9000;
+}
+/* Borderless PNGS */
+.imgnoborder {
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+-moz-box-shadow: 0 0 0px tranparent;
+-webkit-box-shadow: 0 0 0px tranparent;
+box-shadow: 0 0 0px transparent;
+border: 0px solid transparent;
+padding: 0px;
+}
+.imgnoborder, .imgnoborder:hover {
+border: 0px solid transparent;
+}
+/* HearthstoneDividerFiligree */
+#blog .detail hr.filigree {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79C1M3XMY0L31401477381292.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerWood */
+#blog .detail hr.wood {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79VCDJZ6362M1401477381334.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerManaCrystals */
+#blog .detail hr.mana {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/AYRLNZFG7ZCY1401477381322.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* StandardDivider */
+#blog .detail hr.standard {
+width:100%;
+height: 100px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/5e/5EATP35KLFOG1454297371918.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+</style>
+</div></content></entry><entry><title type="text">Hearthstone® September 2016 Ranked Play Season – The Burning Legion</title><published>2016-09-01T07:05:00.000Z</published><updated>2016-09-01T11:56:42.697Z</updated><id>20271284</id><link href="http://us.battle.net//hearthstone/en/blog/20271284"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">The September Ranked Play Season is now live—and we’re unveiling a new card back you can add to your collection! </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p><span style="line-height: 2;">The September Ranked Play Season is now live – and we’re unveiling a new card back you can add to your collection!</span></p>
+
+<hr class="filigree"/>
+<p>The demons of the Burning Legion have made their mark on Hearthstone with the delightfully infernal Legion card back! Add this beauti-fel card back to your collection by playing Hearthstone during the month of September.</p>
+
+<p>These card backs replace the art decorating the reverse side of your cards and are a great way to show off your Hearthstone accomplishments. Add the Legion card back to your collection by hitting Rank 20 in either Standard or Wild Ranked Play modes. You’ll receive the Legion card back at the end of September’s Ranked Play Season in your Ranked Play reward chest.</p>
+
+<p>You earn Ranked Play reward chests based on your highest earned rank over the course of a Ranked Play season. Reward chests may contain seasonal card backs, Arcane Dust, and golden cards, and can be obtained by playing in either Standard or Wild Ranked Play modes. You’ll be awarded one chest per Ranked Play season based on your highest rank between the two modes.</p>
+
+<p/>
+
+<p align="center"><a class="lightbox" href="https://bnetcmsus-a.akamaihd.net/cms/gallery/7UUG4QNGOFQZ1472684165186.png"><img alt="" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/3B3MVURUH2HP1472684165384.gif" style="width: 500px; height: 345px; float: center;"/></a></p>
+
+<p>Don’t forget—the further you move up the Ranked Play ladder, the more bonus stars you’ll receive next season. In Ranked Play, you’ll receive bonus stars based on your performance from the previous season—one bonus star per rank you attained. Please note that even if bonus stars from the previous season get you directly to Rank 20 or above, you still have to log in at least once each Ranked Season to qualify for the card back reward.</p>
+
+<p>Go and show everyone that you ARE prepared in September’s Ranked Play Season, The Burning Legion!</p>
+
+<p/>
+
+<hr class="mana"/>
+<style type="text/css">/* Normal Lightbox */
+.imgborder {
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border-radius:4px;
+-moz-box-shadow:0 0 20px #000000;
+-webkit-box-shadow:0 0 20px #000000;
+box-shadow:0 0 20px #000000;
+border: 1px solid #372511;
+padding: 1px;
+}
+.imgborder, .imgborder:hover {
+border: 1px solid #CD9000;
+}
+/* Borderless PNGS */
+.imgnoborder {
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+-moz-box-shadow: 0 0 0px tranparent;
+-webkit-box-shadow: 0 0 0px tranparent;
+box-shadow: 0 0 0px transparent;
+border: 0px solid transparent;
+padding: 0px;
+}
+.imgnoborder, .imgnoborder:hover {
+border: 0px solid transparent;
+}
+/* HearthstoneDividerFiligree */
+#blog .detail hr.filigree {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79C1M3XMY0L31401477381292.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerWood */
+#blog .detail hr.wood {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79VCDJZ6362M1401477381334.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerManaCrystals */
+#blog .detail hr.mana {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/AYRLNZFG7ZCY1401477381322.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* StandardDivider */
+#blog .detail hr.standard {
+width:100%;
+height: 100px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/5e/5EATP35KLFOG1454297371918.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+</style>
+</div></content></entry><entry><title type="text">One Night in Karazhan is Now Live!</title><published>2016-08-11T17:16:00.000Z</published><updated>2016-08-12T17:48:36.801Z</updated><id>20228505</id><link href="http://us.battle.net//hearthstone/en/blog/20228505"/><summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml">It’s time to get this party started! The free Prologue mission and The Parlor, the first wing of Hearthstone’s newest Adventure: One Night in Karazhan, are now LIVE! </div></summary><content type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><p><span style="line-height: 2;">It’s time to get this party started! The free Prologue mission and The Parlor, the first wing of Hearthstone’s newest Adventure: One Night in Karazhan, are now LIVE!</span></p>
+
+<p style="text-align: center;"><a href="https://us.battle.net/shop/en/product/hearthstone-one-night-in-karazhan?utm_source=app-play&amp;utm_medium=internal&amp;utm_content=spotlight-ad&amp;utm_campaign=community-hearthstone-onik" target="_blank"><img alt="Button.png" data-id="20241754" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/mq/MQX1K5COZXE71470951532600.png" style="height: 150px; width: 250px;"/></a></p>
+
+<p/>
+
+<p>Note: In order to access One Night in Karazhan once it goes live in your region, please restart your Hearthstone client.</p>
+
+<p/>
+
+<p style="text-align: center;"><iframe allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/qlHx7YNWYGY" width="560"/></p>
+
+<p/>
+
+<hr class="filigree"/>
+<p align="center"/>
+
+<p>The magus Medivh is hosting the party of the millennium in the magical, magnificent tower of Karazhan. A shindig sure to go down in legend has just begun, but before you dance the night away with Azeroth’s most glamorous people, you’ll first meet up with Medivh in the free Prologue mission. Better yet, you’ll pick up two copies each of Enchanted Raven and Firelands Portal just for stopping by.</p>
+
+<p/>
+
+<p align="center"><img alt="Enchanted Raven - 1/2/2, minion" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/1k/1K94I0RFLM5P1469733551227.png" style="width: 250px; height: 329px;"/><img alt="Firelands Portal - Spell: 7 mana, Deal 5 damage. Summon a random 5-Cost minion." src="https://bnetcmsus-a.akamaihd.net/cms/gallery/8KD5JIRHE6EF1469689461896.png" style="width: 250px; height: 329px;"/></p>
+
+<p/>
+
+<p>Stick around for the party proper and boogie through all four wings of Karazhan: The Parlor, The Opera, The Menagerie, and The Spire. Get on up the whole tower, and then get down with all nine Class challenges, and you’ll pick up 43 more dazzling new cards as party favors!</p>
+
+<p/>
+
+<p>If you purchase the whole Adventure in the first week, you’ll also add the sparkling* new Karazhan Nights cardback to your collection.</p>
+
+<p/>
+
+<p align="center"><a class="lightbox" href="https://bnetcmsus-a.akamaihd.net/cms/gallery/9HTDCQDIDE0C1469689462107.jpg"><img alt="Bundle Pricing" class="imgborder" src="https://bnetcmsus-a.akamaihd.net/cms/gallery/F7PH0DAVOZ681469689461989.jpg" style="width: 500px; height: 313px;"/></a></p>
+
+<p align="center"><a href="https://bnetcmsus-a.akamaihd.net/cms/gallery/s0/S0IINXZ1G3531469691480890.jpg"><span style="font-size:12px;">Click HERE for AUD pricing.</span></a></p>
+
+<p align="center"/>
+
+<p>Learn more about what you have to look forward to in <a href="http://www.karazhan.com/">One Night in Karazhan</a>! Then revel in ALL of the One Night in Karazhan cards on the official <a href="https://www.facebook.com/Hearthstone/photos/?tab=album&amp;album_id=1163157510393682">Hearthstone Facebook gallery</a>!</p>
+
+<p/>
+
+<p>*Literally sparkling! There’s a disco ball and everything!</p>
+
+<hr class="mana"/>
+<style type="text/css">/* Normal Lightbox */
+.imgborder {
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+border-radius:4px;
+-moz-box-shadow:0 0 20px #000000;
+-webkit-box-shadow:0 0 20px #000000;
+box-shadow:0 0 20px #000000;
+border: 1px solid #372511;
+padding: 1px;
+}
+.imgborder, .imgborder:hover {
+border: 1px solid #CD9000;
+}
+/* Borderless PNGS */
+.imgnoborder {
+-moz-border-radius: 0px;
+-webkit-border-radius: 0px;
+border-radius: 0px;
+-moz-box-shadow: 0 0 0px tranparent;
+-webkit-box-shadow: 0 0 0px tranparent;
+box-shadow: 0 0 0px transparent;
+border: 0px solid transparent;
+padding: 0px;
+}
+.imgnoborder, .imgnoborder:hover {
+border: 0px solid transparent;
+}
+/* HearthstoneDividerFiligree */
+#blog .detail hr.filigree {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79C1M3XMY0L31401477381292.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerWood */
+#blog .detail hr.wood {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/79VCDJZ6362M1401477381334.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* HearthstoneDividerManaCrystals */
+#blog .detail hr.mana {
+width:100%;
+height: 50px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/AYRLNZFG7ZCY1401477381322.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+/* StandardDivider */
+#blog .detail hr.standard {
+width:100%;
+height: 100px;
+background:url('https://bnetcmsus-a.akamaihd.net/cms/gallery/5e/5EATP35KLFOG1454297371918.png') center center no-repeat;
+border: none;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+</style>
+</div></content></entry></feed>

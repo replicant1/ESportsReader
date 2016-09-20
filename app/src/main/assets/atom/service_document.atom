@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--suppress ALL -->
+<service xmlns="http://www.w3.org/2007/app"
+         xmlns:atom="http://www.w3.org/2005/Atom"
+         xmlns:ext="http://www.esportsreader.com/Atom"
+         xml:lang="en-GB">
+  <workspace>
+    <atom:title>eSportsReader Sports</atom:title>
+    <collection href="http://feed.esportsreader.com/reader/sports/dota2">
+      <atom:id>dota2</atom:id>
+      <atom:title>Dota 2</atom:title>
+      
+
+      <accept />
+
+      <categories scheme="http://feed.esportsreader.com/reader/sports/categories" fixed="yes">
+        <atom:category term="dota2" />
+      </categories>
+    </collection>
+    <collection href="http://feed.esportsreader.com/reader/sports/starcraft">
+      <atom:id>starcraft</atom:id>
+      <atom:title>Starcraft</atom:title>
+      
+
+      <accept />
+
+      <categories scheme="http://feed.esportsreader.com/reader/sports/categories" fixed="yes">
+        <atom:category term="starcraft" />
+      </categories>
+    </collection>
+    <collection href="http://feed.esportsreader.com/reader/sports/leagueoflegends">
+      <atom:id>leagueoflegends</atom:id>
+      <atom:title>League Of Legends</atom:title>
+      <ext:abbreviatedName>LoL</ext:abbreviatedName>
+
+      <accept />
+
+      <categories scheme="http://feed.esportsreader.com/reader/sports/categories" fixed="yes">
+        <atom:category term="leagueoflegends" />
+      </categories>
+    </collection>
+    <collection href="http://feed.esportsreader.com/reader/sports/hearthstone">
+      <atom:id>hearthstone</atom:id>
+      <atom:title>Hearthstone</atom:title>
+      
+
+      <accept />
+
+      <categories scheme="http://feed.esportsreader.com/reader/sports/categories" fixed="yes">
+        <atom:category term="hearthstone" />
+      </categories>
+    </collection>
+    <collection href="http://feed.esportsreader.com/reader/sports/counterstrikego">
+      <atom:id>counterstrikego</atom:id>
+      <atom:title>Counter-Strike: Global Offensive</atom:title>
+      <ext:abbreviatedName>CS: GO</ext:abbreviatedName>
+
+      <accept />
+
+      <categories scheme="http://feed.esportsreader.com/reader/sports/categories" fixed="yes">
+        <atom:category term="counterstrike" />
+      </categories>
+    </collection>
+  </workspace>
+</service>

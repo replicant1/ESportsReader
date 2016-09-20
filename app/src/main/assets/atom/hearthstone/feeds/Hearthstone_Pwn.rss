@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Hearthstone News from HearthPwn</title>
+    <link>http://www.hearthpwn.com/news</link>
+    <description />
+    <category>News</category>
+    <image>
+      <url>http://media-hearth.cursecdn.com/avatars/thumbnails/39/250/144/144/635260953434005691.png</url>
+      <title>Hearthstone News from HearthPwn</title>
+      <link>http://www.hearthpwn.com/news</link>
+    </image>
+    <a10:link rel="self" type="application/rss+xml" title="News" length="1000" href="http://www.hearthpwn.com/news.rss" />
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/641/636097638977604034.jpeg" author="Fluxflashor">
+      <guid isPermaLink="false">1730</guid>
+      <link>http://www.hearthpwn.com/news/1730-popular-decks-of-the-week-for-september-18</link>
+      <a10:author>
+        <a10:name>Fluxflashor</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/Fluxflashor</a10:uri>
+      </a10:author>
+      <title>Popular Decks of the Week for September 18</title>
+      <description>The calculations are in and the most popular Standard decks from the past week are ready for you to take to the ladder.&lt;br&gt;&lt;br&gt;What are you going to play this week?</description>
+      <pubDate>Sun, 18 Sep 2016 07:51:47 Z</pubDate>
+      <a10:updated>2016-09-18T07:51:54Z</a10:updated>
+    </item>
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/553/636096303229308939.jpeg" author="Fluxflashor">
+      <guid isPermaLink="false">1729</guid>
+      <link>http://www.hearthpwn.com/news/1729-paid-battletag-name-changes-now-available-for-10</link>
+      <a10:author>
+        <a10:name>Fluxflashor</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/Fluxflashor</a10:uri>
+      </a10:author>
+      <title>Paid BattleTag Name Changes Now Available for $10 USD</title>
+      <description>Players on Battle.net have been asking for a paid BattleTag change service since the early days of BattleTags, and it's finally here.</description>
+      <pubDate>Fri, 16 Sep 2016 18:46:12 Z</pubDate>
+      <a10:updated>2016-09-18T07:53:23Z</a10:updated>
+    </item>
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/501/636095771062628504.jpeg" author="Fluxflashor">
+      <guid isPermaLink="false">1727</guid>
+      <link>http://www.hearthpwn.com/news/1727-value-town-87-batstone-tyrande-arena-changes</link>
+      <a10:author>
+        <a10:name>Fluxflashor</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/Fluxflashor</a10:uri>
+      </a10:author>
+      <title>Value Town #87 - BatStone, Tyrande, Arena Changes, Current State of Hearthstone</title>
+      <description>This week on Value Town, ChanManV, Noxious, Firebat, and Reynad discussed BatStone, today's patch, and the current state of the game.</description>
+      <pubDate>Fri, 16 Sep 2016 11:00:00 Z</pubDate>
+      <a10:updated>2016-09-17T06:50:15Z</a10:updated>
+    </item>
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/364/636094090685914175.jpeg" author="Fluxflashor">
+      <guid isPermaLink="false">1721</guid>
+      <link>http://www.hearthpwn.com/news/1721-hearthpwn-card-design-competition-season-4-a</link>
+      <a10:author>
+        <a10:name>Fluxflashor</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/Fluxflashor</a10:uri>
+      </a10:author>
+      <title>HearthPwn Card Design Competition Season 4 - A Shocking Revelation!</title>
+      <description>Our tenth card design competition of season 4, A Shocking Relevation, has begun! This week we're designing cards which reveal cards from hands or decks, but not in the way of the jouster.</description>
+      <pubDate>Fri, 16 Sep 2016 06:00:00 Z</pubDate>
+      <a10:updated>2016-09-18T00:08:09Z</a10:updated>
+    </item>
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/471/636095413550786510.jpeg" author="Fluxflashor">
+      <guid isPermaLink="false">1726</guid>
+      <link>http://www.hearthpwn.com/news/1726-hearthstone-patch-14406-welcome-bundle-arrives</link>
+      <a10:author>
+        <a10:name>Fluxflashor</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/Fluxflashor</a10:uri>
+      </a10:author>
+      <title>Hearthstone Patch 14406 - Welcome Bundle Arrives, Tyrande Priest Hero, New Card Backs, World Events</title>
+      <description>A new patch has arrived with the Welcome Bundle, a brand new Priest Hero - Tyrande Whisperwind, Card Backs, and More!</description>
+      <pubDate>Thu, 15 Sep 2016 17:14:42 Z</pubDate>
+      <a10:updated>2016-09-18T06:03:31Z</a10:updated>
+    </item>
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/442/636095384883051409.png" author="jmxd">
+      <guid isPermaLink="false">1725</guid>
+      <link>http://www.hearthpwn.com/news/1725-blizzcon-2016-in-game-goodies-announced</link>
+      <a10:author>
+        <a10:name>jmxd</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/jmxd</a10:uri>
+      </a10:author>
+      <title>BlizzCon® 2016 in-game goodies announced!</title>
+      <description>Blizzard just revealed the in-game items you'll be receiving for attending BlizzCon this year or by purchasing the virtual ticket! For Hearthstone you'll once again be able to unlock a unique cardback.</description>
+      <pubDate>Thu, 15 Sep 2016 17:14:12 Z</pubDate>
+      <a10:updated>2016-09-17T01:01:27Z</a10:updated>
+    </item>
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/403/636094902359300997.jpeg" author="Fluxflashor">
+      <guid isPermaLink="false">1724</guid>
+      <link>http://www.hearthpwn.com/news/1724-top-10-chinese-decks-from-the-hearthstone-china</link>
+      <a10:author>
+        <a10:name>Fluxflashor</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/Fluxflashor</a10:uri>
+      </a10:author>
+      <title>Top 10 Chinese Decks From the Hearthstone China Autumn Championships</title>
+      <description>Why hello there Yogg &amp; N'Zoth, how do you do? We've got the top 10 decks from the recent Hearthstone China Autumn Championships and you should totally check them out.</description>
+      <pubDate>Thu, 15 Sep 2016 03:50:52 Z</pubDate>
+      <a10:updated>2016-09-16T03:59:50Z</a10:updated>
+    </item>
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/396/636094798573975824.jpeg" author="Fluxflashor">
+      <guid isPermaLink="false">1723</guid>
+      <link>http://www.hearthpwn.com/news/1723-hearthstone-americas-summer-championships-2016</link>
+      <a10:author>
+        <a10:name>Fluxflashor</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/Fluxflashor</a10:uri>
+      </a10:author>
+      <title>Hearthstone Americas Summer Championships 2016 Decklists</title>
+      <description>Decklists from the upcoming Americas Summer Championships are here! Come see what the top eight competitors in the Americas region will be playing this weekend.</description>
+      <pubDate>Thu, 15 Sep 2016 01:03:14 Z</pubDate>
+      <a10:updated>2016-09-16T03:41:44Z</a10:updated>
+    </item>
+    <item image="http://media-Hearth.cursecdn.com/avatars/303/378/636094483945648673.jpeg" author="Fluxflashor">
+      <guid isPermaLink="false">1722</guid>
+      <link>http://www.hearthpwn.com/news/1722-top-3-is-this-weeks-tavern-brawl</link>
+      <a10:author>
+        <a10:name>Fluxflashor</a10:name>
+        <a10:uri>http://www.hearthpwn.com/members/Fluxflashor</a10:uri>
+      </a10:author>
+      <title>Top 3 is this Week's Tavern Brawl!</title>
+      <description>This week's brawl involves decks built with a composition of only 3 different cards! What are your top 3?</description>
+      <pubDate>Wed, 14 Sep 2016 16:13:24 Z</pubDate>
+      <a10:updated>2016-09-18T09:45:54Z</a10:updated>
+    </item>
+  </channel>
+</rss>

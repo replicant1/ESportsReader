@@ -11,7 +11,8 @@ import java.io.InputStream;
 
 import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.ESportsFeed;
-import bailey.rod.esportsreader.xml.atom.RSSFeedParser;
+import bailey.rod.esportsreader.xml.rss.AtomFeedParser;
+import bailey.rod.esportsreader.xml.rss.RSSFeedParser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
-        String documentName = "atom/starcraft/feeds/theScore_Starcraft_2.rss";
+        String documentName = "atom/hearthstone/feeds/Hearthstone.atom";
         Log.i(TAG, "****** feed document=" + documentName + " *******");
 
         try {
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, "Creating parser");
             //AtomServiceDocumentParser parser = new AtomServiceDocumentParser();
 //            AtomCollectionDocumentParser parser = new AtomCollectionDocumentParser();
-            RSSFeedParser parser = new RSSFeedParser();
+            AtomFeedParser parser = new AtomFeedParser();
 
             Log.i(TAG, "Parsing document");
             //AtomServiceDocument serviceDocument = parser.parse(stream);

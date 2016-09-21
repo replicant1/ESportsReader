@@ -74,4 +74,13 @@ public class XPPUtils {
 
         return startTagFound;
     }
+
+//    public static String statusAsString(XmlPullParser parser) throws XmlPullParserException {
+//        parser.getName();
+//        parser.getEventType();
+//        parser.getDepth();
+//        parser.getColumnNumber();
+//        parser.getPrefix();
+//        parser.get
+//    }
 }

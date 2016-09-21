@@ -1,4 +1,4 @@
-package bailey.rod.esportsreader.xml.atom;
+package bailey.rod.esportsreader.xml.rss;
 
 import android.util.Log;
 
@@ -23,7 +23,7 @@ import bailey.rod.esportsreader.xml.ESportsFeedEntry;
  *         <title>Title of RSS Feed</title>
  *         .. other tags ...
  *         <item>
- *             ... order of the following 4 tags may vary, but "content" is always last
+ *             ... order of the following 4 tags may vary
  *             <title>Title of item 1</title>
  *             <link>URL of item 1 in context of source web site</link>
  *             <description>Optional synopsis of item 1</description>
@@ -31,11 +31,12 @@ import bailey.rod.esportsreader.xml.ESportsFeedEntry;
  *             <content:encoded>Optional full content of item 1</content:encoded>
  *             <a10:updated>Optional date/time when item 1 was last updated</a10:updated>
  *         </item>
- *         ... More <item> tags until end of document
+ *         ... More <item> tags until </rss>
  *     </rss>
  * </pre>
  * NOTE: For each "item" tag it is assumed that at least one of the "description" and "content" child tags will be
  * present.
+ * This class has only been tested on RSS 2.0 but may well work on other versions of RSS.
  */
 public class RSSFeedParser {
 
@@ -66,13 +67,11 @@ public class RSSFeedParser {
         String feedTitle = parser.nextText();
 
         // Advance through all the <item> tags until the end of the document
-        int i = 0;
-        while (XPPUtils.skipToNextStartTag(parser, "item") && (i++ < 10)) {
+        while (XPPUtils.skipToNextStartTag(parser, "item")) {
             entryList.add(parseItem(parser));
         }
 
-        ESportsFeed result = new ESportsFeed(feedTitle, entryList);
-        return result;
+        return new ESportsFeed(feedTitle, entryList);
     }
 
     private ESportsFeedEntry parseItem(XmlPullParser parser) throws XmlPullParserException, IOException {

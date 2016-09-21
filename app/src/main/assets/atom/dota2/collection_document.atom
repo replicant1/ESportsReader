@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--suppress ALL -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>starcraft</id>
+    <title type="text">Starcraft Sources</title>
+    <updated>2016-09-20T20:20:00.670+00:00</updated>
+    <link rel="self" href="http://feed.esportsreader.com/reader/sports/starcraft"/>
+
+    <author>
+
+        <name>eSportsReader (contactesportsreader@gmail.com)</name>
+    </author>
+
+    <category term="starcraft" />
+
+    <generator uri="http://feed.esportsreader.com" version="1.0">eSportsReader</generator>
+
+
+    <contributor>
+        <name type="text">StarCraft 2</name>
+        <uri>http://us.battle.net/sc2/en/feed/news</uri>
+    </contributor>
+    <contributor>
+        <name type="text">GosuGamers StarCraft 2</name>
+        <uri>http://www.gosugamers.net/starcraft/news/rss</uri>
+    </contributor>
+    <contributor>
+        <name type="text">StarCraft Legacy</name>
+        <uri>http://sclegacy.com/index.php?format=feed&amp;type=rss</uri>
+    </contributor>
+    <contributor>
+        <name type="text">theScore SC2</name>
+        <uri>http://feeds.thescoreesports.com/sc2.rss</uri>
+    </contributor>
+
+
+    <entry>
+        <id>starcraft2blog</id>
+        <title type="text">StarCraft 2</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">Blizzard&#x27;s Official Starcraft 2 Blog</summary>
+
+        <link rel="via" href="http://us.battle.net/sc2/en/feed/news"/>
+        <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/starcraft/starcraft2blog" />
+        <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/starcraft/starcraft2blog/icon" />
+
+        <source>
+            <id>http://us.battle.net/sc2/en/feed/news</id>
+            <title>StarCraft 2</title>
+
+
+            <updated>2016-09-21T07:56:03.000+00:00</updated>
+            <rights>(c) Blizzard</rights>
+        </source>
+
+    </entry><entry>
+    <id>gosugamersstarcraft2</id>
+    <title type="text">GosuGamers StarCraft 2</title>
+    <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+    <summary type="text">GosuGamers StarCraft 2 News</summary>
+
+    <link rel="via" href="http://www.gosugamers.net/starcraft/news/rss"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/starcraft/gosugamersstarcraft2" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/starcraft/gosugamersstarcraft2/icon" />
+
+    <source>
+        <id>http://www.gosugamers.net/starcraft/news/rss</id>
+        <title>GosuGamers StarCraft 2</title>
+
+
+        <updated>2016-09-21T07:57:15.000+00:00</updated>
+        <rights>(c) GosuGamers</rights>
+    </source>
+
+</entry><entry>
+    <id>sclegacy</id>
+    <title type="text">StarCraft Legacy</title>
+    <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+    <summary type="text">StarCraft Legacy News</summary>
+
+    <link rel="via" href="http://sclegacy.com/index.php?format=feed&amp;type=rss"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/starcraft/sclegacy" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/starcraft/sclegacy/icon" />
+
+    <source>
+        <id>http://sclegacy.com/index.php?format=feed&amp;type=rss</id>
+        <title>StarCraft Legacy</title>
+
+
+        <updated>2016-09-21T08:00:17.000+00:00</updated>
+        <rights>(c) sclegacy.com</rights>
+    </source>
+
+</entry><entry>
+    <id>thescorestarcraft2</id>
+    <title type="text">theScore SC2</title>
+    <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+    <summary type="text">SC2 news from theScore</summary>
+
+    <link rel="via" href="http://feeds.thescoreesports.com/sc2.rss"/>
+    <link rel="related" title="entries" type="application/atom+xml" href="http://feed.esportsreader.com/reader/sports/starcraft/thescorestarcraft2" />
+    <link rel="icon" title="icons" type="application/vnd.esportsreader+png" href="http://feed.esportsreader.com/reader/sports/starcraft/thescorestarcraft2/icon" />
+
+    <source>
+        <id>http://feeds.thescoreesports.com/sc2.rss</id>
+        <title>theScore SC2</title>
+
+
+        <updated>2016-09-21T08:00:15.540+00:00</updated>
+        <rights>(c) Score Media Ventures Inc.</rights>
+    </source>
+
+</entry>
+
+</feed>

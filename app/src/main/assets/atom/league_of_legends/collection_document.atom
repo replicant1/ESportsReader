@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--suppress ALL -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>leagueoflegends</id>
+    <title type="text">League Of Legends Sources</title>
+    <updated>2016-09-20T20:20:00.670+00:00</updated>
+    <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends" rel="self"/>
+
+    <author>
+
+        <name>eSportsReader (contactesportsreader@gmail.com)</name>
+    </author>
+
+    <category term="leagueoflegends"/>
+
+    <generator uri="http://feed.esportsreader.com" version="1.0">eSportsReader</generator>
+
+
+    <contributor>
+        <name type="text">League Of Legends</name>
+        <uri>http://na.leagueoflegends.com/en/rss.xml</uri>
+    </contributor>
+    <contributor>
+        <name type="text">The Summoners Code</name>
+        <uri>http://summonerscode.com/rss</uri>
+    </contributor>
+    <contributor>
+        <name type="text">Reign Of Gaming</name>
+        <uri>http://www.reignofgaming.net/news.rss?cookieTest=1</uri>
+    </contributor>
+    <contributor>
+        <name type="text">Cloth 5</name>
+        <uri>http://cloth5.com/feed/</uri>
+    </contributor>
+    <contributor>
+        <name type="text">News of Legends</name>
+        <uri>http://www.newsoflegends.com/index.php/feed/</uri>
+    </contributor>
+    <contributor>
+        <name type="text">GosuGamers League Of Legends</name>
+        <uri>http://www.gosugamers.net/lol/news/rss</uri>
+    </contributor>
+    <contributor>
+        <name type="text">Surrender at 20</name>
+        <uri>http://feeds.feedburner.com/surrenderat20?format=xml</uri>
+    </contributor>
+    <contributor>
+        <name type="text">NerfPlz.LOL</name>
+        <uri>http://www.nerfplz.com/feeds/posts/default</uri>
+    </contributor>
+    <contributor>
+        <name type="text">theScore LoL</name>
+        <uri>http://feeds.thescoreesports.com/lol.rss</uri>
+    </contributor>
+
+
+    <entry>
+        <id>lolriot</id>
+        <title type="text">League Of Legends</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">Riot&#x27;s Official LoL Blog</summary>
+
+        <link href="http://na.leagueoflegends.com/en/rss.xml" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolriot"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolriot/icon"
+              rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://na.leagueoflegends.com/en/rss.xml</id>
+            <title>League Of Legends</title>
+
+
+            <updated>2016-09-21T04:20:10.008+00:00</updated>
+            <rights>(c) Riot Games, Inc</rights>
+        </source>
+
+    </entry>
+    <entry>
+        <id>lolsummonerscode</id>
+        <title type="text">The Summoners Code</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">The words of League of Legends players, as they appear, unedited.
+        </summary>
+
+        <link href="http://summonerscode.com/rss" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolsummonerscode"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link
+            href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolsummonerscode/icon"
+            rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://summonerscode.com/rss</id>
+            <title>The Summoners Code</title>
+
+
+            <updated>2016-09-21T04:00:12.262+00:00</updated>
+            <rights>(c) summonerscode.com</rights>
+        </source>
+
+    </entry>
+    <entry>
+        <id>lolreignofgaming</id>
+        <title type="text">Reign Of Gaming</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">News from Reign of Gaming</summary>
+
+        <link href="http://www.reignofgaming.net/news.rss?cookieTest=1" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolreignofgaming"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link
+            href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolreignofgaming/icon"
+            rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://www.reignofgaming.net/news.rss?cookieTest=1</id>
+            <title>Reign Of Gaming</title>
+
+
+            <updated>2016-09-21T04:00:13.438+00:00</updated>
+            <rights>(c) Curse (reignofgaming.next)</rights>
+        </source>
+
+    </entry>
+    <entry>
+        <id>lolcloth5</id>
+        <title type="text">Cloth 5</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">League of Legends News, Blogs, and eSports</summary>
+
+        <link href="http://cloth5.com/feed/" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolcloth5"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolcloth5/icon"
+              rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://cloth5.com/feed/</id>
+            <title>Cloth 5</title>
+
+
+            <updated>2015-06-11T20:30:56.000+00:00</updated>
+            <rights>(c) cloth 5</rights>
+        </source>
+
+    </entry>
+    <entry>
+        <id>lolnewsoflegends</id>
+        <title type="text">News of Legends</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">League of Legends news and content</summary>
+
+        <link href="http://www.newsoflegends.com/index.php/feed/" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolnewsoflegends"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link
+            href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolnewsoflegends/icon"
+            rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://www.newsoflegends.com/index.php/feed/</id>
+            <title>News of Legends</title>
+
+
+            <updated>2016-09-21T04:00:10.316+00:00</updated>
+            <rights>(c) newsoflegends.com</rights>
+        </source>
+
+    </entry>
+    <entry>
+        <id>gosugamerslol</id>
+        <title type="text">GosuGamers League Of Legends</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">GosuGamers League Of Legends News</summary>
+
+        <link href="http://www.gosugamers.net/lol/news/rss" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/gosugamerslol"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/gosugamerslol/icon"
+              rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://www.gosugamers.net/lol/news/rss</id>
+            <title>GosuGamers League Of Legends</title>
+
+
+            <updated>2016-09-21T03:40:03.000+00:00</updated>
+            <rights>(c) GosuGamers</rights>
+        </source>
+
+    </entry>
+    <entry>
+        <id>lolsurrenderat20</id>
+        <title type="text">Surrender at 20</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">A news resource for everything League of Legends</summary>
+
+        <link href="http://feeds.feedburner.com/surrenderat20?format=xml" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolsurrenderat20"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link
+            href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolsurrenderat20/icon"
+            rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://feeds.feedburner.com/surrenderat20?format=xml</id>
+            <title>Surrender at 20</title>
+
+
+            <updated>2016-09-21T03:39:46.000+00:00</updated>
+            <rights>(c) Surrender at 20</rights>
+        </source>
+
+    </entry>
+    <entry>
+        <id>lolnerfplz</id>
+        <title type="text">NerfPlz.LOL</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">Hosting the latest in LoL news and strategy guides</summary>
+
+        <link href="http://www.nerfplz.com/feeds/posts/default" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolnerfplz"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/lolnerfplz/icon"
+              rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://www.nerfplz.com/feeds/posts/default</id>
+            <title>NerfPlz.LOL</title>
+
+
+            <updated>2016-09-21T03:08:17.000+00:00</updated>
+            <rights>(c) NerfPlz</rights>
+        </source>
+
+    </entry>
+    <entry>
+        <id>thescorelol</id>
+        <title type="text">theScore LoL</title>
+        <updated>2016-09-20T20:20:00.670+00:00</updated>
+
+        <summary type="text">LoL news from theScore</summary>
+
+        <link href="http://feeds.thescoreesports.com/lol.rss" rel="via"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/thescorelol"
+              rel="related" title="entries" type="application/atom+xml"/>
+        <link href="http://feed.esportsreader.com/reader/sports/leagueoflegends/thescorelol/icon"
+              rel="icon" title="icons" type="application/vnd.esportsreader+png"/>
+
+        <source>
+            <id>http://feeds.thescoreesports.com/lol.rss</id>
+            <title>theScore LoL</title>
+
+
+            <updated>2016-09-21T04:00:13.964+00:00</updated>
+            <rights>(c) Score Media Ventures Inc.</rights>
+        </source>
+
+    </entry>
+
+</feed>

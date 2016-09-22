@@ -3,14 +3,19 @@ package bailey.rod.esportsreader;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.webkit.WebView;
+import android.widget.ListView;
 
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
+import bailey.rod.esportsreader.adapter.ESportsFeedEntrySynopsisListAdapter;
 import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.ESportsFeed;
+import bailey.rod.esportsreader.xml.ESportsFeedEntry;
 import bailey.rod.esportsreader.xml.rss.AtomFeedParser;
 import bailey.rod.esportsreader.xml.rss.RSSFeedParser;
 
@@ -23,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
-        String documentName = "atom/league_of_legends/feeds/nerf_plz.atom";
+        String documentName = "atom/hearthstone/feeds/Hearthstone.atom";
         Log.i(TAG, "****** feed document=" + documentName + " *******");
 
         try {
@@ -45,16 +50,22 @@ public class MainActivity extends AppCompatActivity {
 
             setContentView(R.layout.activity_main);
 
+            List<ESportsFeedEntry> entries = document.getEntries();
+
+
 //            List<AtomCollectionEntry> entries = document.getEntries();
 //
 //            Log.i(TAG, "Finished parsing. #entries=" + entries.size());
 //            AtomCollectionEntryListAdapter adapter = new AtomCollectionEntryListAdapter(this, entries);
+//            ESportsFeedEntrySynopsisListAdapter adapter = new ESportsFeedEntrySynopsisListAdapter(this, entries);
 
             // Initialize the eSports listview
-//            ListView eSportListView = (ListView) findViewById(R.id.esport_list_view);
-//            eSportListView.setAdapter(adapter);
+            WebView webview = (WebView) findViewById(R.id.esport_web_view);
+            ESportsFeedEntry entry = entries.get(1);
+            webview.loadData(entry.getContent(), "text/html; charset=utf-8", null);
+//            webview.loadDataWithBaseURL("", entry.getContent(), "UTF-8", "");
 
-            getSupportActionBar().setTitle(document.getTitle());
+            getSupportActionBar().setTitle(entry.getTitle());
 
 //            List<AtomServiceCollection> esports = serviceDocument.getCollections();
 //

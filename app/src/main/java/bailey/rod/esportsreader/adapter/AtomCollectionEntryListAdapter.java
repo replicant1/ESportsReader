@@ -29,7 +29,9 @@ public class AtomCollectionEntryListAdapter extends ArrayAdapter<AtomCollectionE
         AtomCollectionEntry entry = getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_2, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(android.R.layout
+                                                                            .simple_list_item_2,
+                                                                    parent, false);
         }
 
         TextView firstLineTextView = (TextView) convertView.findViewById(android.R.id.text1);

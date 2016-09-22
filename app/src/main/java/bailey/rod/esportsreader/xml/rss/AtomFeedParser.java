@@ -1,6 +1,5 @@
 package bailey.rod.esportsreader.xml.rss;
 
-import android.renderscript.ScriptGroup;
 import android.util.Log;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -48,46 +47,6 @@ import bailey.rod.esportsreader.xml.ESportsFeedEntry;
 public class AtomFeedParser {
 
     private static final String TAG = AtomFeedParser.class.getSimpleName();
-
-    // TODO: Augment this to copy the attributes as well
-    private String getNestedXHTML(XmlPullParser parser) throws XmlPullParserException, IOException {
-        // At entry , we are at START_TAG of tag whose body constitutes all the xhtml we want to return
-        StringBuffer buf = new StringBuffer();
-
-        String openingTagName = parser.getName();
-        Log.d(TAG, "Opening tag name=" + openingTagName);
-
-        boolean continueReading = true;
-
-        while (continueReading) {
-            parser.next();
-            switch (parser.getEventType()) {
-                case XmlPullParser.START_TAG:
-                    buf.append("<" + parser.getName() + ">");
-                    break;
-
-                case XmlPullParser.END_TAG:
-                    if (openingTagName.equals(parser.getName())) {
-                        continueReading = false;
-                    } else {
-                        buf.append("</" + parser.getName() + ">");
-                    }
-                    break;
-
-                case XmlPullParser.TEXT:
-                    buf.append(parser.getText());
-                    break;
-
-                case XmlPullParser.END_DOCUMENT:
-                    continueReading = false;
-                    break;
-            }
-        }
-
-        String result = buf.toString();
-        Log.d(TAG, "Get Nested XHTML is \"" + result + "\"");
-        return result;
-    }
 
     public ESportsFeed parse(InputStream inputStream) throws XmlPullParserException, IOException {
         Log.i(TAG, "*** Into AtomFeedParser.parse() ***");
@@ -155,26 +114,6 @@ public class AtomFeedParser {
         return entry;
     }
 
-    private String parseLink(XmlPullParser parser) throws XmlPullParserException, IOException {
-        String result = null;
-
-        // At entry, parser is at START_TAG of <link>
-        Log.d(TAG, "Attribute count for link is " + parser.getAttributeCount());
-
-        for (int i = 0; i < parser.getAttributeCount(); i++) {
-            String attributeValue= parser.getAttributeValue(i);
-            String attributeName= parser.getAttributeName(i);
-            if ("href".equals(attributeName)) {
-                result = attributeValue;
-                break;
-            }
-        }
-
-        parser.next();
-
-        return result;
-    }
-
     private ESportsFeed parseFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
         List<ESportsFeedEntry> entryList = new LinkedList<>();
 
@@ -199,30 +138,95 @@ public class AtomFeedParser {
         return result;
     }
 
-    private String parseNestedXHTML(XmlPullParser parser) throws XmlPullParserException, IOException {
-        // At entry, parser is at START_TAG for <content type="xhtml"> or <content type="html">
-        // If "type" attribute, html appears in the <content> tag. If xhtml, there is a <div> first and
-        // THEN html.
-        String typeAttrValue = parser.getAttributeValue(0);
+    private String parseLink(XmlPullParser parser) throws XmlPullParserException, IOException {
         String result = null;
 
-//        if ("xhtml".equals(typeAttrValue)) {
-//            Log.d(TAG, "Into xhtml clause");
-////            Log.d(TAG, "Prior to skipping to div, parser=" + parser.getPositionDescription() + ",depth=" + parser.getDepth());
-//            result = getNestedXHTML(parser);
-//            // Leave parser at END_TAG of "content"
-//        } else if ("html".equals(typeAttrValue)) {
-//            result = parser.getText();
-//            // Leave parser at END_TAG of "content"
-//        } else {
-//            result = "Unrecognized XHTML";
-//            // Leave parser at START_TAG of "content"
-//        }
+        // At entry, parser is at START_TAG of <link>
+        Log.d(TAG, "Attribute count for link is " + parser.getAttributeCount());
 
-        result =getNestedXHTML(parser);
+        for (int i = 0; i < parser.getAttributeCount(); i++) {
+            String attributeValue = parser.getAttributeValue(i);
+            String attributeName = parser.getAttributeName(i);
+            if ("href".equals(attributeName)) {
+                result = attributeValue;
+                break;
+            }
+        }
+
+        parser.next();
 
         return result;
     }
 
+    /**
+     * Gets the body of the current tag, where the body itself contains XHTML.
+     *
+     * @param parser Parser whose current event type is START_TAG and whose current tag is the one whose
+     *               body contains the XHTML we want to get as a string.
+     * @return XHTML of the body of the current tag, as one string. Note that comments will not be preserved. Neither
+     * will "xmlns" attributes.
+     */
+    private String parseNestedXHTML(XmlPullParser parser) throws XmlPullParserException, IOException {
+        StringBuffer xhtml = new StringBuffer();
 
+        String openingTagName = parser.getName();
+        Log.d(TAG, "Opening tag name=" + openingTagName);
+
+        boolean continueReading = true;
+
+        while (continueReading) {
+            parser.next();
+            switch (parser.getEventType()) {
+                case XmlPullParser.START_TAG:
+                    // attributeBuf contains all the attribute name/value pairs for this tag as a string
+                    StringBuffer attributeBuf = new StringBuffer();
+
+                    for (int i = 0; i < parser.getAttributeCount(); i++) {
+                        String attributePrefix = parser.getAttributePrefix(i);
+                        String attributeName = parser.getAttributeName(i);
+                        String attributeValue = parser.getAttributeValue(i);
+
+                        if (attributePrefix == null) {
+                            attributeBuf.append(String.format("%s=\"%s\"", attributeName, attributeValue));
+                        } else {
+                            attributeBuf.append(String.format("%s:%s=\"%s\"", attributePrefix, attributeName,
+                                                              attributePrefix));
+                        }
+
+                        // Space after all attribute values except last, to separate from next attribute def
+                        if (i != (parser.getAttributeCount() - 1)) {
+                            attributeBuf.append(" ");
+                        }
+                    }
+
+                    // Append the start tag to xhtml, with or without attributes
+                    if (attributeBuf.length() == 0) {
+                        xhtml.append(String.format("<%s>", parser.getName()));
+                    } else {
+                        xhtml.append(String.format("<%s %s>", parser.getName(), attributeBuf.toString()));
+                    }
+                    break;
+
+                case XmlPullParser.END_TAG:
+                    if (openingTagName.equals(parser.getName())) {
+                        continueReading = false;
+                    } else {
+                        xhtml.append("</" + parser.getName() + ">");
+                    }
+                    break;
+
+                case XmlPullParser.TEXT:
+                    xhtml.append(parser.getText());
+                    break;
+
+                case XmlPullParser.END_DOCUMENT:
+                    continueReading = false;
+                    break;
+            }
+        }
+
+        String result = xhtml.toString();
+        Log.d(TAG, "Get Nested XHTML is \"" + result + "\"");
+        return result;
+    }
 }

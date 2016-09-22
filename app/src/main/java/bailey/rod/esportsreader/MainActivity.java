@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
-        String documentName = "atom/hearthstone/feeds/Hearthstone.atom";
+        String documentName = "atom/league_of_legends/feeds/nerf_plz.atom";
         Log.i(TAG, "****** feed document=" + documentName + " *******");
 
         try {

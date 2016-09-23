@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.xml.atom.AtomServiceCollection;
 
 /**
@@ -29,10 +30,10 @@ public class AtomServiceCollectionListAdapter extends ArrayAdapter<AtomServiceCo
         AtomServiceCollection collection = getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.esports_list_item, parent, false);
         }
 
-        TextView textView = (TextView) convertView.findViewById(android.R.id.text1);
+        TextView textView = (TextView) convertView.findViewById(R.id.text1);
         textView.setText(collection.getTitle());
 
         return convertView;

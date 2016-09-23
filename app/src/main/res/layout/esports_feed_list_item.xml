@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-Item in a list of news items. Each news item has a title, a date line and a synopsis.
+Item in a list of ESports Feeds (Sources). Each item is an individual eSports Feed which has two
+text labels : a name and a brief description
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
@@ -11,7 +12,7 @@ Item in a list of news items. Each news item has a title, a date line and a syno
               android:paddingRight="16dp"
               android:paddingTop="8dp">
 
-    <!-- Title of news item -->
+    <!-- Name of the news feed -->
 
     <TextView
         android:id="@+id/text1"
@@ -20,7 +21,7 @@ Item in a list of news items. Each news item has a title, a date line and a syno
         android:textColor="@color/Black"
         android:textSize="18sp"/>
 
-    <!-- Date of news item -->
+    <!-- Brief description of the news feed -->
 
     <TextView
         android:id="@+id/text2"
@@ -28,18 +29,7 @@ Item in a list of news items. Each news item has a title, a date line and a syno
         android:layout_height="wrap_content"
         android:layout_alignStart="@id/text2"
         android:layout_below="@id/text2"
-        android:textColor="@color/Gray"
-        android:textSize="14sp"/>
 
-    <!-- Synopsis of news item -->
-
-    <TextView
-        android:id="@+id/text3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@id/text2"
-        android:layout_below="@id/text2"
-        android:paddingTop="20dp"
         android:textColor="@color/Gray"
         android:textSize="16sp"/>
 

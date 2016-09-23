@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionEntry;
 
 /**
@@ -29,13 +30,13 @@ public class AtomCollectionEntryListAdapter extends ArrayAdapter<AtomCollectionE
         AtomCollectionEntry entry = getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(android.R.layout
-                                                                            .simple_list_item_2,
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout
+                                                                            .esports_feed_list_item,
                                                                     parent, false);
         }
 
-        TextView firstLineTextView = (TextView) convertView.findViewById(android.R.id.text1);
-        TextView secondLineTextView = (TextView) convertView.findViewById(android.R.id.text2);
+        TextView firstLineTextView = (TextView) convertView.findViewById(R.id.text1);
+        TextView secondLineTextView = (TextView) convertView.findViewById(R.id.text2);
 
         firstLineTextView.setText(entry.getTitle());
         secondLineTextView.setText(entry.getSummary());

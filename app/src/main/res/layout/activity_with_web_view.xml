@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/White"
+    tools:context=".activity.ESportListActivity"
+    android:paddingBottom="8dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp">
+
+    <!-- Title of the news item -->
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Black"
+        android:textSize="32sp"/>
+
+    <!-- Date/time of the news feed -->
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/text2"
+        android:layout_below="@id/text2"
+        android:textColor="@color/Gray"
+        android:paddingBottom="32dp"
+        android:textSize="14sp"/>
+
+    <!-- HTML content of the news feed -->
+
+    <WebView xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/esport_web_view"
+             android:layout_weight="1"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"/>
+
+</LinearLayout>

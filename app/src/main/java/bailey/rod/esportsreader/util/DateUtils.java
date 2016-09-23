@@ -27,4 +27,5 @@ public final class DateUtils {
     public static Date parseFromGMT(String gmtString) throws ParseException {
         return ISO8601_DATE_FORMAT.parse(gmtString);
     }
+
 }

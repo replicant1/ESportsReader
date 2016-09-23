@@ -1,6 +1,8 @@
 package bailey.rod.esportsreader.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import bailey.rod.esportsreader.R;
+import bailey.rod.esportsreader.activity.ESportFeedActivity;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionEntry;
 
 /**
@@ -41,6 +44,23 @@ public class AtomCollectionEntryListAdapter extends ArrayAdapter<AtomCollectionE
         firstLineTextView.setText(entry.getTitle());
         secondLineTextView.setText(entry.getSummary());
 
+        convertView.setOnClickListener(new ItemClickListener());
+        convertView.setTag(entry.getLinkViaHref());
+
         return convertView;
+    }
+
+    private class ItemClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            String feedHref = (String) view.getTag();
+            Log.d(TAG, "Clicked on feed with href " + feedHref);
+
+            Context context = AtomCollectionEntryListAdapter.this.getContext();
+
+            Intent intent = new Intent(context, ESportFeedActivity.class);
+            intent.putExtra(ESportFeedActivity.EXTRA_FEED_HREF, feedHref);
+            context.startActivity(intent);
+        }
     }
 }

@@ -1,6 +1,7 @@
 package bailey.rod.esportsreader.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import bailey.rod.esportsreader.R;
+import bailey.rod.esportsreader.activity.ESportFeedListActivity;
 import bailey.rod.esportsreader.xml.atom.AtomServiceCollection;
 
 /**
@@ -36,7 +38,29 @@ public class AtomServiceCollectionListAdapter extends ArrayAdapter<AtomServiceCo
         TextView textView = (TextView) convertView.findViewById(R.id.text1);
         textView.setText(collection.getTitle());
 
+        convertView.setOnClickListener(new ItemClickListener());
+        convertView.setTag(collection.getCollectionDocumentHref());
+
         return convertView;
     }
 
+    /**
+     * When a list item is clicked, starts an Intent to go the next activity which will display a list of
+     * all the feeds in the feed collection just clicked on.
+     *
+     * @#see ESportFeedListActivity
+     */
+    private class ItemClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            String collectionDocumentHref = (String) view.getTag();
+            Log.d(TAG, "Clicked on collection document with href " + collectionDocumentHref);
+
+            Context context = AtomServiceCollectionListAdapter.this.getContext();
+
+            Intent intent = new Intent(context, ESportFeedListActivity.class);
+            intent.putExtra(ESportFeedListActivity.EXTRA_ATOM_COLLECTION_DOCUMENT_HREF, collectionDocumentHref);
+            context.startActivity(intent);
+        }
+    }
 }

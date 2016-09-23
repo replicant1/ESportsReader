@@ -3,20 +3,45 @@
           package="bailey.rod.esportsreader">
 
     <!-- Needed to download news feeds and images they might embed from net -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ESportFeedListActivity">
+
+        <!--
+        First screen seen - contains a list of eSports for selection, as given in an Atom
+        Service Document whose URL is hard coded into config.properties.
+        -->
+        <activity android:name=".activity.ESportListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!--
+        Second screen seen - contains a list of news feeds for selection, being all known
+        feeds for a given eSport.
+        -->
+        <activity android:name=".activity.ESportFeedListActivity"/>
+
+        <!--
+        Third screen seen - contains a list of all the news items for a given news feed, with an
+        optional synopsis for each one.
+        -->
+
+        <activity android:name=".activity.ESportFeedActivity"/>
+
+        <!--
+        Fourth screen seen - contains just a single web view for showing the content of a given
+        news item expressed in HTML
+        -->
+
+        <activity android:name=".activity.ESportFeedEntryActivity"/>
     </application>
 
 </manifest>

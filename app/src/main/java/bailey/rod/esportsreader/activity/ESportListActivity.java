@@ -3,6 +3,7 @@ package bailey.rod.esportsreader.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ListView;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -20,7 +21,8 @@ import bailey.rod.esportsreader.xml.atom.AtomServiceDocument;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocumentParser;
 
 /**
- * Activity presents user with a list of eSports to choose from.
+ * Activity presents user with a list of eSports to choose from. This is the first screen the user sees when the app
+ * starts up. It contains options like "League of Legends", "Hearthstone" etc.
  */
 public class ESportListActivity extends AppCompatActivity {
 
@@ -57,7 +59,7 @@ public class ESportListActivity extends AppCompatActivity {
             ListView listView = (ListView) findViewById(R.id.esport_list_view);
             listView.setAdapter(adapter);
 
-            getSupportActionBar().setTitle("eSports");
+            getSupportActionBar().setTitle(serviceDocument.getTitle());
 
             // Put the Atom Service Document into the cache
             ESportsCache.getInstance().put(serviceDocument);
@@ -70,7 +72,12 @@ public class ESportListActivity extends AppCompatActivity {
         } catch (XmlPullParserException xppx) {
             Log.e(TAG, "Failed to parse document", xppx);
         }
+    }
 
+    private class ItemClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
 
+        }
     }
 }

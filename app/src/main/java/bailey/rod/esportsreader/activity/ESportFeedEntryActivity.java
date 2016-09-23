@@ -1,5 +1,6 @@
 package bailey.rod.esportsreader.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -23,15 +24,22 @@ import bailey.rod.esportsreader.xml.rss.AtomFeedParser;
  */
 public class ESportFeedEntryActivity extends AppCompatActivity {
 
+    public static final String EXTRA_HTML_CONTENT_URL = "extra-html-content-url";
+
     private static final String TAG = ESportFeedEntryActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        try {
-            String documentName = "atom/hearthstone/feeds/Hearthstone.atom";
+        Intent intent = getIntent();
+        String contentHref = intent.getStringExtra(EXTRA_HTML_CONTENT_URL);
 
+        String documentName = "atom/hearthstone/feeds/Hearthstone.atom";
+
+        Log.d(TAG, "Received item URL " + contentHref + ". Overwriting with " + documentName);
+
+        try {
             Log.i(TAG, "Getting input stream to document");
             InputStream stream = getAssets().open(documentName);
 

@@ -1,5 +1,6 @@
 package bailey.rod.esportsreader.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.ESportsFeedEntrySynopsisListAdapter;
+import bailey.rod.esportsreader.cache.ESportsCache;
 import bailey.rod.esportsreader.xml.ESportsFeed;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
 import bailey.rod.esportsreader.xml.rss.AtomFeedParser;
@@ -23,15 +25,21 @@ import bailey.rod.esportsreader.xml.rss.AtomFeedParser;
  */
 public class ESportFeedActivity extends AppCompatActivity {
 
+    public static final String EXTRA_FEED_HREF = "feed-href";
+
     private static final String TAG = ESportFeedActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        try {
-            String documentName= "atom/hearthstone/feeds/Hearthstone.atom";
+        Intent intent = getIntent();
+        String feedHref = intent.getStringExtra(EXTRA_FEED_HREF);
 
+        String documentName = "atom/hearthstone/feeds/Hearthstone.atom";
+        Log.d(TAG, "Received item URL " + feedHref + ". Overwriting with " + documentName);
+
+        try {
             Log.i(TAG, "Getting input stream to document");
             InputStream stream = getAssets().open(documentName);
 
@@ -47,10 +55,16 @@ public class ESportFeedActivity extends AppCompatActivity {
 
             Log.d(TAG, "Populating list");
 
+            getSupportActionBar().setTitle(feed.getTitle());
+
             List<ESportsFeedEntry> entries = feed.getEntries();
             ESportsFeedEntrySynopsisListAdapter adapter = new ESportsFeedEntrySynopsisListAdapter(this, entries);
             ListView listView = (ListView) findViewById(R.id.esport_list_view);
             listView.setAdapter(adapter);
+
+            // Put the ESportsFeed into the cache
+            ESportsCache.getInstance().put(feed);
+            Log.d(TAG, "New cache contents: " + ESportsCache.getInstance().dump());
         } catch (IOException iox) {
             Log.e(TAG, "Failed to parse document", iox);
         } catch (XmlPullParserException xppx) {

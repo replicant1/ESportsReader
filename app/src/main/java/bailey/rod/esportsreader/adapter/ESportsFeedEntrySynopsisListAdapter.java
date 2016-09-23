@@ -1,7 +1,9 @@
 package bailey.rod.esportsreader.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import bailey.rod.esportsreader.R;
+import bailey.rod.esportsreader.activity.ESportFeedEntryActivity;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
 
 /**
@@ -51,6 +54,23 @@ public class ESportsFeedEntrySynopsisListAdapter extends ArrayAdapter<ESportsFee
             thirdLineTextView.setText("No synopsis available");
         }
 
+        convertView.setTag(entry.getLink());
+        convertView.setOnClickListener(new ItemClickListener());
+
         return convertView;
+    }
+
+    private class ItemClickListener implements View.OnClickListener {
+        @Override
+        public void onClick(View view) {
+            String itemHref = (String) view.getTag();
+            Log.d(TAG, "Click on feed item with href " + itemHref);
+
+            Context context = ESportsFeedEntrySynopsisListAdapter.this.getContext();
+
+            Intent intent = new Intent(context, ESportFeedEntryActivity.class);
+            intent.putExtra(ESportFeedEntryActivity.EXTRA_HTML_CONTENT_URL, itemHref);
+            context.startActivity(intent);
+        }
     }
 }

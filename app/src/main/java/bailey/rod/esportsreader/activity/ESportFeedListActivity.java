@@ -1,5 +1,6 @@
 package bailey.rod.esportsreader.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -26,17 +27,21 @@ import bailey.rod.esportsreader.xml.atom.AtomCollectionEntry;
  */
 public class ESportFeedListActivity extends AppCompatActivity {
 
+    public static final String EXTRA_ATOM_COLLECTION_DOCUMENT_HREF = "atom-collection-document-href";
+
     private static final String TAG = ESportFeedListActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: Extract URL of collection document to load from Intent args.
-        ConfigSingleton config = ConfigSingleton.getInstance().init(this);
-        String documentName = config.localAtomCollectionDocument();
+        Intent intent = getIntent();
+        String acdDocumentRef = intent.getStringExtra(EXTRA_ATOM_COLLECTION_DOCUMENT_HREF);
+        String documentName = "atom/hearthstone/collection_document.atom";
 
-        Log.i(TAG, "ACD document=" + documentName + " *******");
+        Log.d(TAG, "Received item URL " + acdDocumentRef + ". Overwriting with " + documentName);
+
+        Log.i(TAG, "Into ESportFeedListActivity.onCreate with collection document=" + documentName + " *******");
 
         try {
             Log.i(TAG, "Getting input stream to document");
@@ -70,8 +75,7 @@ public class ESportFeedListActivity extends AppCompatActivity {
             Log.e(TAG, "Failed to parse document", iox);
         } catch (XmlPullParserException xppx) {
             Log.e(TAG, "Failed to parse document", xppx);
-        }
-        catch (ParseException pex) {
+        } catch (ParseException pex) {
             Log.e(TAG, "Failed to parse document", pex);
         }
     }

@@ -64,6 +64,7 @@ public class ESportListActivity extends AppCompatActivity {
 
             Log.d(TAG, "Populating list");
             List<AtomServiceCollection> serviceCollections = serviceDocument.getCollections();
+
             AtomServiceCollectionListAdapter adapter = new AtomServiceCollectionListAdapter(this, serviceCollections);
             ListView listView = (ListView) findViewById(R.id.esport_list_view);
             listView.setAdapter(adapter);
@@ -79,8 +80,6 @@ public class ESportListActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.esport_list_menu, menu);
-        MenuItem item = menu.findItem(R.id.toggle_switch_item);
-        item.setActionView(R.layout.toggle_online_switch_layout);
         return true;
     }
 

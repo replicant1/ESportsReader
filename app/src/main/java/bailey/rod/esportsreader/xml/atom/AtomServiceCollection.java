@@ -7,7 +7,7 @@ package bailey.rod.esportsreader.xml.atom;
  *
  * See http://www.atomenabled.org/developers/protocol/#collection
  */
-public final class AtomServiceCollection {
+public class AtomServiceCollection {
 
     private final String title;
 

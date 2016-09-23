@@ -27,4 +27,6 @@ dependencies {
     // Valid4J provides Programming By Contract functions 'require' (preconditions)
     // and 'ensure' (postconditions)
     compile 'org.valid4j:valid4j:0.5.0'
+
+    compile 'com.android.volley:volley:1.0.0'
 }

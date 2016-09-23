@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+A custom indeterminate progress bar taken from codebin.co.uk/custom-indeterminate-progressbar-on-android.
+It makes one revolution every 4 seconds. Changing the "duration" attribut ebelow has no effect. If you prefer to speed it up,
+you can change the "toDegrees" attribute to multiples of 360:
+720 makes one revoluatio every 2 seconds
+1080 makes one revoution every 1.33 seconds
+1440 makes one revolution eery 1 second.
+The shape is a circle drawn with a sweep graident.
+-->
+<rotate xmlns:android="http://schemas.android.com/apk/res/android" >
+    android:duration="4000"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:toDegrees="360" >
+    <shape
+        android:innerRadius="30dp"
+        android:shape="ring"
+        android:thickness="8dp"
+        android:useLevel="false" >
+        <size
+            android:height="100dp"
+            android:width="100dp" />
+
+        <!-- Note that centerColor, startColor and endColor all end in the same 6 hex digits. Only the alpha is varying from one to the other. -->
+
+        <gradient
+            android:centerColor="#804E74D3"
+            android:centerY="0.5"
+            android:endColor="#ff4E74D3"
+            android:startColor="#004E74D3"
+            android:type="sweep"
+            android:useLevel="false" />
+    </shape>
+
+</rotate>

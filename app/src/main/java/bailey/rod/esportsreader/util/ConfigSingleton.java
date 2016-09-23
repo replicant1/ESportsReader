@@ -22,44 +22,16 @@ public class ConfigSingleton {
 
     private static final ConfigSingleton singleton = new ConfigSingleton();
 
-    private boolean initialized = false;
-
-    public static ConfigSingleton getInstance() {
-        return singleton;
-    }
-
     private final Properties configProperties = new Properties();
 
+    private boolean initialized = false;
 
     private ConfigSingleton() {
         // Empty
     }
 
-    public ConfigSingleton init(Context context) {
-        InputStream istream;
-
-        try {
-            istream = context.getAssets().open("config.properties");
-            configProperties.load(istream);
-            initialized = true;
-        }
-        catch (IOException x) {
-            Log.e(TAG, "Failed to load config.properties file from assets directory");
-        }
-
-        return this;
-    }
-
-    public boolean isInitialized() {
-        return initialized;
-    }
-
-    public String localAtomServiceDocument() {
-        return getStringProperty("LocalAtomServiceDocument");
-    }
-
-    public String localAtomCollectionDocument() {
-        return getStringProperty("LocalAtomCollectionDocument");
+    public static ConfigSingleton getInstance() {
+        return singleton;
     }
 
     private boolean getBoolProperty(String propertyName) {
@@ -68,10 +40,10 @@ public class ConfigSingleton {
         return Boolean.parseBoolean(configProperties.getProperty(propertyName));
     }
 
-    private String getStringProperty(String propertyName) {
+    public int getIntProperty(String propertyName) {
         Assertive.require(initialized);
         Assertive.require(propertyName != null);
-        return configProperties.getProperty(propertyName);
+        return Integer.parseInt(configProperties.getProperty(propertyName));
     }
 
     private List<String> getStringListProperty(String propertyName) {
@@ -83,6 +55,46 @@ public class ConfigSingleton {
         }
         return result;
     }
+
+    private String getStringProperty(String propertyName) {
+        Assertive.require(initialized);
+        Assertive.require(propertyName != null);
+        return configProperties.getProperty(propertyName);
+    }
+
+    public ConfigSingleton init(Context context) {
+        InputStream istream;
+
+        try {
+            istream = context.getAssets().open("config.properties");
+            configProperties.load(istream);
+            initialized = true;
+        } catch (IOException x) {
+            Log.e(TAG, "Failed to load config.properties file from assets directory");
+        }
+
+        return this;
+    }
+
+    public boolean isInitialized() {
+        return initialized;
+    }
+
+    public boolean loadFromLocalAtomFiles() {
+        return getBoolProperty("LoadFromLocalAtomFiles");
+    }
+
+    public String localAtomCollectionDocument() { return getStringProperty("LocalAtomCollectionDocument"); }
+
+    public String localAtomServiceDocument() {
+        return getStringProperty("LocalAtomServiceDocument");
+    }
+
+    public String localFeed() { return getStringProperty("LocalFeed"); }
+
+    public int localFeedEntryIndex() { return getIntProperty("LocalFeedEntryIndex");}
+
+    public String atomServiceDocument() { return getStringProperty("AtomServiceDocument"); }
 
 
 }

@@ -78,4 +78,8 @@ public class ESportsCache {
 
         return isGivenObjectInCacheAtExit;
     }
+
+    public void clear() {
+        cache.clear();
+    }
 }

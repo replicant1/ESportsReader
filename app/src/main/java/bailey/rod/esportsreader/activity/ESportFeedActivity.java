@@ -16,6 +16,7 @@ import java.util.List;
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.ESportsFeedEntrySynopsisListAdapter;
 import bailey.rod.esportsreader.cache.ESportsCache;
+import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.ESportsFeed;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
 import bailey.rod.esportsreader.xml.rss.AtomFeedParser;
@@ -36,18 +37,26 @@ public class ESportFeedActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String feedHref = intent.getStringExtra(EXTRA_FEED_HREF);
 
-        String documentName = "atom/hearthstone/feeds/Hearthstone.atom";
-        Log.d(TAG, "Received item URL " + feedHref + ". Overwriting with " + documentName);
+        String documentHref;
+        ConfigSingleton config = ConfigSingleton.getInstance();
+
+        if (config.loadFromLocalAtomFiles()) {
+            documentHref = config.localFeed();
+        } else {
+            documentHref = feedHref;
+        }
+
+        Log.d(TAG, "Received feed URL " + feedHref + ". Overwriting with " + documentHref);
 
         try {
             Log.i(TAG, "Getting input stream to document");
-            InputStream stream = getAssets().open(documentName);
+            InputStream stream = getAssets().open(documentHref);
 
             Log.i(TAG, "Creating parser");
             AtomFeedParser parser = new AtomFeedParser();
 
             Log.i(TAG, "Parsing document");
-            ESportsFeed feed = parser.parse(stream, documentName, "now");
+            ESportsFeed feed = parser.parse(stream, documentHref, "now");
             Log.i(TAG, "Finished parsing OK");
 
             Log.i(TAG, "Creating GUI");

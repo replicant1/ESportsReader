@@ -7,10 +7,10 @@ name of the eSport.
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="vertical"
-              android:paddingBottom="8dp"
+              android:paddingBottom="16dp"
               android:paddingLeft="16dp"
               android:paddingRight="16dp"
-              android:paddingTop="8dp">
+              android:paddingTop="16dp">
 
     <!-- Name of the eSport -->
 
@@ -18,6 +18,7 @@ name of the eSport.
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:textColor="@color/Black"
         android:textSize="18sp"
         />

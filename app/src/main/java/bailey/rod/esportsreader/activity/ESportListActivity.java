@@ -3,6 +3,8 @@ package bailey.rod.esportsreader.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 
@@ -33,40 +35,40 @@ public class ESportListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
-        String documentName = config.localAtomServiceDocument();
+        String documentHref;
+        AtomServiceDocument serviceDocument;
+        ESportsCache cache = ESportsCache.getInstance();
 
-        Log.i(TAG, "ASD document=" + documentName + " *******");
+        if (config.loadFromLocalAtomFiles()) {
+            documentHref = config.localAtomServiceDocument();
+        } else {
+            documentHref = config.atomServiceDocument();
+        }
 
         try {
-            Log.i(TAG, "Getting input stream to document");
-            InputStream stream = getAssets().open(documentName);
+            Log.i(TAG, String.format("Atom Service Document at %s required to display eSport list", documentHref));
 
-            Log.i(TAG, "Creating parser");
-            AtomServiceDocumentParser parser = new AtomServiceDocumentParser();
-
-            Log.i(TAG, "Parsing document");
-            AtomServiceDocument serviceDocument = parser.parse(stream, documentName, "now");
-
-            Log.i(TAG, "Finished parsing OK");
+            if (cache.contains(documentHref)) {
+                Log.d(TAG, "Retrieving ASD from cache");
+                serviceDocument = (AtomServiceDocument) cache.get(documentHref);
+            } else {
+                Log.d(TAG, "Retrieving ASD from non-cache source and adding to cache");
+                InputStream stream = getAssets().open(documentHref);
+                AtomServiceDocumentParser parser = new AtomServiceDocumentParser();
+                serviceDocument = parser.parse(stream, documentHref, "now");
+                cache.put(serviceDocument);
+            }
 
             Log.i(TAG, "Creating GUI");
             setContentView(R.layout.activity_with_list_view);
 
             Log.d(TAG, "Populating list");
-
             List<AtomServiceCollection> serviceCollections = serviceDocument.getCollections();
             AtomServiceCollectionListAdapter adapter = new AtomServiceCollectionListAdapter(this, serviceCollections);
             ListView listView = (ListView) findViewById(R.id.esport_list_view);
             listView.setAdapter(adapter);
 
             getSupportActionBar().setTitle(serviceDocument.getTitle());
-
-            // Put the Atom Service Document into the cache
-            ESportsCache.getInstance().put(serviceDocument);
-
-            // Print out the new cache contents
-            Log.d(TAG, "New cache contents: " + ESportsCache.getInstance().dump());
-
         } catch (IOException iox) {
             Log.e(TAG, "Failed to parse document", iox);
         } catch (XmlPullParserException xppx) {
@@ -74,10 +76,24 @@ public class ESportListActivity extends AppCompatActivity {
         }
     }
 
-    private class ItemClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View view) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.esport_list_menu, menu);
+        MenuItem item = menu.findItem(R.id.toggle_switch_item);
+        item.setActionView(R.layout.toggle_online_switch_layout);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_delete_cache) {
+            Log.i(TAG, "Clear cache");
+            ESportsCache.getInstance().clear();
+
+            // TODO: How to restart the current activity?
+
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

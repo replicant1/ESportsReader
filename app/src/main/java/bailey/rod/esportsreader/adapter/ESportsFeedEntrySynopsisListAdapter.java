@@ -54,7 +54,7 @@ public class ESportsFeedEntrySynopsisListAdapter extends ArrayAdapter<ESportsFee
             thirdLineTextView.setText("No synopsis available");
         }
 
-        convertView.setTag(entry.getLink());
+        convertView.setTag(position);
         convertView.setOnClickListener(new ItemClickListener());
 
         return convertView;
@@ -63,13 +63,20 @@ public class ESportsFeedEntrySynopsisListAdapter extends ArrayAdapter<ESportsFee
     private class ItemClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-            String itemHref = (String) view.getTag();
-            Log.d(TAG, "Click on feed item with href " + itemHref);
+            Integer itemPosition = (Integer) view.getTag();
+            Log.d(TAG, "Click on feed item with position " + itemPosition);
 
             Context context = ESportsFeedEntrySynopsisListAdapter.this.getContext();
 
+            ESportsFeedEntry entry = getItem(itemPosition);
+
             Intent intent = new Intent(context, ESportFeedEntryActivity.class);
-            intent.putExtra(ESportFeedEntryActivity.EXTRA_HTML_CONTENT_URL, itemHref);
+            intent.putExtra(ESportFeedEntryActivity.EXTRA_FEED_ENTRY_CONTENT, entry.getContent());
+            intent.putExtra(ESportFeedEntryActivity.EXTRA_FEED_ENTRY_TITLE, entry.getTitle());
+            intent.putExtra(ESportFeedEntryActivity.EXTRA_FEED_ENTRY_DATE, entry.getLastUpdated() == null ? entry
+                    .getPublished() : entry.getLastUpdated());
+            intent.putExtra(ESportFeedEntryActivity.EXTRA_WEBSITE_URL, entry.getLink());
+
             context.startActivity(intent);
         }
     }

@@ -1,10 +1,13 @@
 package bailey.rod.esportsreader.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
@@ -12,71 +15,87 @@ import android.widget.TextView;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 import bailey.rod.esportsreader.R;
-import bailey.rod.esportsreader.xml.ESportsFeed;
+import bailey.rod.esportsreader.cache.ESportsCache;
+import bailey.rod.esportsreader.cache.ICacheable;
+import bailey.rod.esportsreader.util.StringUtils;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
-import bailey.rod.esportsreader.xml.rss.AtomFeedParser;
 
 /**
- * Created by rodbailey on 23/09/2016.
+ * A screen containing just a WebView that displays a single new item with an artifical heading + time. Content
+ * appears in a scrolling area underneath.
  */
 public class ESportFeedEntryActivity extends AppCompatActivity {
 
-    public static final String EXTRA_HTML_CONTENT_URL = "extra-html-content-url";
+    public static final String EXTRA_FEED_ENTRY_CONTENT = "extra-feed-entryu-content";
+
+    public static final String EXTRA_FEED_ENTRY_TITLE = "extra-feed-entry-title";
+
+    public static final String EXTRA_FEED_ENTRY_DATE = "extra-feed-entry-date";
+
+    public static final String EXTRA_WEBSITE_URL = "extra-website-url";
 
     private static final String TAG = ESportFeedEntryActivity.class.getSimpleName();
+
+    private String websiteUrl;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
-        String contentHref = intent.getStringExtra(EXTRA_HTML_CONTENT_URL);
+        String content = intent.getStringExtra(EXTRA_FEED_ENTRY_CONTENT);
+        String title = intent.getStringExtra(EXTRA_FEED_ENTRY_TITLE);
+        String date = intent.getStringExtra(EXTRA_FEED_ENTRY_DATE);
+        websiteUrl = intent.getStringExtra(EXTRA_WEBSITE_URL);
 
-        String documentName = "atom/hearthstone/feeds/Hearthstone.atom";
+        Log.d(TAG, "Received content = " + StringUtils.ellipsizeNullSafe(content, 50));
+        Log.d(TAG, "Received title = " + title);
+        Log.d(TAG, "Received date = " + date);
+        Log.d(TAG, "Received website url = " + websiteUrl);
 
-        Log.d(TAG, "Received item URL " + contentHref + ". Overwriting with " + documentName);
+        setContentView(R.layout.activity_with_web_view);
 
-        try {
-            Log.i(TAG, "Getting input stream to document");
-            InputStream stream = getAssets().open(documentName);
+        WebView webView = (WebView) findViewById(R.id.esport_web_view);
 
-            Log.i(TAG, "Creating parser");
-            AtomFeedParser parser = new AtomFeedParser();
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setBuiltInZoomControls(true);
+        settings.setDisplayZoomControls(true);
+        settings.setUseWideViewPort(false);
+        settings.setBlockNetworkImage(true);
 
-            Log.i(TAG, "Parsing document");
-            ESportsFeed feed = parser.parse(stream, documentName, "now");
-            Log.i(TAG, "Finished parsing OK");
+        webView.loadData(content, "text/html; charset=utf-8", null);
 
-            Log.i(TAG, "Creating GUI");
-            setContentView(R.layout.activity_with_web_view);
+        TextView titleTextView = (TextView) findViewById(R.id.text1);
+        titleTextView.setText(title);
 
-            Log.d(TAG, "Populating web view");
+        TextView dateTextView = (TextView) findViewById(R.id.text2);
+        dateTextView.setText(date);
 
-            ESportsFeedEntry entry = feed.getEntries().get(0);
-            WebView webView = (WebView) findViewById(R.id.esport_web_view);
+        getSupportActionBar().setTitle("Article");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-            WebSettings settings = webView.getSettings();
-            settings.setJavaScriptEnabled(true);
-            settings.setBuiltInZoomControls(true);
-            settings.setDisplayZoomControls(true);
-            settings.setUseWideViewPort(false);
-            settings.setBlockNetworkImage(true);
+    }
 
-            webView.loadData(entry.getContent(), "text/html; charset=utf-8", null);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.esport_feed_entry_menu, menu);
+        return true;
+    }
 
-            TextView titleTextView = (TextView) findViewById(R.id.text1);
-            titleTextView.setText(entry.getTitle());
-
-            TextView dateTextView = (TextView) findViewById(R.id.text2);
-            dateTextView.setText(entry.getPublished());
-
-        } catch (IOException iox) {
-            Log.e(TAG, "Failed to parse document", iox);
-        } catch (XmlPullParserException xppx) {
-            Log.e(TAG, "Failed to parse document", xppx);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_view_website) {
+            Log.i(TAG, "Viewing on web site");
+            // Startup web browser on this link.
+            Uri webpage = Uri.parse(websiteUrl);
+            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
         }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -27,21 +27,31 @@
         Second screen seen - contains a list of news feeds for selection, being all known
         feeds for a given eSport.
         -->
-        <activity android:name=".activity.ESportFeedListActivity"/>
+        <activity
+            android:name=".activity.ESportFeedListActivity"
+            android:parentActivityName=".activity.ESportListActivity">
+        </activity>
 
         <!--
         Third screen seen - contains a list of all the news items for a given news feed, with an
         optional synopsis for each one.
         -->
 
-        <activity android:name=".activity.ESportFeedActivity"/>
+        <activity
+            android:name=".activity.ESportFeedActivity"
+            android:parentActivityName=".activity.ESportFeedListActivity">
+
+        </activity>
 
         <!--
         Fourth screen seen - contains just a single web view for showing the content of a given
         news item expressed in HTML
         -->
 
-        <activity android:name=".activity.ESportFeedEntryActivity"/>
+        <activity
+            android:name=".activity.ESportFeedEntryActivity"
+            android:parentActivityName=".activity.ESportFeedActivity">
+        </activity>
     </application>
 
 </manifest>

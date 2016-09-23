@@ -36,22 +36,31 @@ public class ESportFeedListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
-        String acdDocumentRef = intent.getStringExtra(EXTRA_ATOM_COLLECTION_DOCUMENT_HREF);
-        String documentName = "atom/hearthstone/collection_document.atom";
+        String acdRef = intent.getStringExtra(EXTRA_ATOM_COLLECTION_DOCUMENT_HREF);
+        String documentRef;
 
-        Log.d(TAG, "Received item URL " + acdDocumentRef + ". Overwriting with " + documentName);
+        ConfigSingleton config = ConfigSingleton.getInstance();
 
-        Log.i(TAG, "Into ESportFeedListActivity.onCreate with collection document=" + documentName + " *******");
+        if (config.loadFromLocalAtomFiles()) {
+            documentRef = config.localAtomCollectionDocument();
+        }
+        else {
+            documentRef = acdRef;
+        }
+
+        Log.d(TAG, "Received acdRef " + acdRef + ". Overwriting with " + documentRef);
+
+        Log.i(TAG, "Into ESportFeedListActivity.onCreate with collection document=" + documentRef + " *******");
 
         try {
             Log.i(TAG, "Getting input stream to document");
-            InputStream stream = getAssets().open(documentName);
+            InputStream stream = getAssets().open(documentRef);
 
             Log.i(TAG, "Creating parser");
             AtomCollectionDocumentParser parser = new AtomCollectionDocumentParser();
 
             Log.i(TAG, "Parsing document");
-            AtomCollectionDocument collectionDocument = parser.parse(stream, documentName, "now");
+            AtomCollectionDocument collectionDocument = parser.parse(stream, documentRef, "now");
 
             Log.i(TAG, "Finished parsing OK");
 
@@ -61,6 +70,7 @@ public class ESportFeedListActivity extends AppCompatActivity {
             Log.d(TAG, "Populating list");
 
             getSupportActionBar().setTitle(collectionDocument.getTitle());
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             List<AtomCollectionEntry> entries = collectionDocument.getEntries();
             AtomCollectionEntryListAdapter adapter = new AtomCollectionEntryListAdapter(this, entries);

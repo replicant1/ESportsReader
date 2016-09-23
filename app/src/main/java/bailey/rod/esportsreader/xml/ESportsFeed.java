@@ -3,16 +3,19 @@ package bailey.rod.esportsreader.xml;
 import java.util.LinkedList;
 import java.util.List;
 
+import bailey.rod.esportsreader.cache.AbstractCacheable;
+
 /**
  * Represents an RSS or Atom news feed
  */
-public class ESportsFeed {
+public class ESportsFeed extends AbstractCacheable {
 
     private final String title;
 
     private final List<ESportsFeedEntry> entries = new LinkedList<>();
 
-    public ESportsFeed(String title, List<ESportsFeedEntry> entries) {
+    public ESportsFeed(String title, List<ESportsFeedEntry> entries, String url, String timestamp) {
+        super(url, timestamp);
         this.title = title;
         this.entries.addAll(entries);
     }

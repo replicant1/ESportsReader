@@ -48,7 +48,8 @@ public class AtomFeedParser {
 
     private static final String TAG = AtomFeedParser.class.getSimpleName();
 
-    public ESportsFeed parse(InputStream inputStream) throws XmlPullParserException, IOException {
+    public ESportsFeed parse(InputStream inputStream, String url, String cacheTimestamp) throws XmlPullParserException,
+            IOException {
         Log.i(TAG, "*** Into AtomFeedParser.parse() ***");
 
         try {
@@ -56,7 +57,7 @@ public class AtomFeedParser {
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(inputStream, null);
-            return parseFeed(parser);
+            return parseFeed(parser, url, cacheTimestamp);
         } finally {
             Log.i(TAG, "** Exiting AtomFeedParser.parse() **");
             inputStream.close();
@@ -114,7 +115,8 @@ public class AtomFeedParser {
         return entry;
     }
 
-    private ESportsFeed parseFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private ESportsFeed parseFeed(XmlPullParser parser, String url, String cacheTimestamp) throws
+            XmlPullParserException, IOException {
         List<ESportsFeedEntry> entryList = new LinkedList<>();
 
         Log.d(TAG, "Into parseFeed");
@@ -133,7 +135,7 @@ public class AtomFeedParser {
             entryList.add(parseEntry(parser));
         }
 
-        ESportsFeed result = new ESportsFeed(feedTitle, entryList);
+        ESportsFeed result = new ESportsFeed(feedTitle, entryList, url, cacheTimestamp);
         Log.d(TAG, "Parsed atom feed to: " + result);
         return result;
     }

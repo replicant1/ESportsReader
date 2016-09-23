@@ -13,6 +13,7 @@ import java.util.List;
 
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.AtomServiceCollectionListAdapter;
+import bailey.rod.esportsreader.cache.ESportsCache;
 import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.atom.AtomServiceCollection;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocument;
@@ -42,7 +43,7 @@ public class ESportListActivity extends AppCompatActivity {
             AtomServiceDocumentParser parser = new AtomServiceDocumentParser();
 
             Log.i(TAG, "Parsing document");
-            AtomServiceDocument serviceDocument = parser.parse(stream);
+            AtomServiceDocument serviceDocument = parser.parse(stream, documentName, "now");
 
             Log.i(TAG, "Finished parsing OK");
 
@@ -58,6 +59,11 @@ public class ESportListActivity extends AppCompatActivity {
 
             getSupportActionBar().setTitle("eSports");
 
+            // Put the Atom Service Document into the cache
+            ESportsCache.getInstance().put(serviceDocument);
+
+            // Print out the new cache contents
+            Log.d(TAG, "New cache contents: " + ESportsCache.getInstance().dump());
 
         } catch (IOException iox) {
             Log.e(TAG, "Failed to parse document", iox);

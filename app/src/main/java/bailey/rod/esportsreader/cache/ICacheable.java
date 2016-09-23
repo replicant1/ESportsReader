@@ -8,9 +8,10 @@ package bailey.rod.esportsreader.cache;
 public interface ICacheable {
 
     /**
-     * @return Uniquely identifies this object from all others in the same cache.
+     * @return Uniquely identifies this object from all others in the same cache. The document at a given URL can
+     * only be cached once.
      */
-    public String getCacheId();
+    public String getURL();
 
     /**
      * @return The timestamp associated with the cacheable object. NOT the time we are retrieving it, but the time at

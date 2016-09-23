@@ -15,6 +15,7 @@ import java.util.List;
 
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.AtomCollectionEntryListAdapter;
+import bailey.rod.esportsreader.cache.ESportsCache;
 import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionDocument;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionDocumentParser;
@@ -31,6 +32,7 @@ public class ESportFeedListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // TODO: Extract URL of collection document to load from Intent args.
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
         String documentName = config.localAtomCollectionDocument();
 
@@ -44,7 +46,7 @@ public class ESportFeedListActivity extends AppCompatActivity {
             AtomCollectionDocumentParser parser = new AtomCollectionDocumentParser();
 
             Log.i(TAG, "Parsing document");
-            AtomCollectionDocument collectionDocument = parser.parse(stream);
+            AtomCollectionDocument collectionDocument = parser.parse(stream, documentName, "now");
 
             Log.i(TAG, "Finished parsing OK");
 
@@ -53,10 +55,17 @@ public class ESportFeedListActivity extends AppCompatActivity {
 
             Log.d(TAG, "Populating list");
 
+            getSupportActionBar().setTitle(collectionDocument.getTitle());
+
             List<AtomCollectionEntry> entries = collectionDocument.getEntries();
             AtomCollectionEntryListAdapter adapter = new AtomCollectionEntryListAdapter(this, entries);
             ListView listView = (ListView) findViewById(R.id.esport_list_view);
             listView.setAdapter(adapter);
+
+            // Put the Atom Collection Document into the cache
+            ESportsCache.getInstance().put(collectionDocument);
+            Log.d(TAG, "New cache contents: " + ESportsCache.getInstance().dump());
+
         } catch (IOException iox) {
             Log.e(TAG, "Failed to parse document", iox);
         } catch (XmlPullParserException xppx) {

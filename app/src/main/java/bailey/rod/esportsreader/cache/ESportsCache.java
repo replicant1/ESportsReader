@@ -21,6 +21,17 @@ public class ESportsCache {
         return cache.containsKey(cacheId);
     }
 
+    public String dump() {
+        StringBuffer buf = new StringBuffer();
+        buf.append(String.format("ESportsCache has %d records. ", cache.keySet().size()));
+
+        for (Map.Entry<String, ICacheable> cacheEntry : cache.entrySet()) {
+            buf.append(String.format("[%s -> %s]", cacheEntry.getKey(), cacheEntry.getValue()));
+        }
+
+        return buf.toString();
+    }
+
     public ICacheable get(String cacheId) {
         return cache.get(cacheId);
     }
@@ -38,7 +49,7 @@ public class ESportsCache {
      *                  cache id in the cache, it will be overwritten with this one.
      */
     public void put(ICacheable cacheable) {
-        cache.put(cacheable.getCacheId(), cacheable);
+        cache.put(cacheable.getURL(), cacheable);
     }
 
     /**
@@ -50,8 +61,8 @@ public class ESportsCache {
     public boolean putIfNewer(ICacheable cacheable) {
         boolean isGivenObjectInCacheAtExit = false;
 
-        if (contains(cacheable.getCacheId())) {
-            ICacheable alreadyCachedObj = get(cacheable.getCacheId());
+        if (contains(cacheable.getURL())) {
+            ICacheable alreadyCachedObj = get(cacheable.getURL());
 
             if (isNewer(alreadyCachedObj, cacheable)) {
                 // Do nothing, the object already in the cache is newer than the given object
@@ -61,7 +72,7 @@ public class ESportsCache {
 
             }
         } else {
-            cache.put(cacheable.getCacheId(), cacheable);
+            cache.put(cacheable.getURL(), cacheable);
             isGivenObjectInCacheAtExit = true;
         }
 

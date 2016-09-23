@@ -2,6 +2,8 @@ package bailey.rod.esportsreader.xml.atom;
 
 import java.util.List;
 
+import bailey.rod.esportsreader.cache.AbstractCacheable;
+
 /**
  * Represents an Atom "service document" - but only those parts of it that this app is interested in. In particular,
  * we see it as having two properties:
@@ -12,13 +14,14 @@ import java.util.List;
  * </p>
  * See http://www.atomenabled.org/developers/protocol/#service
  */
-public class AtomServiceDocument {
+public class AtomServiceDocument extends AbstractCacheable {
 
     private final String title;
 
     private final List<AtomServiceCollection> collections;
 
-    public AtomServiceDocument(String title, List<AtomServiceCollection> collections) {
+    public AtomServiceDocument(String title, List<AtomServiceCollection> collections, String url, String timestamp) {
+        super(url, timestamp);
         this.title = title;
         this.collections = collections;
     }
@@ -29,5 +32,19 @@ public class AtomServiceDocument {
 
     public String getTitle() {
         return title;
+    }
+
+    @Override
+    public String toString() {
+        StringBuffer buf = new StringBuffer();
+        buf.append("title=" + title);
+        buf.append(",url=" + getURL());
+        buf.append(",timestamp=" + getCacheTimestamp());
+        buf.append(",collections=[");
+        for (AtomServiceCollection collection : collections) {
+            buf.append("[" + collection.toString() + "],");
+        }
+        buf.append("]");
+        return buf.toString();
     }
 }

@@ -1,27 +1,25 @@
 package bailey.rod.esportsreader.cache;
 
-import java.util.UUID;
-
 /**
  * Abstract base class for all cacheable objects.
  */
 public abstract class AbstractCacheable implements ICacheable{
 
-    private final String cacheId;
+    private final String url;
 
     private final String timestamp;
 
-    public AbstractCacheable(String cacheId, String timestamp) {
-        this.cacheId = cacheId;
+    public AbstractCacheable(String url, String timestamp) {
+        this.url = url;
         this.timestamp = timestamp;
     }
 
     @Override
-    public String getCacheId() {
-        return cacheId;
+    public String getURL() {
+        return url;
     }
 
-    public String getTimestamp() {
+    public String getCacheTimestamp() {
         return timestamp;
     }
 }

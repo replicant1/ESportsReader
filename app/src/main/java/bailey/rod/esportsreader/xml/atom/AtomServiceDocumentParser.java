@@ -57,7 +57,7 @@ public class AtomServiceDocumentParser {
      * @param istream Stream to the service document
      * @return Structure containing parsed contents
      */
-    public AtomServiceDocument parse(InputStream istream)
+    public AtomServiceDocument parse(InputStream istream, String url, String cacheTimestamp)
             throws XmlPullParserException, IOException {
         Log.i(TAG, "** Into AtomServiceDocument.parse **");
 
@@ -66,7 +66,7 @@ public class AtomServiceDocumentParser {
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(istream, null);
-            return parseService(parser);
+            return parseService(parser, url, cacheTimestamp);
         } finally {
             Log.i(TAG, "** Finished AtomServiceDocument.parse **");
             istream.close();
@@ -105,7 +105,7 @@ public class AtomServiceDocumentParser {
      * @param parser Parser for service document. Should be positioned at the start of the document.
      * @return Model object representing parsed "service".
      */
-    private AtomServiceDocument parseService(XmlPullParser parser)
+    private AtomServiceDocument parseService(XmlPullParser parser, String url, String cacheTimestamp)
             throws XmlPullParserException, IOException {
         List<AtomServiceCollection> collectionList = new LinkedList<>();
         String workspaceTitle;
@@ -131,7 +131,7 @@ public class AtomServiceDocumentParser {
 
         Log.i(TAG, "Finished parsing AtomServiceDocument");
 
-        return new AtomServiceDocument(workspaceTitle, collectionList);
+        return new AtomServiceDocument(workspaceTitle, collectionList, url, cacheTimestamp);
     }
 
 

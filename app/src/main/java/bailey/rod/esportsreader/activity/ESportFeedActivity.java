@@ -39,7 +39,7 @@ public class ESportFeedActivity extends AppCompatActivity {
             AtomFeedParser parser = new AtomFeedParser();
 
             Log.i(TAG, "Parsing document");
-            ESportsFeed feed = parser.parse(stream);
+            ESportsFeed feed = parser.parse(stream, documentName, "now");
             Log.i(TAG, "Finished parsing OK");
 
             Log.i(TAG, "Creating GUI");

@@ -42,7 +42,8 @@ public class RSSFeedParser {
 
     private static final String TAG = RSSFeedParser.class.getSimpleName();
 
-    public ESportsFeed parse(InputStream inputStream) throws XmlPullParserException, IOException {
+    public ESportsFeed parse(InputStream inputStream, String url, String cacheTimestamp) throws XmlPullParserException,
+            IOException {
         Log.i(TAG, "** Into RSSFeedParser.parse() **");
 
         try {
@@ -50,13 +51,15 @@ public class RSSFeedParser {
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(inputStream, null);
-            return parseFeed(parser);
+            return parseFeed(parser, url, cacheTimestamp);
         } finally {
             inputStream.close();
         }
     }
 
-    private ESportsFeed parseFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
+    private ESportsFeed parseFeed(XmlPullParser parser, String url, String cacheTimestamp) throws
+            XmlPullParserException,
+            IOException {
         List<ESportsFeedEntry> entryList = new LinkedList<>();
 
         // Skip the <?xml> declaration advance to the <rss> feed tag
@@ -71,7 +74,7 @@ public class RSSFeedParser {
             entryList.add(parseItem(parser));
         }
 
-        return new ESportsFeed(feedTitle, entryList);
+        return new ESportsFeed(feedTitle, entryList, url, cacheTimestamp);
     }
 
     private ESportsFeedEntry parseItem(XmlPullParser parser) throws XmlPullParserException, IOException {

@@ -25,7 +25,7 @@ public class AtomCollectionDocumentParser {
 
     private static final String TAG = AtomCollectionDocumentParser.class.getSimpleName();
 
-    public AtomCollectionDocument parse(InputStream inputStream)
+    public AtomCollectionDocument parse(InputStream inputStream, String url, String timestamp)
             throws XmlPullParserException, IOException, ParseException {
         Log.i(TAG, "** Into AtomCollectionDocument.parse() **");
 
@@ -34,7 +34,7 @@ public class AtomCollectionDocumentParser {
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(inputStream, null);
-            return parseFeed(parser);
+            return parseFeed(parser, url, timestamp);
         } finally {
             Log.i(TAG, "** Finished AtomCollectionDocumentParser **");
             inputStream.close();
@@ -68,7 +68,7 @@ public class AtomCollectionDocumentParser {
         return result;
     }
 
-    private AtomCollectionDocument parseFeed(XmlPullParser parser)
+    private AtomCollectionDocument parseFeed(XmlPullParser parser, String url, String timestamp)
             throws XmlPullParserException, IOException, ParseException {
         List<AtomCollectionEntry> entryList = new LinkedList<>();
 
@@ -88,7 +88,7 @@ public class AtomCollectionDocumentParser {
             entryList.add(parseEntry(parser));
         }
 
-        AtomCollectionDocument result = new AtomCollectionDocument(feedTitle, entryList);
+        AtomCollectionDocument result = new AtomCollectionDocument(feedTitle, entryList, url, timestamp);
         return result;
     }
 

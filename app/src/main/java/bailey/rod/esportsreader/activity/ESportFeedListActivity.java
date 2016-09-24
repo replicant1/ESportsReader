@@ -17,7 +17,7 @@ import java.text.ParseException;
 import java.util.List;
 
 import bailey.rod.esportsreader.adapter.AtomCollectionEntryListAdapter;
-import bailey.rod.esportsreader.cache.ESportsCache;
+import bailey.rod.esportsreader.cache.SessionCache;
 import bailey.rod.esportsreader.job.GetXmlDocumentRequest;
 import bailey.rod.esportsreader.job.VolleySingleton;
 import bailey.rod.esportsreader.util.ConfigSingleton;
@@ -43,7 +43,7 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
 
         String documentRef;
         AtomCollectionDocument collectionDocument;
-        ESportsCache cache = ESportsCache.getInstance();
+        SessionCache cache = SessionCache.getInstance();
 
         if (config.loadFromLocalAtomFiles()) {
             documentRef = config.localAtomCollectionDocument();
@@ -76,9 +76,9 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
     }
 
     /**
-     * By the time this is called, the ESportsCache is guaranteed to contain a copy of documentHref that is
+     * By the time this is called, the SessionCache is guaranteed to contain a copy of documentHref that is
      * up-to-date enough to be displayed in the list view. Either it will have been retrieved from an external source
-     * and placed in the ESportsCache, or it may have been found to be already in the ESportsCache and just as
+     * and placed in the SessionCache, or it may have been found to be already in the SessionCache and just as
      * up-to-date as the external source.
      *
      * @param documentHref URL of the feed document. This is the key by which is retrieved from cache.
@@ -86,7 +86,7 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
     private void updateDisplayPerCachedCollectionDocument(String documentHref) {
         showListView();
 
-        AtomCollectionDocument collectionDocument = (AtomCollectionDocument) ESportsCache.getInstance().get
+        AtomCollectionDocument collectionDocument = (AtomCollectionDocument) SessionCache.getInstance().get
                 (documentHref);
 
         // Update the ListView
@@ -133,7 +133,7 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
 
             try {
                 AtomCollectionDocument collectionDocument = parser.parse(stream, documentHref, "now");
-                ESportsCache.getInstance().put(collectionDocument);
+                SessionCache.getInstance().put(collectionDocument);
                 updateDisplayPerCachedCollectionDocument(documentHref);
             } catch (XmlPullParserException xppe) {
                 Log.w(TAG, "Failed to parse " + documentHref, xppe);

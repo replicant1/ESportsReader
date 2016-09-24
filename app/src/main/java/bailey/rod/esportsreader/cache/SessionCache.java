@@ -7,13 +7,13 @@ import java.util.Map;
  * A cache for storing anything that implements ICacheable. In practice, we use this to store news feed info to avoid
  * needless retrievals of it over the network.
  */
-public class ESportsCache {
+public class SessionCache {
 
-    private static final ESportsCache singleton = new ESportsCache();
+    private static final SessionCache singleton = new SessionCache();
 
     private Map<String, ICacheable> cache = new HashMap<String, ICacheable>();
 
-    public static synchronized ESportsCache getInstance() {
+    public static synchronized SessionCache getInstance() {
         return singleton;
     }
 
@@ -23,7 +23,7 @@ public class ESportsCache {
 
     public String dump() {
         StringBuffer buf = new StringBuffer();
-        buf.append(String.format("ESportsCache has %d records. ", cache.keySet().size()));
+        buf.append(String.format("SessionCache has %d records. ", cache.keySet().size()));
 
         for (Map.Entry<String, ICacheable> cacheEntry : cache.entrySet()) {
             buf.append(String.format("[%s -> %s]", cacheEntry.getKey(), cacheEntry.getValue()));

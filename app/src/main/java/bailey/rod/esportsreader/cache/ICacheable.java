@@ -3,7 +3,7 @@ package bailey.rod.esportsreader.cache;
 /**
  * Identifies a party capable of being stored in a client-side cache after it has been created with information
  * retrieved from online.
- * @see ESportsCache
+ * @see SessionCache
  */
 public interface ICacheable {
 

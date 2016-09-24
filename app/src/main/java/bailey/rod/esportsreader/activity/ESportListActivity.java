@@ -5,9 +5,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.ByteArrayInputStream;
@@ -18,13 +15,11 @@ import java.util.List;
 
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.AtomServiceCollectionListAdapter;
-import bailey.rod.esportsreader.cache.ESportsCache;
+import bailey.rod.esportsreader.cache.SessionCache;
 import bailey.rod.esportsreader.job.GetXmlDocumentJob;
-import bailey.rod.esportsreader.job.GetXmlDocumentRequest;
 import bailey.rod.esportsreader.job.IJobFailureHandler;
 import bailey.rod.esportsreader.job.IJobSuccessHandler;
 import bailey.rod.esportsreader.job.JobEngineSingleton;
-import bailey.rod.esportsreader.job.VolleySingleton;
 import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.atom.AtomServiceCollection;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocument;
@@ -50,7 +45,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
 
         String documentHref;
         AtomServiceDocument serviceDocument;
-        ESportsCache cache = ESportsCache.getInstance();
+        SessionCache cache = SessionCache.getInstance();
 
         if (config.loadFromLocalAtomFiles()) {
             documentHref = config.localAtomServiceDocument();
@@ -90,7 +85,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_delete_cache) {
             Log.i(TAG, "Clear cache");
-            ESportsCache.getInstance().clear();
+            SessionCache.getInstance().clear();
 
             // Restart the present activity with an empty cache
             recreate();
@@ -106,16 +101,16 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     }
 
     /**
-     * By the time this is called, the ESportsCache is guaranteed to contain a copy of documentHref that is
+     * By the time this is called, the SessionCache is guaranteed to contain a copy of documentHref that is
      * up-to-date enough to be displayed in the list view. Either it will have been retrieved from an external source
-     * and placed in the ESportsCache, or it may have been found to be already in the ESportsCache and just as
+     * and placed in the SessionCache, or it may have been found to be already in the SessionCache and just as
      * up-to-date as the external source.
      *
      * @param documentHref
      */
     private void updateDisplayPerCachedServiceDocument(String documentHref) {
         showListView();
-        AtomServiceDocument serviceDocument = (AtomServiceDocument) ESportsCache.getInstance().get(documentHref);
+        AtomServiceDocument serviceDocument = (AtomServiceDocument) SessionCache.getInstance().get(documentHref);
 
         List<AtomServiceCollection> collections = serviceDocument.getCollections();
         AtomServiceCollectionListAdapter adapter = new AtomServiceCollectionListAdapter(ESportListActivity.this,
@@ -161,7 +156,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
 
             try {
                 AtomServiceDocument serviceDocument = parser.parse(stream, documentHref, "now");
-                ESportsCache.getInstance().put(serviceDocument);
+                SessionCache.getInstance().put(serviceDocument);
                 updateDisplayPerCachedServiceDocument(documentHref);
             } catch (XmlPullParserException xppe) {
                 Log.w(TAG, "Failed to parse " + documentHref, xppe);

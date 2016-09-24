@@ -73,4 +73,9 @@ public class JobEngineSingleton {
         ExecuteJobTask asyncTask = new ExecuteJobTask(job, successHandler, failureHandler);
         asyncTask.execute();
     }
+
+    public void cancelAll() {
+        // I would love to have a way of cancelling all outstanding HttpURLConnections.
+        // This is a facility libs like Volley provide, which I miss.
+    }
 }

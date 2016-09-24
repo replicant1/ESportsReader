@@ -4,9 +4,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.ByteArrayInputStream;
@@ -18,8 +15,10 @@ import java.util.List;
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.ESportsFeedEntrySynopsisListAdapter;
 import bailey.rod.esportsreader.cache.SessionCache;
-import bailey.rod.esportsreader.job.GetXmlDocumentRequest;
-import bailey.rod.esportsreader.job.VolleySingleton;
+import bailey.rod.esportsreader.job.GetXmlDocumentJob;
+import bailey.rod.esportsreader.job.IJobFailureHandler;
+import bailey.rod.esportsreader.job.IJobSuccessHandler;
+import bailey.rod.esportsreader.job.JobEngineSingleton;
 import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.ESportsFeed;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
@@ -39,7 +38,7 @@ public class ESportFeedActivity extends ESportAsyncRequestingActivity {
         super.onCreate(savedInstanceState);
 
         ConfigSingleton config = ConfigSingleton.getInstance();
-        VolleySingleton volley = VolleySingleton.getInstance();
+        JobEngineSingleton jobEngine = JobEngineSingleton.getInstance();
 
         String documentHref;
         ESportsFeed eSportsFeed;
@@ -60,18 +59,18 @@ public class ESportFeedActivity extends ESportAsyncRequestingActivity {
             updateDisplayPerCachedFeedDocument(documentHref);
         } else {
             Log.d(TAG, "Feed doc not in cache. Getting feed from file system or remote server");
-            GetXmlDocumentRequest request = new GetXmlDocumentRequest(documentHref,
-                                                                      new GetFeedDocumentListener(documentHref),
-                                                                      new GetFeedDocumentErrorListener());
             showProgressMessage("Loading feed...");
-            volley.addRequest(request);
+            GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, "lastModified");
+            jobEngine.doJobAsync(job, //
+                                 new GetFeedDocumentSuccessHandler(documentHref), //
+                                 new GetFeedDocumentFailureHandler());
         }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        //VolleySingleton.getInstance().cancelAll();
+        JobEngineSingleton.getInstance().cancelAll();
     }
 
     /**
@@ -98,29 +97,28 @@ public class ESportFeedActivity extends ESportAsyncRequestingActivity {
         getSupportActionBar().setTitle(feed.getTitle());
     }
 
-    private class GetFeedDocumentErrorListener implements Response.ErrorListener {
-        private final String TAG = GetFeedDocumentErrorListener.class.getSimpleName();
+    private class GetFeedDocumentFailureHandler implements IJobFailureHandler {
+        private final String TAG = GetFeedDocumentFailureHandler.class.getSimpleName();
 
         @Override
-        public void onErrorResponse(VolleyError error) {
-            Log.w(TAG, "error response:" + error.getMessage(), error.getCause());
-            showErrorMessage(error.getMessage());
+        public void onFailure(String failureMsg) {
+            Log.w(TAG, failureMsg);
+            showErrorMessage(failureMsg);
         }
     }
 
-    private class GetFeedDocumentListener implements Response.Listener<String> {
-        private final String TAG = GetFeedDocumentListener.class.getSimpleName();
+    private class GetFeedDocumentSuccessHandler implements IJobSuccessHandler {
+        private final String TAG = GetFeedDocumentSuccessHandler.class.getSimpleName();
 
         private final String documentHref;
 
-        public GetFeedDocumentListener(String documentHref) {
+        public GetFeedDocumentSuccessHandler(String documentHref) {
             this.documentHref = documentHref;
         }
 
         @Override
-        public void onResponse(String response) {
-            Log.i(TAG, "GetFeedDocumentListener.onResponse: " + response);
-
+        public void onSuccess(String response) {
+            Log.i(TAG, "GetFeedDocumentSuccessHandler.onResponse: " + response);
 
             InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(response).array());
             // TODO: Prescan doc to see if atom, rss or unrecognized. see RSSParser.

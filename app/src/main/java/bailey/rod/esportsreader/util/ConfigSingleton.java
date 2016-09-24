@@ -3,8 +3,6 @@ package bailey.rod.esportsreader.util;
 import android.content.Context;
 import android.util.Log;
 
-import org.valid4j.Assertive;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.LinkedList;
@@ -35,14 +33,14 @@ public class ConfigSingleton {
     }
 
     private boolean getBoolProperty(String propertyName) {
-        Assertive.require(initialized);
-        Assertive.require(propertyName != null);
+        assert isInitialized();
+        assert (propertyName != null);
         return Boolean.parseBoolean(configProperties.getProperty(propertyName));
     }
 
     public int getIntProperty(String propertyName) {
-        Assertive.require(initialized);
-        Assertive.require(propertyName != null);
+        assert isInitialized();
+        assert propertyName != null;
         return Integer.parseInt(configProperties.getProperty(propertyName));
     }
 
@@ -57,8 +55,8 @@ public class ConfigSingleton {
     }
 
     private String getStringProperty(String propertyName) {
-        Assertive.require(initialized);
-        Assertive.require(propertyName != null);
+        assert isInitialized();
+        assert (propertyName != null);
         return configProperties.getProperty(propertyName);
     }
 

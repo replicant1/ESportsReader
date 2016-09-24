@@ -63,11 +63,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
 
         } else {
             Log.d(TAG, "ASD not in cache. Retrieving ASD async from file system or remote server");
-//            GetXmlDocumentRequest request = new GetXmlDocumentRequest(documentHref, //
-//                                                                      new GetASDListener(documentHref), //
-//                                                                      new GetASDErrorListener());
             showProgressMessage("Loading eSports...");
-//            volley.addRequest(request);
             GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, "lastModified");
             jobEngine.doJobAsync(job, //
                                  new GetASDSuccessHandler(documentHref), //
@@ -97,7 +93,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     @Override
     protected void onStop() {
         super.onStop();
-//         VolleySingleton.getInstance().cancelAll();
+        JobEngineSingleton.getInstance().cancelAll();
     }
 
     /**

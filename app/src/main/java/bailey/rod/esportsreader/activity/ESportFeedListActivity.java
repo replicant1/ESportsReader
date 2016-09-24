@@ -4,9 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.ByteArrayInputStream;
@@ -18,8 +15,10 @@ import java.util.List;
 
 import bailey.rod.esportsreader.adapter.AtomCollectionEntryListAdapter;
 import bailey.rod.esportsreader.cache.SessionCache;
-import bailey.rod.esportsreader.job.GetXmlDocumentRequest;
-import bailey.rod.esportsreader.job.VolleySingleton;
+import bailey.rod.esportsreader.job.GetXmlDocumentJob;
+import bailey.rod.esportsreader.job.IJobFailureHandler;
+import bailey.rod.esportsreader.job.IJobSuccessHandler;
+import bailey.rod.esportsreader.job.JobEngineSingleton;
 import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionDocument;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionDocumentParser;
@@ -39,7 +38,7 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
         super.onCreate(savedInstanceState);
 
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
-        VolleySingleton volley = VolleySingleton.getInstance().init(this);
+        JobEngineSingleton jobEngine = JobEngineSingleton.getInstance();
 
         String documentRef;
         AtomCollectionDocument collectionDocument;
@@ -61,18 +60,18 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
             updateDisplayPerCachedCollectionDocument(documentRef);
         } else {
             Log.d(TAG, "ACD not in cache. Getting ACD async from file system or remote server");
-            GetXmlDocumentRequest request = new GetXmlDocumentRequest(documentRef,
-                                                                      new GetACDListener(documentRef),
-                                                                      new GetACDErrorListener());
             showProgressMessage("Loading feed list...");
-            volley.addRequest(request);
+            GetXmlDocumentJob job = new GetXmlDocumentJob(documentRef, "lastModified");
+            jobEngine.doJobAsync(job,//
+                                 new GetACDSuccessHandler(documentRef),//
+                                 new GetACDFailureHandler());
         }
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        //VolleySingleton.getInstance().cancelAll();
+        JobEngineSingleton.getInstance().cancelAll();
     }
 
     /**
@@ -104,28 +103,28 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
      * Called by Volley if the request to load the list of feeds fails. Displays an error message
      * if so. Leaves the user to redo the command by clicking the "Retry" button.
      */
-    private class GetACDErrorListener implements Response.ErrorListener {
-        private final String TAG = GetACDListener.class.getSimpleName();
+    private class GetACDFailureHandler implements IJobFailureHandler {
+        private final String TAG = GetACDFailureHandler.class.getSimpleName();
 
         @Override
-        public void onErrorResponse(VolleyError error) {
-            Log.w(TAG, "error response: " + error.getMessage(), error.getCause());
-            showErrorMessage(error.getMessage());
+        public void onFailure(String failureMessage) {
+            Log.w(TAG, failureMessage);
+            showErrorMessage(failureMessage);
         }
     }
 
-    private class GetACDListener implements Response.Listener<String> {
-        private final String TAG = GetACDListener.class.getSimpleName();
+    private class GetACDSuccessHandler implements IJobSuccessHandler{
+        private final String TAG = GetACDSuccessHandler.class.getSimpleName();
 
         private final String documentHref;
 
-        public GetACDListener(String documentHref) {
+        public GetACDSuccessHandler(String documentHref) {
             this.documentHref = documentHref;
         }
 
         @Override
-        public void onResponse(String response) {
-            Log.i(TAG, "GetACDListener.onResponse: " + response);
+        public void onSuccess(String response) {
+            Log.i(TAG, "GetACDSuccessHandler.onResponse: " + response);
 
             InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(response).array());
             // TODO: Prescan document to confirm it is atom format.

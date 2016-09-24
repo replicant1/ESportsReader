@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_delete_cache"
-        android:icon="@android:drawable/ic_media_ff"
+        android:icon="@drawable/cached"
         android:title="Clear Cache"
         app:showAsAction="always"/>
 

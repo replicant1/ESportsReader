@@ -3,7 +3,6 @@ package bailey.rod.esportsreader.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -12,15 +11,8 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
-
 import bailey.rod.esportsreader.R;
-import bailey.rod.esportsreader.cache.ESportsCache;
-import bailey.rod.esportsreader.cache.ICacheable;
 import bailey.rod.esportsreader.util.StringUtils;
-import bailey.rod.esportsreader.xml.ESportsFeedEntry;
 
 /**
  * A screen containing just a WebView that displays a single new item with an artifical heading + time. Content
@@ -41,7 +33,7 @@ public class ESportFeedEntryActivity extends AppCompatActivity {
     private String websiteUrl;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
@@ -56,6 +48,8 @@ public class ESportFeedEntryActivity extends AppCompatActivity {
         Log.d(TAG, "Received website url = " + websiteUrl);
 
         setContentView(R.layout.activity_with_web_view);
+
+        // Update the WebView to contain the HTML content of the entry
 
         WebView webView = (WebView) findViewById(R.id.esport_web_view);
 
@@ -74,9 +68,8 @@ public class ESportFeedEntryActivity extends AppCompatActivity {
         TextView dateTextView = (TextView) findViewById(R.id.text2);
         dateTextView.setText(date);
 
+        // Update the action bar
         getSupportActionBar().setTitle("Article");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
     @Override

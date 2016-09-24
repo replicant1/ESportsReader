@@ -29,7 +29,7 @@
         -->
         <activity
             android:name=".activity.ESportFeedListActivity"
-            android:parentActivityName=".activity.ESportListActivity">
+            >
         </activity>
 
         <!--
@@ -39,7 +39,7 @@
 
         <activity
             android:name=".activity.ESportFeedActivity"
-            android:parentActivityName=".activity.ESportFeedListActivity">
+            >
 
         </activity>
 
@@ -50,7 +50,7 @@
 
         <activity
             android:name=".activity.ESportFeedEntryActivity"
-            android:parentActivityName=".activity.ESportFeedActivity">
+            >
         </activity>
     </application>
 

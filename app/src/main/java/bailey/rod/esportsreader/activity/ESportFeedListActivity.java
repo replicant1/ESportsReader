@@ -1,15 +1,11 @@
 package bailey.rod.esportsreader.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ListView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.Volley;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -20,7 +16,6 @@ import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.util.List;
 
-import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.AtomCollectionEntryListAdapter;
 import bailey.rod.esportsreader.cache.ESportsCache;
 import bailey.rod.esportsreader.net.GetXmlDocumentRequest;
@@ -61,9 +56,11 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
 
         if (cache.contains(documentRef)) {
             Log.d(TAG, "Retrieving ACD from cache");
+            // TODO Update to date check
             collectionDocument = (AtomCollectionDocument) cache.get(documentRef);
+            updateDisplayPerCachedCollectionDocument(documentRef);
         } else {
-            Log.d(TAG, "ACD not in cache. Getting ACD async from file system or remove server");
+            Log.d(TAG, "ACD not in cache. Getting ACD async from file system or remote server");
             GetXmlDocumentRequest request = new GetXmlDocumentRequest(documentRef,
                                                                       new GetACDListener(documentRef),
                                                                       new GetACDErrorListener());
@@ -76,6 +73,31 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
     protected void onStop() {
         super.onStop();
         //VolleySingleton.getInstance().cancelAll();
+    }
+
+    /**
+     * By the time this is called, the ESportsCache is guaranteed to contain a copy of documentHref that is
+     * up-to-date enough to be displayed in the list view. Either it will have been retrieved from an external source
+     * and placed in the ESportsCache, or it may have been found to be already in the ESportsCache and just as
+     * up-to-date as the external source.
+     *
+     * @param documentHref URL of the feed document. This is the key by which is retrieved from cache.
+     */
+    private void updateDisplayPerCachedCollectionDocument(String documentHref) {
+        showListView();
+
+        AtomCollectionDocument collectionDocument = (AtomCollectionDocument) ESportsCache.getInstance().get
+                (documentHref);
+
+        // Update the ListView
+        List<AtomCollectionEntry> collectionEntries = collectionDocument.getEntries();
+        AtomCollectionEntryListAdapter adapter = new AtomCollectionEntryListAdapter(ESportFeedListActivity
+                                                                                            .this,
+                                                                                    collectionEntries);
+        listView.setAdapter(adapter);
+
+        // Update the action bar
+        getSupportActionBar().setTitle(collectionDocument.getTitle());
     }
 
     /**
@@ -105,22 +127,14 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
         public void onResponse(String response) {
             Log.i(TAG, "GetACDListener.onResponse: " + response);
 
-            showListView();
-
             InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(response).array());
+            // TODO: Prescan document to confirm it is atom format.
             AtomCollectionDocumentParser parser = new AtomCollectionDocumentParser();
 
             try {
                 AtomCollectionDocument collectionDocument = parser.parse(stream, documentHref, "now");
                 ESportsCache.getInstance().put(collectionDocument);
-
-                List<AtomCollectionEntry> collectionEntries = collectionDocument.getEntries();
-                AtomCollectionEntryListAdapter adapter = new AtomCollectionEntryListAdapter(ESportFeedListActivity
-                                                                                                    .this,
-                                                                                            collectionEntries);
-                listView.setAdapter(adapter);
-                getSupportActionBar().setTitle(collectionDocument.getTitle());
-                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                updateDisplayPerCachedCollectionDocument(documentHref);
             } catch (XmlPullParserException xppe) {
                 Log.w(TAG, "Failed to parse " + documentHref, xppe);
             } catch (ParseException pex) {

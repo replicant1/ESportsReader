@@ -3,7 +3,6 @@ package bailey.rod.esportsreader.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -43,8 +42,6 @@ public class ESportAsyncRequestingActivity extends AppCompatActivity {
      * successfully.
      */
     protected void showListView() {
-
-
         progressMonitor.setVisibility(View.GONE);
         errorMessage.setVisibility(View.GONE);
         listView.setVisibility(View.VISIBLE);

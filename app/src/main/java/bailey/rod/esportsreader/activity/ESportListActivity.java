@@ -56,7 +56,10 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
 
         if (cache.contains(documentHref)) {
             Log.d(TAG, "Retrieving ASD from cache");
+            // TODO: Up-to-date check
             serviceDocument = (AtomServiceDocument) cache.get(documentHref);
+            updateDisplayPerCachedServiceDocument(documentHref);
+
         } else {
             Log.d(TAG, "ASD not in cache. Retrieving ASD async from file system or remote server");
             GetXmlDocumentRequest request = new GetXmlDocumentRequest(documentHref, //
@@ -76,7 +79,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        // VolleySingleton.getInstance().cancelAll();
+//         VolleySingleton.getInstance().cancelAll();
     }
 
     @Override
@@ -107,6 +110,26 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     }
 
     /**
+     * By the time this is called, the ESportsCache is guaranteed to contain a copy of documentHref that is
+     * up-to-date enough to be displayed in the list view. Either it will have been retrieved from an external source
+     * and placed in the ESportsCache, or it may have been found to be already in the ESportsCache and just as
+     * up-to-date as the external source.
+     *
+     * @param documentHref
+     */
+    private void updateDisplayPerCachedServiceDocument(String documentHref) {
+        showListView();
+        AtomServiceDocument serviceDocument = (AtomServiceDocument) ESportsCache.getInstance().get(documentHref);
+
+        List<AtomServiceCollection> collections = serviceDocument.getCollections();
+        AtomServiceCollectionListAdapter adapter = new AtomServiceCollectionListAdapter(ESportListActivity.this,
+                                                                                        collections);
+        listView.setAdapter(adapter);
+
+        getSupportActionBar().setTitle(serviceDocument.getTitle());
+    }
+
+    /**
      * Called by Volley if the request to load the ASD succeeds. Parses the document just loaded and
      * feeds the data into a listView for display. Also copied to cache.
      */
@@ -123,21 +146,13 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
         public void onResponse(String response) {
             Log.i(TAG, "onResponse: " + response);
 
-            showListView();
-
             InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(response).array());
             AtomServiceDocumentParser parser = new AtomServiceDocumentParser();
 
             try {
                 AtomServiceDocument serviceDocument = parser.parse(stream, documentHref, "now");
                 ESportsCache.getInstance().put(serviceDocument);
-
-                List<AtomServiceCollection> serviceCollections = serviceDocument.getCollections();
-                AtomServiceCollectionListAdapter adapter = new AtomServiceCollectionListAdapter(ESportListActivity.this,
-                                                                                                serviceCollections);
-
-                listView.setAdapter(adapter);
-                getSupportActionBar().setTitle(serviceDocument.getTitle());
+                updateDisplayPerCachedServiceDocument(documentHref);
             } catch (XmlPullParserException xppe) {
                 Log.w(TAG, "Failed to parse " + documentHref, xppe);
             } catch (IOException iox) {

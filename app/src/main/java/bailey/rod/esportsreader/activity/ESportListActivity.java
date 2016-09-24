@@ -1,13 +1,9 @@
 package bailey.rod.esportsreader.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -34,29 +30,14 @@ import bailey.rod.esportsreader.xml.atom.AtomServiceDocumentParser;
  * Activity presents user with a list of eSports to choose from. This is the first screen the user sees when the app
  * starts up. It contains options like "League of Legends", "Hearthstone" etc.
  */
-public class ESportListActivity extends AppCompatActivity {
+public class ESportListActivity extends ESportAsyncRequestingActivity {
 
     /** Tag for Android logging */
     private static final String TAG = ESportListActivity.class.getSimpleName();
 
-    private TextView errorMessage;
-
-    private ListView listView;
-
-    private TextView progressMessage;
-
-    private View progressMonitor;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.activity_with_list_view);
-
-        progressMonitor = findViewById(R.id.progress_monitor);
-        listView = (ListView) ESportListActivity.this.findViewById(R.id.esport_list_view);
-        errorMessage = (TextView) findViewById(R.id.error_message);
-        progressMessage = (TextView) findViewById(R.id.progress_message);
 
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
         VolleySingleton volley = VolleySingleton.getInstance().init(this);
@@ -74,7 +55,7 @@ public class ESportListActivity extends AppCompatActivity {
         Log.i(TAG, String.format("Atom Service Document at %s required to display eSport list", documentHref));
 
         if (cache.contains(documentHref)) {
-            Log.d(TAG, "Retrieving ASD synch from cache");
+            Log.d(TAG, "Retrieving ASD from cache");
             serviceDocument = (AtomServiceDocument) cache.get(documentHref);
         } else {
             Log.d(TAG, "ASD not in cache. Retrieving ASD async from file system or remote server");
@@ -93,6 +74,12 @@ public class ESportListActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        // VolleySingleton.getInstance().cancelAll();
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_delete_cache) {
             Log.i(TAG, "Clear cache");
@@ -106,38 +93,6 @@ public class ESportListActivity extends AppCompatActivity {
     }
 
     /**
-     * Show the error message panel while hiding the listView and progressMonitor. This occurs when an attempt to
-     * load XML fails due to network problems.
-     */
-    private void showErrorMessage(String msg) {
-        progressMonitor.setVisibility(View.GONE);
-        listView.setVisibility(View.GONE);
-        errorMessage.setVisibility(View.VISIBLE);
-        errorMessage.setText(msg);
-    }
-
-    /**
-     * Show the listView while hiding the progressMonitor and errorMessage. This occurs when loading of XML completes
-     * successfully.
-     */
-    private void showListView() {
-        progressMonitor.setVisibility(View.GONE);
-        errorMessage.setVisibility(View.GONE);
-        listView.setVisibility(View.VISIBLE);
-    }
-
-    /**
-     * Show the progressMonitor and set a given progressMessage. Hide all else. This occurs when data loading is
-     * underway but not yet complete.
-     */
-    private void showProgressMessage(String msg) {
-        listView.setVisibility(View.GONE);
-        errorMessage.setVisibility(View.GONE);
-        progressMonitor.setVisibility(View.VISIBLE);
-        progressMessage.setText(msg);
-    }
-
-    /**
      * Called by Volley if the request to load the list of eSports fails. Displays an error message if so. Leaves the
      * user to manually redo the command using the "refresh" icon in the action bar.
      */
@@ -146,13 +101,13 @@ public class ESportListActivity extends AppCompatActivity {
 
         @Override
         public void onErrorResponse(VolleyError error) {
-            Log.i(TAG, "error response: " + error.getMessage());
+            Log.w(TAG, "error response: " + error.getMessage(), error.getCause());
             showErrorMessage(error.getMessage());
         }
     }
 
     /**
-     * Called by Volley if the request to load the list of eSports succeeds. Parses the document just loaded and
+     * Called by Volley if the request to load the ASD succeeds. Parses the document just loaded and
      * feeds the data into a listView for display. Also copied to cache.
      */
     private class GetASDListener implements Response.Listener<String> {

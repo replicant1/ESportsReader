@@ -6,12 +6,15 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
+import org.valid4j.Assertive;
+
 /**
- * Contains singleton instance of outgoing request queue for all XML files this app downloads (not images)
+ * Contains singleton instance of outgoing Volley request queue for all XML files this app downloads (not images).
+ * All requests are tagged with APP_REQUEST_QUEUE_TAG so that they can all be cancelled at once when an Activity stops.
  */
 public class VolleySingleton {
 
-    public static final String REQUEST_QUEUE_TAG = "esportsreader-request-queue";
+    public static final String APP_REQUEST_QUEUE_TAG = "esportsreader.rod.bailey.requestqueue";
 
     private static final String TAG = VolleySingleton.class.getSimpleName();
 
@@ -30,18 +33,30 @@ public class VolleySingleton {
     }
 
     public void addRequest(Request request) {
-        request.setTag(REQUEST_QUEUE_TAG);
+        Assertive.require(isInitialized());
+        request.setTag(APP_REQUEST_QUEUE_TAG);
         requestQueue.add(request);
     }
 
+    public void cancelAll() {
+        Assertive.require(isInitialized());
+        requestQueue.cancelAll(APP_REQUEST_QUEUE_TAG);
+    }
+
     public RequestQueue getRequestQueue() {
+        Assertive.require(isInitialized());
         return requestQueue;
     }
 
     public VolleySingleton init(Context context) {
         requestQueue = Volley.newRequestQueue(context);
         initialized = true;
+        Assertive.ensure(isInitialized());
         return singleton;
+    }
+
+    public boolean isInitialized() {
+        return initialized;
     }
 
 

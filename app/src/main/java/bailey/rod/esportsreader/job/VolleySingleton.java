@@ -1,4 +1,4 @@
-package bailey.rod.esportsreader.net;
+package bailey.rod.esportsreader.job;
 
 import android.content.Context;
 

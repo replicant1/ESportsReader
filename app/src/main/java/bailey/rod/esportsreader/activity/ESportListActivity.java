@@ -19,8 +19,12 @@ import java.util.List;
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.AtomServiceCollectionListAdapter;
 import bailey.rod.esportsreader.cache.ESportsCache;
-import bailey.rod.esportsreader.net.GetXmlDocumentRequest;
-import bailey.rod.esportsreader.net.VolleySingleton;
+import bailey.rod.esportsreader.job.GetXmlDocumentJob;
+import bailey.rod.esportsreader.job.GetXmlDocumentRequest;
+import bailey.rod.esportsreader.job.IJobFailureHandler;
+import bailey.rod.esportsreader.job.IJobSuccessHandler;
+import bailey.rod.esportsreader.job.JobEngineSingleton;
+import bailey.rod.esportsreader.job.VolleySingleton;
 import bailey.rod.esportsreader.util.ConfigSingleton;
 import bailey.rod.esportsreader.xml.atom.AtomServiceCollection;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocument;
@@ -32,7 +36,9 @@ import bailey.rod.esportsreader.xml.atom.AtomServiceDocumentParser;
  */
 public class ESportListActivity extends ESportAsyncRequestingActivity {
 
-    /** Tag for Android logging */
+    /**
+     * Tag for Android logging
+     */
     private static final String TAG = ESportListActivity.class.getSimpleName();
 
     @Override
@@ -40,7 +46,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
         super.onCreate(savedInstanceState);
 
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
-        VolleySingleton volley = VolleySingleton.getInstance().init(this);
+        JobEngineSingleton jobEngine = JobEngineSingleton.getInstance();
 
         String documentHref;
         AtomServiceDocument serviceDocument;
@@ -62,11 +68,15 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
 
         } else {
             Log.d(TAG, "ASD not in cache. Retrieving ASD async from file system or remote server");
-            GetXmlDocumentRequest request = new GetXmlDocumentRequest(documentHref, //
-                                                                      new GetASDListener(documentHref), //
-                                                                      new GetASDErrorListener());
+//            GetXmlDocumentRequest request = new GetXmlDocumentRequest(documentHref, //
+//                                                                      new GetASDListener(documentHref), //
+//                                                                      new GetASDErrorListener());
             showProgressMessage("Loading eSports...");
-            volley.addRequest(request);
+//            volley.addRequest(request);
+            GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, "lastModified");
+            jobEngine.doJobAsync(job, //
+                                 new GetASDSuccessHandler(documentHref), //
+                                 new GetASDFailureHandler());
         }
     }
 
@@ -74,12 +84,6 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.esport_list_menu, menu);
         return true;
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-//         VolleySingleton.getInstance().cancelAll();
     }
 
     @Override
@@ -95,18 +99,10 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Called by Volley if the request to load the list of eSports fails. Displays an error message if so. Leaves the
-     * user to manually redo the command using the "refresh" icon in the action bar.
-     */
-    private class GetASDErrorListener implements Response.ErrorListener {
-        private final String TAG = GetASDErrorListener.class.getSimpleName();
-
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            Log.w(TAG, "error response: " + error.getMessage(), error.getCause());
-            showErrorMessage(error.getMessage());
-        }
+    @Override
+    protected void onStop() {
+        super.onStop();
+//         VolleySingleton.getInstance().cancelAll();
     }
 
     /**
@@ -130,20 +126,34 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     }
 
     /**
+     * Called by Volley if the request to load the list of eSports fails. Displays an error message if so. Leaves the
+     * user to manually redo the command using the "refresh" icon in the action bar.
+     */
+    private class GetASDFailureHandler implements IJobFailureHandler {
+        private final String TAG = GetASDFailureHandler.class.getSimpleName();
+
+        @Override
+        public void onFailure(String failureMsg) {
+            Log.w(TAG, failureMsg);
+            showErrorMessage(failureMsg);
+        }
+    }
+
+    /**
      * Called by Volley if the request to load the ASD succeeds. Parses the document just loaded and
      * feeds the data into a listView for display. Also copied to cache.
      */
-    private class GetASDListener implements Response.Listener<String> {
-        private final String TAG = GetASDListener.class.getSimpleName();
+    private class GetASDSuccessHandler implements IJobSuccessHandler {
+        private final String TAG = GetASDSuccessHandler.class.getSimpleName();
 
         private final String documentHref;
 
-        public GetASDListener(String documentHref) {
+        public GetASDSuccessHandler(String documentHref) {
             this.documentHref = documentHref;
         }
 
         @Override
-        public void onResponse(String response) {
+        public void onSuccess(String response) {
             Log.i(TAG, "onResponse: " + response);
 
             InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(response).array());

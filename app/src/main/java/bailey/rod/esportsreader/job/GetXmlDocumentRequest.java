@@ -1,4 +1,4 @@
-package bailey.rod.esportsreader.net;
+package bailey.rod.esportsreader.job;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;

@@ -26,3 +26,16 @@ Possible strategies to implement:
 
 (2) Have a "favourites" facility, that can be applied to entries sports, blogs, or just individual
     feeds. Let the user display/refresh "favouries only".
+
+DATE FORMATS
+============
+
+2016-09-19T20:07:49.248+00:00           collection_document.atom <updated> tag
+2016-09-20T23:08:17.707-04:00           nerf_plz.atom <updated>
+
+2016-09-21T07:56:03.431Z                blizzards_official_blog.atom <updated> <published>
+2016-09-16T17:00:00.000Z                Hearthstone.atom <published>
+2016-09-18T07:51:54Z                    Hearthstone_Pwn.rss
+
+Sun, 18 Sep 2016 07:51:47 Z             hearthstone_Pwn.rss <putDate>
+Mon, 19 Sep 2016 18:45:48 +0000         theScore_cs.atom <putDate> tag

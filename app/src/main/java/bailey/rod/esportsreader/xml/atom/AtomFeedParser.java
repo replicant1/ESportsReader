@@ -1,4 +1,4 @@
-package bailey.rod.esportsreader.xml.rss;
+package bailey.rod.esportsreader.xml.atom;
 
 import android.util.Log;
 
@@ -14,6 +14,7 @@ import java.util.List;
 import bailey.rod.esportsreader.util.XPPUtils;
 import bailey.rod.esportsreader.xml.ESportsFeed;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
+import bailey.rod.esportsreader.xml.ISyndicationDocumentParser;
 
 /**
  * Parses an Atom feed - only extracting the information this app is interested in. Note that although
@@ -44,11 +45,11 @@ import bailey.rod.esportsreader.xml.ESportsFeedEntry;
  * @see bailey.rod.esportsreader.xml.atom.AtomCollectionDocumentParser
  * @see bailey.rod.esportsreader.xml.atom.AtomServiceDocumentParser
  */
-public class AtomFeedParser {
+public class AtomFeedParser implements ISyndicationDocumentParser {
 
     private static final String TAG = AtomFeedParser.class.getSimpleName();
 
-    public ESportsFeed parse(InputStream inputStream, String url, String cacheTimestamp) throws XmlPullParserException,
+    public ESportsFeed parse(InputStream inputStream, String url, String etag) throws XmlPullParserException,
             IOException {
         Log.i(TAG, "*** Into AtomFeedParser.parse() ***");
 
@@ -57,7 +58,7 @@ public class AtomFeedParser {
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(inputStream, null);
-            return parseFeed(parser, url, cacheTimestamp);
+            return parseFeed(parser, url, etag);
         } finally {
             Log.i(TAG, "** Exiting AtomFeedParser.parse() **");
             inputStream.close();
@@ -115,7 +116,7 @@ public class AtomFeedParser {
         return entry;
     }
 
-    private ESportsFeed parseFeed(XmlPullParser parser, String url, String cacheTimestamp) throws
+    private ESportsFeed parseFeed(XmlPullParser parser, String url, String etag) throws
             XmlPullParserException, IOException {
         List<ESportsFeedEntry> entryList = new LinkedList<>();
 
@@ -135,7 +136,7 @@ public class AtomFeedParser {
             entryList.add(parseEntry(parser));
         }
 
-        ESportsFeed result = new ESportsFeed(feedTitle, entryList, url, cacheTimestamp);
+        ESportsFeed result = new ESportsFeed(feedTitle, entryList, url, etag);
         Log.d(TAG, "Parsed atom feed to: " + result);
         return result;
     }

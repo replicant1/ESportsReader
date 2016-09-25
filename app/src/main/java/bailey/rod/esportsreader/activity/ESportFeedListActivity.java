@@ -19,7 +19,9 @@ import bailey.rod.esportsreader.job.GetXmlDocumentJob;
 import bailey.rod.esportsreader.job.IJobFailureHandler;
 import bailey.rod.esportsreader.job.IJobSuccessHandler;
 import bailey.rod.esportsreader.job.JobEngineSingleton;
+import bailey.rod.esportsreader.job.TimestampedXmlDocument;
 import bailey.rod.esportsreader.util.ConfigSingleton;
+import bailey.rod.esportsreader.util.DateUtils;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionDocument;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionDocumentParser;
 import bailey.rod.esportsreader.xml.atom.AtomCollectionEntry;
@@ -40,32 +42,32 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
         ConfigSingleton config = ConfigSingleton.getInstance().init(this);
         JobEngineSingleton jobEngine = JobEngineSingleton.getInstance();
 
-        String documentRef;
+        String documentHref;
         AtomCollectionDocument collectionDocument;
         SessionCache cache = SessionCache.getInstance();
 
         if (config.loadFromLocalAtomFiles()) {
-            documentRef = config.localAtomCollectionDocument();
+            documentHref = config.localAtomCollectionDocument();
         } else {
-            documentRef = getIntent().getStringExtra(EXTRA_ATOM_COLLECTION_DOCUMENT_HREF);
+            documentHref = getIntent().getStringExtra(EXTRA_ATOM_COLLECTION_DOCUMENT_HREF);
         }
 
         Log.i(TAG, String.format("Atom Collection Document at %s is required to display feed list",
-                                 documentRef));
+                                 documentHref));
 
-        if (cache.contains(documentRef)) {
-            Log.d(TAG, "Retrieving ACD from cache");
-            // TODO Update to date check
-            collectionDocument = (AtomCollectionDocument) cache.get(documentRef);
-            updateDisplayPerCachedCollectionDocument(documentRef);
-        } else {
-            Log.d(TAG, "ACD not in cache. Getting ACD async from file system or remote server");
-            showProgressMessage("Loading feed list...");
-            GetXmlDocumentJob job = new GetXmlDocumentJob(documentRef, "lastModified");
-            jobEngine.doJobAsync(job,//
-                                 new GetACDSuccessHandler(documentRef),//
-                                 new GetACDFailureHandler());
+        // Check cache to see how recent a copy of the ASD we have, if any
+        String etag = null;
+
+        if (cache.contains(documentHref)) {
+            etag = cache.get(documentHref).getEtag();
+            Log.d(TAG, String.format("ACD exists in cache with lastModified = " + etag));
         }
+
+        showProgressMessage("Loading feed list...");
+        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag);
+        jobEngine.doJobAsync(job,//
+                             new GetACDSuccessHandler(documentHref),//
+                             new GetACDFailureHandler());
     }
 
     @Override
@@ -113,7 +115,7 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
         }
     }
 
-    private class GetACDSuccessHandler implements IJobSuccessHandler{
+    private class GetACDSuccessHandler implements IJobSuccessHandler {
         private final String TAG = GetACDSuccessHandler.class.getSimpleName();
 
         private final String documentHref;
@@ -123,24 +125,35 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
         }
 
         @Override
-        public void onSuccess(String response) {
-            Log.i(TAG, "GetACDSuccessHandler.onResponse: " + response);
+        public void onSuccess(Object result) {
+            TimestampedXmlDocument timedDoc = (TimestampedXmlDocument) result;
+            Log.i(TAG, "GetACDSuccessHandler.onSuccess: " + timedDoc);
 
-            InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(response).array());
-            // TODO: Prescan document to confirm it is atom format.
-            AtomCollectionDocumentParser parser = new AtomCollectionDocumentParser();
+            // If we've just retrieved an identical copy to what's already in the cache, don't bother
+            // adding to the SessionCache.
+            if (SessionCache.getInstance().containsDifferentVersion(documentHref, timedDoc.getEtag())) {
+                Log.i(TAG, String.format("Parsing %s to add to cache", documentHref));
 
-            try {
-                AtomCollectionDocument collectionDocument = parser.parse(stream, documentHref, "now");
-                SessionCache.getInstance().put(collectionDocument);
-                updateDisplayPerCachedCollectionDocument(documentHref);
-            } catch (XmlPullParserException xppe) {
-                Log.w(TAG, "Failed to parse " + documentHref, xppe);
-            } catch (ParseException pex) {
-                Log.w(TAG, "Failed to parse " + documentHref, pex);
-            } catch (IOException iox) {
-                Log.w(TAG, "Failed to parse " + documentHref, iox);
+                InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(timedDoc.getContent()).array());
+
+                // Note we assume the document is ATOM format
+                AtomCollectionDocumentParser parser = new AtomCollectionDocumentParser();
+
+                try {
+                    AtomCollectionDocument collectionDocument = parser.parse(stream, documentHref, timedDoc.getEtag());
+                    SessionCache.getInstance().put(collectionDocument);
+                } catch (XmlPullParserException xppe) {
+                    Log.w(TAG, "Failed to parse " + documentHref, xppe);
+                } catch (ParseException pex) {
+                    Log.w(TAG, "Failed to parse " + documentHref, pex);
+                } catch (IOException iox) {
+                    Log.w(TAG, "Failed to parse " + documentHref, iox);
+                }
+            } else {
+                Log.i(TAG, String.format("Not parsing %s and not adding to cache", documentHref));
             }
+
+            updateDisplayPerCachedCollectionDocument(documentHref);
         }
     }
 }

@@ -28,4 +28,18 @@ public final class DateUtils {
         return ISO8601_DATE_FORMAT.parse(gmtString);
     }
 
+    public static String timeSinceEpochToString(long timestamp) {
+        String result = null;
+
+        if (timestamp == 0) {
+            result = "Unknown";
+        }
+         else {
+            Date date = new Date(timestamp);
+            result = DATE_FORMAT.format(date);
+        }
+
+        return result;
+    }
+
 }

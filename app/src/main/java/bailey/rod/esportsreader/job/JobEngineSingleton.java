@@ -14,7 +14,7 @@ public class JobEngineSingleton {
      * Progress = Void
      * Result = String
      */
-    private class ExecuteJobTask extends AsyncTask<Void, Void, String> {
+    private class ExecuteJobTask extends AsyncTask<Void, Void, Object> {
 
         private final String TAG = ExecuteJobTask.class.getSimpleName();
 
@@ -38,8 +38,8 @@ public class JobEngineSingleton {
         }
 
         @Override
-        protected String doInBackground(Void... voids) {
-            String result = null;
+        protected Object doInBackground(Void... voids) {
+            Object result = null;
 
             try {
                 result = job.doJob();
@@ -53,7 +53,7 @@ public class JobEngineSingleton {
         }
 
         @Override
-        protected void onPostExecute(String result) {
+        protected void onPostExecute(Object result) {
             if (failureReason == null) {
                 successHandler.onSuccess(result);
             }

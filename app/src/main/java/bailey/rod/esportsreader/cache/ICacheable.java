@@ -14,9 +14,10 @@ public interface ICacheable {
     public String getURL();
 
     /**
-     * @return The timestamp associated with the cacheable object. NOT the time we are retrieving it, but the time at
-     * which it was most recently updated on the origin server.
+     * @return The timestamp associated with the cacheable object. NOT the time of the things retrieval,
+     * but the time at which it was most recently updated on the origin server. As usual, the value is a number of
+     * seconds since Jan 1, 1970 GMT.
      */
-    public String getCacheTimestamp();
+    public String getEtag();
 
 }

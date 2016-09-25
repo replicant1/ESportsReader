@@ -20,8 +20,8 @@ public class AtomServiceDocument extends AbstractCacheable {
 
     private final List<AtomServiceCollection> collections;
 
-    public AtomServiceDocument(String title, List<AtomServiceCollection> collections, String url, String timestamp) {
-        super(url, timestamp);
+    public AtomServiceDocument(String title, List<AtomServiceCollection> collections, String url, String etag) {
+        super(url, etag);
         this.title = title;
         this.collections = collections;
     }
@@ -39,7 +39,7 @@ public class AtomServiceDocument extends AbstractCacheable {
         StringBuffer buf = new StringBuffer();
         buf.append("title=" + title);
         buf.append(",url=" + getURL());
-        buf.append(",timestamp=" + getCacheTimestamp());
+        buf.append(",etag=" + getEtag());
         buf.append(",collections=[");
         for (AtomServiceCollection collection : collections) {
             buf.append("[" + collection.toString() + "],");

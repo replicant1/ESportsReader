@@ -14,6 +14,7 @@ import java.util.List;
 import bailey.rod.esportsreader.util.XPPUtils;
 import bailey.rod.esportsreader.xml.ESportsFeed;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
+import bailey.rod.esportsreader.xml.ISyndicationDocumentParser;
 
 /**
  * Parses an RSS feed - only extracting the information this app is interested in. For our purposes, an RSS
@@ -38,11 +39,11 @@ import bailey.rod.esportsreader.xml.ESportsFeedEntry;
  * present.
  * This class has only been tested on RSS 2.0 but may well work on other versions of RSS.
  */
-public class RSSFeedParser {
+public class RSSFeedParser implements ISyndicationDocumentParser {
 
     private static final String TAG = RSSFeedParser.class.getSimpleName();
 
-    public ESportsFeed parse(InputStream inputStream, String url, String cacheTimestamp) throws XmlPullParserException,
+    public ESportsFeed parse(InputStream inputStream, String url, String etag) throws XmlPullParserException,
             IOException {
         Log.i(TAG, "** Into RSSFeedParser.parse() **");
 
@@ -51,13 +52,13 @@ public class RSSFeedParser {
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(inputStream, null);
-            return parseFeed(parser, url, cacheTimestamp);
+            return parseFeed(parser, url, etag);
         } finally {
             inputStream.close();
         }
     }
 
-    private ESportsFeed parseFeed(XmlPullParser parser, String url, String cacheTimestamp) throws
+    private ESportsFeed parseFeed(XmlPullParser parser, String url, String etag) throws
             XmlPullParserException,
             IOException {
         List<ESportsFeedEntry> entryList = new LinkedList<>();
@@ -74,7 +75,7 @@ public class RSSFeedParser {
             entryList.add(parseItem(parser));
         }
 
-        return new ESportsFeed(feedTitle, entryList, url, cacheTimestamp);
+        return new ESportsFeed(feedTitle, entryList, url, etag);
     }
 
     private ESportsFeedEntry parseItem(XmlPullParser parser) throws XmlPullParserException, IOException {

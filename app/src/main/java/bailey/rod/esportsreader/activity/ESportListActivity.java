@@ -20,7 +20,9 @@ import bailey.rod.esportsreader.job.GetXmlDocumentJob;
 import bailey.rod.esportsreader.job.IJobFailureHandler;
 import bailey.rod.esportsreader.job.IJobSuccessHandler;
 import bailey.rod.esportsreader.job.JobEngineSingleton;
+import bailey.rod.esportsreader.job.TimestampedXmlDocument;
 import bailey.rod.esportsreader.util.ConfigSingleton;
+import bailey.rod.esportsreader.util.DateUtils;
 import bailey.rod.esportsreader.xml.atom.AtomServiceCollection;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocument;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocumentParser;
@@ -55,20 +57,19 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
 
         Log.i(TAG, String.format("Atom Service Document at %s required to display eSport list", documentHref));
 
-        if (cache.contains(documentHref)) {
-            Log.d(TAG, "Retrieving ASD from cache");
-            // TODO: Up-to-date check
-            serviceDocument = (AtomServiceDocument) cache.get(documentHref);
-            updateDisplayPerCachedServiceDocument(documentHref);
+        // Check cache to see how recent a copy of the ASD we have, if any
+        String etag = null;
 
-        } else {
-            Log.d(TAG, "ASD not in cache. Retrieving ASD async from file system or remote server");
-            showProgressMessage("Loading eSports...");
-            GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, "lastModified");
-            jobEngine.doJobAsync(job, //
-                                 new GetASDSuccessHandler(documentHref), //
-                                 new GetASDFailureHandler());
+        if (cache.contains(documentHref)) {
+            etag = cache.get(documentHref).getEtag();
+            Log.d(TAG, String.format("ASD exists in cache with etag = %s", etag));
         }
+
+        showProgressMessage("Loading eSports...");
+        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag);
+        jobEngine.doJobAsync(job, //
+                             new GetASDSuccessHandler(documentHref), //
+                             new GetASDFailureHandler());
     }
 
     @Override
@@ -144,21 +145,34 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
         }
 
         @Override
-        public void onSuccess(String response) {
-            Log.i(TAG, "onResponse: " + response);
+        public void onSuccess(Object result) {
+            TimestampedXmlDocument timedDoc = (TimestampedXmlDocument) result;
+            Log.i(TAG, "GetASDSuccessHandler.onSuccess: " + timedDoc);
 
-            InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(response).array());
-            AtomServiceDocumentParser parser = new AtomServiceDocumentParser();
+            // If we've just retrieved an identical copy to what's already in the cache, don't bother
+            // adding to the SessionCache.
+            if (SessionCache.getInstance().containsDifferentVersion(documentHref, timedDoc.getEtag())) {
+                Log.i(TAG, String.format("Parsing %s to add to cache", documentHref));
 
-            try {
-                AtomServiceDocument serviceDocument = parser.parse(stream, documentHref, "now");
-                SessionCache.getInstance().put(serviceDocument);
-                updateDisplayPerCachedServiceDocument(documentHref);
-            } catch (XmlPullParserException xppe) {
-                Log.w(TAG, "Failed to parse " + documentHref, xppe);
-            } catch (IOException iox) {
-                Log.w(TAG, "Failed to parse " + documentHref, iox);
+                InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(timedDoc.getContent()).array());
+
+                // We assume the document is in ATOM format
+                AtomServiceDocumentParser parser = new AtomServiceDocumentParser();
+
+                try {
+                    AtomServiceDocument serviceDocument = parser.parse(stream, documentHref, timedDoc.getEtag());
+                    SessionCache.getInstance().put(serviceDocument);
+                } catch (XmlPullParserException xppe) {
+                    Log.w(TAG, "Failed to parse " + documentHref, xppe);
+                } catch (IOException iox) {
+                    Log.w(TAG, "Failed to parse " + documentHref, iox);
+                }
+            } else {
+                Log.i(TAG, String.format("Not parsing %s and not adding to cache", documentHref));
             }
+
+            updateDisplayPerCachedServiceDocument(documentHref);
         }
+
     }
 }

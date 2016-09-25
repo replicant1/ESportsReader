@@ -7,11 +7,11 @@ public abstract class AbstractCacheable implements ICacheable{
 
     private final String url;
 
-    private final String timestamp;
+    private final String etag;
 
-    public AbstractCacheable(String url, String timestamp) {
+    public AbstractCacheable(String url, String etag) {
         this.url = url;
-        this.timestamp = timestamp;
+        this.etag = etag;
     }
 
     @Override
@@ -19,7 +19,7 @@ public abstract class AbstractCacheable implements ICacheable{
         return url;
     }
 
-    public String getCacheTimestamp() {
-        return timestamp;
+    public String getEtag() {
+        return etag;
     }
 }

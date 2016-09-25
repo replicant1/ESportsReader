@@ -1,9 +1,13 @@
 package bailey.rod.esportsreader.util;
 
+import android.util.Log;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
+
+import bailey.rod.esportsreader.xml.SyndicationFormat;
 
 /**
  * Utility methods associated with the XmlPullParser.
@@ -75,12 +79,14 @@ public class XPPUtils {
         return startTagFound;
     }
 
-//    public static String statusAsString(XmlPullParser parser) throws XmlPullParserException {
-//        parser.getName();
-//        parser.getEventType();
-//        parser.getDepth();
-//        parser.getColumnNumber();
-//        parser.getPrefix();
-//        parser.get
-//    }
+    public static SyndicationFormat getSyndicationFormat(String document) {
+        if (document.contains("<feed")) {
+            return SyndicationFormat.ATOM;
+        }
+        else if (document.contains("<rss")) {
+            return SyndicationFormat.RSS;
+        }
+
+        return SyndicationFormat.UNRECOGNIZED;
+    }
 }

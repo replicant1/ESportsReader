@@ -14,15 +14,21 @@ import java.util.List;
 
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.ESportsFeedEntrySynopsisListAdapter;
+import bailey.rod.esportsreader.cache.ICacheable;
 import bailey.rod.esportsreader.cache.SessionCache;
 import bailey.rod.esportsreader.job.GetXmlDocumentJob;
 import bailey.rod.esportsreader.job.IJobFailureHandler;
 import bailey.rod.esportsreader.job.IJobSuccessHandler;
 import bailey.rod.esportsreader.job.JobEngineSingleton;
+import bailey.rod.esportsreader.job.TimestampedXmlDocument;
 import bailey.rod.esportsreader.util.ConfigSingleton;
+import bailey.rod.esportsreader.util.DateUtils;
+import bailey.rod.esportsreader.util.XPPUtils;
 import bailey.rod.esportsreader.xml.ESportsFeed;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
-import bailey.rod.esportsreader.xml.rss.AtomFeedParser;
+import bailey.rod.esportsreader.xml.ISyndicationDocumentParser;
+import bailey.rod.esportsreader.xml.atom.AtomFeedParser;
+import bailey.rod.esportsreader.xml.rss.RSSFeedParser;
 
 /**
  * Activity presents user with a list of news feeds relating to the same eSport.
@@ -52,19 +58,19 @@ public class ESportFeedActivity extends ESportAsyncRequestingActivity {
 
         Log.d(TAG, String.format("Feed at %s is required to display list of entries", documentHref));
 
+        // Check cache to see how recent a copy of the ACD we have, if any
+        String etag = null;
+
         if (cache.contains(documentHref)) {
-            Log.d(TAG, "Retrieving feed from cache");
-            // TODO: Up-to-date check
-            eSportsFeed = (ESportsFeed) cache.get(documentHref);
-            updateDisplayPerCachedFeedDocument(documentHref);
-        } else {
-            Log.d(TAG, "Feed doc not in cache. Getting feed from file system or remote server");
-            showProgressMessage("Loading feed...");
-            GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, "lastModified");
-            jobEngine.doJobAsync(job, //
-                                 new GetFeedDocumentSuccessHandler(documentHref), //
-                                 new GetFeedDocumentFailureHandler());
+            etag = cache.get(documentHref).getEtag();
+            Log.d(TAG, String.format("ACD exists in cache with etag = " + etag));
         }
+
+        showProgressMessage("Loading feed...");
+        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag);
+        IJobFailureHandler failureHandler = new GetFeedDocumentFailureHandler();
+        IJobSuccessHandler successHandler = new GetFeedDocumentSuccessHandler(documentHref, failureHandler);
+        jobEngine.doJobAsync(job, successHandler, failureHandler);
     }
 
     @Override
@@ -112,27 +118,62 @@ public class ESportFeedActivity extends ESportAsyncRequestingActivity {
 
         private final String documentHref;
 
-        public GetFeedDocumentSuccessHandler(String documentHref) {
+        private final IJobFailureHandler failureHandler;
+
+        public GetFeedDocumentSuccessHandler(String documentHref, IJobFailureHandler failureHandler) {
             this.documentHref = documentHref;
+            this.failureHandler = failureHandler;
         }
 
         @Override
-        public void onSuccess(String response) {
-            Log.i(TAG, "GetFeedDocumentSuccessHandler.onResponse: " + response);
+        public void onSuccess(Object result) {
+            TimestampedXmlDocument timedDoc = (TimestampedXmlDocument) result;
 
-            InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(response).array());
-            // TODO: Prescan doc to see if atom, rss or unrecognized. see RSSParser.
-            AtomFeedParser parser = new AtomFeedParser();
+            Log.i(TAG, "GetFeedDocumentSuccessHandler.onSuccess: " + timedDoc);
 
-            try {
-                ESportsFeed feed = parser.parse(stream, documentHref, "now");
-                SessionCache.getInstance().put(feed);
-                updateDisplayPerCachedFeedDocument(documentHref);
-            } catch (XmlPullParserException xppe) {
-                Log.w(TAG, "Failed to parse " + documentHref, xppe);
-            } catch (IOException iox) {
-                Log.w(TAG, "Failed to parse " + documentHref, iox);
+            // If we've just retrieved an identical copy to what's already in the cache, don't bother
+            // adding to the SessionCache.
+            if (SessionCache.getInstance().containsDifferentVersion(documentHref, timedDoc.getEtag())) {
+                Log.i(TAG, String.format("Parsing %s to add to cache", documentHref));
+                ISyndicationDocumentParser parser = null;
+
+                // Have a quick peek ahead into the XML document to see what XML format it's in, so we
+                // can setup the appropriate parser.
+
+                if (timedDoc.getContent() != null) {
+                    switch (XPPUtils.getSyndicationFormat(timedDoc.getContent())) {
+                        case ATOM:
+                            parser = new AtomFeedParser();
+                            break;
+                        case RSS:
+                            parser = new RSSFeedParser();
+                            break;
+                        case UNRECOGNIZED:
+                            Log.w(TAG, "Unrecognized syndication format in " + documentHref);
+                            failureHandler.onFailure("Unrecognized syndication format in " + documentHref);
+                            break;
+                    }
+                }
+
+                if ((parser != null) && (timedDoc.getContent() != null)) {
+                    InputStream stream = new ByteArrayInputStream(Charset.forName("UTF-8").encode(
+                            timedDoc.getContent()).array());
+
+                    try {
+                        ICacheable feed = parser.parse(stream, documentHref, timedDoc.getEtag());
+                        SessionCache.getInstance().put(feed);
+
+                    } catch (XmlPullParserException xppe) {
+                        Log.w(TAG, "Failed to parse " + documentHref, xppe);
+                    } catch (IOException iox) {
+                        Log.w(TAG, "Failed to parse " + documentHref, iox);
+                    }
+                }
+            } else {
+                Log.i(TAG, String.format("Not parsing %s and not adding to cache", documentHref));
             }
+
+            updateDisplayPerCachedFeedDocument(documentHref);
         }
     }
 }

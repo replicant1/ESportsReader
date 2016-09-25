@@ -3,8 +3,10 @@ package bailey.rod.esportsreader.job;
 import android.util.Log;
 
 import java.io.BufferedInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.ProtocolException;
 import java.net.URL;
 
 import bailey.rod.esportsreader.util.DateUtils;
@@ -49,17 +51,81 @@ public class GetXmlDocumentJob implements IJob {
     }
 
     /**
-     * @return An instance of TimestampedXmlDocument
+     * @return An instance of TimestampedXmlDocument. null means that there has been a failure.
      */
     @Override
     public Object doJob() throws Throwable {
         Log.i(TAG, "*** Into GetXmlDocumentJob.doJob() ***");
-        String resultContent = null;
-        String resultEtag = null;
-        long resultLastModified = 0;
+        TimestampedXmlDocument resultingDoc = null;
 
-        URL url = new URL(documentURL);
-        HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+        HttpURLConnection urlConnection = (HttpURLConnection) new URL(documentURL).openConnection();
+        setupHttpURLConnection(urlConnection, etag, lastModified);
+
+        resultingDoc = launchRequestHandleResponse(urlConnection);
+
+        // Note that the builtin HttpUrlConnection does not allow redirects/moves across different schemes
+        // eg. from http to https. We have one at http://dotaland.net/feed -> https://dotaland.net/feed
+        int status = urlConnection.getResponseCode();
+
+        if (status != HttpURLConnection.HTTP_OK) {
+            if ((status == HttpURLConnection.HTTP_MOVED_TEMP) ||
+                    (status == HttpURLConnection.HTTP_MOVED_PERM) ||
+                    (status == HttpURLConnection.HTTP_SEE_OTHER)) {
+                Log.d(TAG, "Found a redirect code so we'd better manually start another connection.");
+
+                String newTargetURL = urlConnection.getHeaderField("Location");
+                Log.d(TAG, "newTargetURL=" + newTargetURL);
+
+                HttpURLConnection newUrlConnection = (HttpURLConnection) new URL(newTargetURL).openConnection();
+                setupHttpURLConnection(newUrlConnection, etag, lastModified);
+
+                resultingDoc = launchRequestHandleResponse(newUrlConnection);
+            }
+        }
+
+        return resultingDoc;
+    }
+
+    private TimestampedXmlDocument launchRequestHandleResponse(HttpURLConnection urlConnection) throws IOException {
+
+        InputStream stream = null;
+
+        try {
+            Log.d(TAG, String.format("Requesting document %s with If-None-Match of %s and if-modified-since of %s",
+                                     urlConnection.getURL(),
+                                     etag, lastModified));
+
+            stream = new BufferedInputStream(urlConnection.getInputStream());
+            String resultContent = convertStreamToString(stream);
+
+            Log.d(TAG, String.format("Back from requesting document %s", documentURL));
+
+            String resultEtag = urlConnection.getHeaderField("Etag");
+            long resultLastModified = urlConnection.getLastModified();
+
+            Log.d(TAG, String.format("Retrieved document has content \"%s\" with resultEtag of %s and " +
+                                             "resultLastModified of %s",
+                                     StringUtils.ellipsizeNullSafe(resultContent, 30), resultEtag, DateUtils
+                                             .timeSinceEpochToString(resultLastModified)));
+            Log.d(TAG, String.format("Response code = %d, response msg=%s", urlConnection.getResponseCode(),
+                                     urlConnection.getResponseMessage()));
+
+            stream.close();
+
+            return new TimestampedXmlDocument(resultContent, resultEtag, resultLastModified);
+        } finally {
+            urlConnection.disconnect();
+
+            if (stream != null) {
+                stream.close();
+            }
+        }
+    }
+
+    private void setupHttpURLConnection(HttpURLConnection urlConnection, String etag, long lastModified) throws
+            ProtocolException {
+        Log.i(TAG, "Into setUpHttURLConnection");
+
         urlConnection.setRequestMethod("GET");
         urlConnection.setInstanceFollowRedirects(true);
 
@@ -90,36 +156,6 @@ public class GetXmlDocumentJob implements IJob {
         urlConnection.setReadTimeout(TIMEOUT_MILLIS);
         urlConnection.setConnectTimeout(TIMEOUT_MILLIS);
 
-        InputStream stream = null;
-
-        try {
-            Log.d(TAG, String.format("Requesting document %s with If-None-Match of %s and if-modified-since of %s",
-                                     documentURL,
-                                     etag, lastModified));
-
-            stream = new BufferedInputStream(urlConnection.getInputStream());
-            resultContent = convertStreamToString(stream);
-
-            Log.d(TAG, String.format("Back from requesting document %s", documentURL));
-
-            resultEtag = urlConnection.getHeaderField("Etag");
-            resultLastModified = urlConnection.getLastModified();
-
-            Log.d(TAG, String.format("Retrieved document has content \"%s\" with resultEtag of %s and " +
-                                             "resultLastModified of %s",
-                                     StringUtils.ellipsizeNullSafe(resultContent, 30), resultEtag, DateUtils
-                                             .timeSinceEpochToString(resultLastModified)));
-            Log.d(TAG, String.format("Response code = %d, response msg=%s", urlConnection.getResponseCode(),
-                                     urlConnection.getResponseMessage()));
-            stream.close();
-        } finally {
-            urlConnection.disconnect();
-
-            if (stream != null) {
-                stream.close();
-            }
-        }
-
-        return new TimestampedXmlDocument(resultContent, resultEtag, resultLastModified);
+        Log.i(TAG, "Exiting setUpHttURLConnection");
     }
 }

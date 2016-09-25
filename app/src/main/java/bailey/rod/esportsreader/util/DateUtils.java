@@ -1,5 +1,7 @@
 package bailey.rod.esportsreader.util;
 
+import android.util.Log;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -18,6 +20,13 @@ public final class DateUtils {
 
     // Input date/times found in feeds are assumed to be ISO 8601 format
     private static final SimpleDateFormat ISO8601_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+
+    /**
+     * works on JDK but not under Android - need an alternative
+     */
+    private static final String SIX_CHAR_TIME_ZONE_FORMAT = "ZZZZZZ";
+
+    private static final String TAG = DateUtils.class.getSimpleName();
 
     static {
         ISO8601_DATE_FORMAT.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -64,7 +73,6 @@ public final class DateUtils {
 
         return result;
     }
-
 
     /**
      * Parse date/time strings that look like this:
@@ -114,7 +122,10 @@ public final class DateUtils {
             } else {
                 strWithTZExpanded = str;
             }
-            format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+
+            String fmtstring = "yyyy-MM-dd'T'HH:mm:ss.SSS" + SIX_CHAR_TIME_ZONE_FORMAT;
+            Log.d(TAG, "Adopting fmtstring of " + fmtstring);
+            format = new SimpleDateFormat(fmtstring);
         } else {
             // Doesn't have milliseconds
             if (str.endsWith("Z")) {
@@ -122,10 +133,12 @@ public final class DateUtils {
             } else {
                 strWithTZExpanded = str;
             }
-            format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+            format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss" + SIX_CHAR_TIME_ZONE_FORMAT);
         }
 
-        Date resultDate = format.parse(str);
+        Log.d(TAG, "Attempting to parse string " + str);
+
+        Date resultDate = format.parse(strWithTZExpanded);
         return resultDate.getTime();
     }
 

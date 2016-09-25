@@ -21,4 +21,5 @@ public interface ICacheable {
     public String getEtag();
 
 
+    public long getLastModified();
 }

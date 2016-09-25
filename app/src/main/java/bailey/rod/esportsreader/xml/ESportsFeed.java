@@ -14,8 +14,8 @@ public class ESportsFeed extends AbstractCacheable {
 
     private final List<ESportsFeedEntry> entries = new LinkedList<>();
 
-    public ESportsFeed(String title, List<ESportsFeedEntry> entries, String url, String etag) {
-        super(url, etag);
+    public ESportsFeed(String title, List<ESportsFeedEntry> entries, String url, String etag, long lastModified) {
+        super(url, etag, lastModified);
         this.title = title;
         this.entries.addAll(entries);
     }

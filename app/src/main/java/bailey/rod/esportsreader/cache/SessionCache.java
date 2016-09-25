@@ -37,8 +37,7 @@ public class SessionCache {
 
             if (cacheId.equals(inCacheCopy.getURL())) {
                 result = false;
-            }
-            else {
+            } else {
                 result = true;
             }
         }
@@ -62,14 +61,21 @@ public class SessionCache {
     }
 
     /**
-     * Determines which of two ICacheable's is the most recent.
+     * Determines if two ICacheable's are from different timestamps based on their etags.
      *
-     * @return True if thisOne is more newer (more recent, later, after) the otherOne
+     * @return True if one is more newer than the other
      */
     private boolean isDifferentVersion(ICacheable thisOne, ICacheable otherOne) {
         String thisTimestamp = thisOne.getEtag();
         String otherTimestamp = otherOne.getEtag();
         return (!thisTimestamp.equals(otherTimestamp));
+    }
+
+    /**
+     * @return True if the 'lastModified' attribute of these objects indicates that 'thisOne' is newer than 'otherOne'.
+     */
+    private boolean isNewer(ICacheable thisOne, ICacheable otherOne) {
+        return (thisOne.getLastModified() > otherOne.getLastModified());
     }
 
     /**

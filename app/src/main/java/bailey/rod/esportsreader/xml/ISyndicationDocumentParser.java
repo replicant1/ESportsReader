@@ -12,6 +12,7 @@ import bailey.rod.esportsreader.cache.ICacheable;
  */
 public interface ISyndicationDocumentParser {
 
-    public ICacheable parse(InputStream inputStream, String url, String etag) throws XmlPullParserException,
+    public ICacheable parse(InputStream inputStream, String url, String etag, long lastModififed) throws
+            XmlPullParserException,
             IOException;
 }

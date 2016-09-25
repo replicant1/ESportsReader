@@ -22,6 +22,7 @@ import bailey.rod.esportsreader.job.IJobSuccessHandler;
 import bailey.rod.esportsreader.job.JobEngineSingleton;
 import bailey.rod.esportsreader.job.TimestampedXmlDocument;
 import bailey.rod.esportsreader.util.ConfigSingleton;
+import bailey.rod.esportsreader.util.DateUtils;
 import bailey.rod.esportsreader.xml.atom.AtomServiceCollection;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocument;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocumentParser;
@@ -58,14 +59,17 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
 
         // Check cache to see how recent a copy of the ASD we have, if any
         String etag = null;
+        long lastModified = 0;
 
         if (cache.contains(documentHref)) {
             etag = cache.get(documentHref).getEtag();
-            Log.d(TAG, String.format("ASD exists in cache with etag = %s", etag));
+            lastModified = cache.get(documentHref).getLastModified();
+            Log.d(TAG, String.format("ASD exists in cache with etag = %s and lastModified=%s", etag, DateUtils
+                    .timeSinceEpochToString(lastModified)));
         }
 
         showProgressMessage("Loading eSports...");
-        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag);
+        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag, lastModified);
         jobEngine.doJobAsync(job, //
                              new GetASDSuccessHandler(documentHref), //
                              new GetASDFailureHandler());
@@ -158,7 +162,8 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
                 AtomServiceDocumentParser parser = new AtomServiceDocumentParser();
 
                 try {
-                    AtomServiceDocument serviceDocument = parser.parse(stream, documentHref, timedDoc.getEtag());
+                    AtomServiceDocument serviceDocument = parser.parse(stream, documentHref, timedDoc.getEtag(),
+                                                                       timedDoc.getLastModified());
                     SessionCache.getInstance().put(serviceDocument);
                 } catch (XmlPullParserException xppe) {
                     Log.w(TAG, "Failed to parse " + documentHref, xppe);

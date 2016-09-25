@@ -12,21 +12,29 @@ public class TimestampedXmlDocument {
 
     private final String etag;
 
-    public TimestampedXmlDocument(String content, String etag) {
+    private final long lastModified;
+
+    public TimestampedXmlDocument(String content, String etag, long lastModified) {
         this.content = content;
         this.etag = etag;
-    }
-
-    public String getEtag() {
-        return etag;
+        this.lastModified = lastModified;
     }
 
     public String getContent() {
         return content;
     }
 
+    public String getEtag() {
+        return etag;
+    }
+
+    public long getLastModified() {
+        return lastModified;
+    }
+
     @Override
     public String toString() {
-        return String.format("content=%s, etag=%s", StringUtils.ellipsizeNullSafe(content, 50),etag);
+        return String.format("content=%s, etag=%s, lastModified=%s", StringUtils.ellipsizeNullSafe(content, 50), etag,
+                             DateUtils.timeSinceEpochToString(lastModified));
     }
 }

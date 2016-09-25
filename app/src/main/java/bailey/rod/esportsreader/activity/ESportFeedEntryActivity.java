@@ -11,7 +11,10 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+import java.text.ParseException;
+
 import bailey.rod.esportsreader.R;
+import bailey.rod.esportsreader.util.DateUtils;
 import bailey.rod.esportsreader.util.StringUtils;
 
 /**
@@ -49,6 +52,8 @@ public class ESportFeedEntryActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_with_web_view);
 
+        String convertedDate = convertDateToAEST(date);
+
         // Update the WebView to contain the HTML content of the entry
 
         WebView webView = (WebView) findViewById(R.id.esport_web_view);
@@ -66,10 +71,24 @@ public class ESportFeedEntryActivity extends AppCompatActivity {
         titleTextView.setText(title);
 
         TextView dateTextView = (TextView) findViewById(R.id.text2);
-        dateTextView.setText(date);
+        dateTextView.setText(convertedDate);
 
         // Update the action bar
         getSupportActionBar().setTitle("Article");
+    }
+
+    private String convertDateToAEST(String dateStr) {
+        String result = "";
+
+        try {
+            long publishedTime = DateUtils.parseFromTimeSinceEpoch(dateStr);
+            result = DateUtils.timeSinceEpochToString(publishedTime);
+        }
+        catch (ParseException pex) {
+            Log.w(TAG, pex);
+        }
+
+        return result;
     }
 
     @Override

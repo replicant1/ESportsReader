@@ -60,14 +60,17 @@ public class ESportFeedActivity extends ESportAsyncRequestingActivity {
 
         // Check cache to see how recent a copy of the ACD we have, if any
         String etag = null;
+        long lastModified = 0;
 
         if (cache.contains(documentHref)) {
             etag = cache.get(documentHref).getEtag();
-            Log.d(TAG, String.format("ACD exists in cache with etag = " + etag));
+            lastModified = cache.get(documentHref).getLastModified();
+            Log.d(TAG, String.format("ACD exists in cache with etag = %s and lastModified = %s", etag, DateUtils
+                    .timeSinceEpochToString(lastModified)));
         }
 
         showProgressMessage("Loading feed...");
-        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag);
+        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag, lastModified);
         IJobFailureHandler failureHandler = new GetFeedDocumentFailureHandler();
         IJobSuccessHandler successHandler = new GetFeedDocumentSuccessHandler(documentHref, failureHandler);
         jobEngine.doJobAsync(job, successHandler, failureHandler);
@@ -160,7 +163,7 @@ public class ESportFeedActivity extends ESportAsyncRequestingActivity {
                             timedDoc.getContent()).array());
 
                     try {
-                        ICacheable feed = parser.parse(stream, documentHref, timedDoc.getEtag());
+                        ICacheable feed = parser.parse(stream, documentHref, timedDoc.getEtag(), timedDoc.getLastModified());
                         SessionCache.getInstance().put(feed);
 
                     } catch (XmlPullParserException xppe) {

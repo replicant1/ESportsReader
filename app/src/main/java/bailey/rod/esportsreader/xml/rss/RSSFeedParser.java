@@ -43,7 +43,8 @@ public class RSSFeedParser implements ISyndicationDocumentParser {
 
     private static final String TAG = RSSFeedParser.class.getSimpleName();
 
-    public ESportsFeed parse(InputStream inputStream, String url, String etag) throws XmlPullParserException,
+    public ESportsFeed parse(InputStream inputStream, String url, String etag, long lastModified) throws
+            XmlPullParserException,
             IOException {
         Log.i(TAG, "** Into RSSFeedParser.parse() **");
 
@@ -52,13 +53,13 @@ public class RSSFeedParser implements ISyndicationDocumentParser {
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(inputStream, null);
-            return parseFeed(parser, url, etag);
+            return parseFeed(parser, url, etag, lastModified);
         } finally {
             inputStream.close();
         }
     }
 
-    private ESportsFeed parseFeed(XmlPullParser parser, String url, String etag) throws
+    private ESportsFeed parseFeed(XmlPullParser parser, String url, String etag, long lastModified) throws
             XmlPullParserException,
             IOException {
         List<ESportsFeedEntry> entryList = new LinkedList<>();
@@ -75,7 +76,7 @@ public class RSSFeedParser implements ISyndicationDocumentParser {
             entryList.add(parseItem(parser));
         }
 
-        return new ESportsFeed(feedTitle, entryList, url, etag);
+        return new ESportsFeed(feedTitle, entryList, url, etag, lastModified);
     }
 
     private ESportsFeedEntry parseItem(XmlPullParser parser) throws XmlPullParserException, IOException {

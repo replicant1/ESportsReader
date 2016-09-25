@@ -21,22 +21,26 @@ public class GetXmlDocumentJob implements IJob {
             "(KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36);AppVersion/11";
 
     /**
-     * Timeout after 20 seconds
+     * Timeouts for connection and read
      */
-    private static final int TIMEOUT_MILLIS = 20000;
+    private static final int TIMEOUT_MILLIS = 10000;
 
     private final String documentURL;
 
-    private final String lastModified;
+    private final String etag;
+
+    private final long lastModified;
+
 
     /**
      * @param documentURL The URL from which to retrieve the document with an HTTP GET request.
-     * @param etag        The lastModified timestamp for the copy of the document that we currently have in the
-     *                    SessionCache. If we don't have a copy, lastModified == 0.
+     * @param etag        The etag timestamp for the copy of the document that we currently have in the
+     *                    SessionCache. If we don't have a copy, etag == 0.
      */
-    public GetXmlDocumentJob(String documentURL, String etag) {
+    public GetXmlDocumentJob(String documentURL, String etag, long lastModified) {
         this.documentURL = documentURL;
-        this.lastModified = etag;
+        this.etag = etag;
+        this.lastModified = lastModified;
     }
 
     private String convertStreamToString(java.io.InputStream is) {
@@ -50,15 +54,16 @@ public class GetXmlDocumentJob implements IJob {
     @Override
     public Object doJob() throws Throwable {
         Log.i(TAG, "*** Into GetXmlDocumentJob.doJob() ***");
-        String result = null;
-        String etag = null;
+        String resultContent = null;
+        String resultEtag = null;
+        long resultLastModified = 0;
 
         URL url = new URL(documentURL);
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         urlConnection.setRequestMethod("GET");
         urlConnection.setInstanceFollowRedirects(true);
 
-        // We do the cacheing ourselves in SessionCache
+        // We do the cacheing ourselves in SessionCache, so turn off Android's own ResponseCache
         urlConnection.setUseCaches(false);
 
         // For reasons unknown, the feed at feed.esportsreader.com insists on a User-Agent being supplied,
@@ -68,31 +73,46 @@ public class GetXmlDocumentJob implements IJob {
         // Version is 1.1, server likes to have it.
         urlConnection.setRequestProperty("v", "11");
 
+        // Server supports conditional GETs, but you must supply the etag that was returned when the
+        // document was last returned.
         if (etag != null) {
             urlConnection.setRequestProperty("If-None-Match", etag);
         }
 
-        // Server supports conditional gets
-//        urlConnection.setIfModifiedSince(lastModified);
+        // Server supports conditional gets, but you must supply an "If-Modified-Since" header
+        if (lastModified != 0) {
+            urlConnection.setIfModifiedSince(lastModified);
+        }
 
+        urlConnection.setRequestProperty("User-Agent", USER_AGENT);
+
+        // Setup timeouts
         urlConnection.setReadTimeout(TIMEOUT_MILLIS);
         urlConnection.setConnectTimeout(TIMEOUT_MILLIS);
 
         InputStream stream = null;
 
         try {
-            Log.d(TAG, String.format("About to request document %s with etag of %s", documentURL, etag));
+            Log.d(TAG, String.format("Requesting document %s with If-None-Match of %s and if-modified-since of %s",
+                                     documentURL,
+                                     etag, lastModified));
+
             stream = new BufferedInputStream(urlConnection.getInputStream());
-            result = convertStreamToString(stream);
-            etag = urlConnection.getHeaderField("Etag");
-            Log.d(TAG, String.format("Raw document is \"%s\" with etag of %s",
-                                     StringUtils.ellipsizeNullSafe(result, 30), etag));
+            resultContent = convertStreamToString(stream);
+
+            Log.d(TAG, String.format("Back from requesting document %s", documentURL));
+
+            resultEtag = urlConnection.getHeaderField("Etag");
+            resultLastModified = urlConnection.getLastModified();
+
+            Log.d(TAG, String.format("Retrieved document has content \"%s\" with resultEtag of %s and " +
+                                             "resultLastModified of %s",
+                                     StringUtils.ellipsizeNullSafe(resultContent, 30), resultEtag, DateUtils
+                                             .timeSinceEpochToString(resultLastModified)));
             Log.d(TAG, String.format("Response code = %d, response msg=%s", urlConnection.getResponseCode(),
                                      urlConnection.getResponseMessage()));
             stream.close();
-        }
-        finally {
-            Log.d(TAG, "Executing the 'finally' clause of GetXmlDocumentJob.doJob()");
+        } finally {
             urlConnection.disconnect();
 
             if (stream != null) {
@@ -100,6 +120,6 @@ public class GetXmlDocumentJob implements IJob {
             }
         }
 
-        return new TimestampedXmlDocument(result, etag);
+        return new TimestampedXmlDocument(resultContent, resultEtag, resultLastModified);
     }
 }

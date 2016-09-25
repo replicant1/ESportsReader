@@ -49,7 +49,8 @@ public class AtomFeedParser implements ISyndicationDocumentParser {
 
     private static final String TAG = AtomFeedParser.class.getSimpleName();
 
-    public ESportsFeed parse(InputStream inputStream, String url, String etag) throws XmlPullParserException,
+    public ESportsFeed parse(InputStream inputStream, String url, String etag, long lastModified) throws
+            XmlPullParserException,
             IOException {
         Log.i(TAG, "*** Into AtomFeedParser.parse() ***");
 
@@ -58,7 +59,7 @@ public class AtomFeedParser implements ISyndicationDocumentParser {
             factory.setNamespaceAware(true);
             XmlPullParser parser = factory.newPullParser();
             parser.setInput(inputStream, null);
-            return parseFeed(parser, url, etag);
+            return parseFeed(parser, url, etag, lastModified);
         } finally {
             Log.i(TAG, "** Exiting AtomFeedParser.parse() **");
             inputStream.close();
@@ -116,7 +117,7 @@ public class AtomFeedParser implements ISyndicationDocumentParser {
         return entry;
     }
 
-    private ESportsFeed parseFeed(XmlPullParser parser, String url, String etag) throws
+    private ESportsFeed parseFeed(XmlPullParser parser, String url, String etag, long lastModified) throws
             XmlPullParserException, IOException {
         List<ESportsFeedEntry> entryList = new LinkedList<>();
 
@@ -136,7 +137,7 @@ public class AtomFeedParser implements ISyndicationDocumentParser {
             entryList.add(parseEntry(parser));
         }
 
-        ESportsFeed result = new ESportsFeed(feedTitle, entryList, url, etag);
+        ESportsFeed result = new ESportsFeed(feedTitle, entryList, url, etag,  lastModified);
         Log.d(TAG, "Parsed atom feed to: " + result);
         return result;
     }

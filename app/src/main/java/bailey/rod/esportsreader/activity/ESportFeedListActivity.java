@@ -57,14 +57,17 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
 
         // Check cache to see how recent a copy of the ASD we have, if any
         String etag = null;
+        long lastModified = 0;
 
         if (cache.contains(documentHref)) {
             etag = cache.get(documentHref).getEtag();
-            Log.d(TAG, String.format("ACD exists in cache with lastModified = " + etag));
+            lastModified = cache.get(documentHref).getLastModified();
+            Log.d(TAG, String.format("ACD exists in cache with etag = %s and lasModified=%s", etag, DateUtils
+                    .timeSinceEpochToString(lastModified)));
         }
 
         showProgressMessage("Loading feed list...");
-        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag);
+        GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag, lastModified);
         jobEngine.doJobAsync(job,//
                              new GetACDSuccessHandler(documentHref),//
                              new GetACDFailureHandler());
@@ -140,7 +143,8 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
                 AtomCollectionDocumentParser parser = new AtomCollectionDocumentParser();
 
                 try {
-                    AtomCollectionDocument collectionDocument = parser.parse(stream, documentHref, timedDoc.getEtag());
+                    AtomCollectionDocument collectionDocument = parser.parse(stream, documentHref, timedDoc.getEtag()
+                            , timedDoc.getLastModified());
                     SessionCache.getInstance().put(collectionDocument);
                 } catch (XmlPullParserException xppe) {
                     Log.w(TAG, "Failed to parse " + documentHref, xppe);

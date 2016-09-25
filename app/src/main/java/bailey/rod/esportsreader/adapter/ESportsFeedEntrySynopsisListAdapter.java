@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.ParseException;
 import java.util.List;
 
 import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.activity.ESportFeedEntryActivity;
+import bailey.rod.esportsreader.util.DateUtils;
 import bailey.rod.esportsreader.xml.ESportsFeedEntry;
 
 /**
@@ -45,7 +47,17 @@ public class ESportsFeedEntrySynopsisListAdapter extends ArrayAdapter<ESportsFee
         TextView thirdLineTextView = (TextView) convertView.findViewById(R.id.text3);
 
         firstLineTextView.setText(entry.getTitle());
-        secondLineTextView.setText(entry.getPublished());
+
+        try {
+            String origPublishedStr = entry.getPublished();
+            long publishedTime = DateUtils.parseFromTimeSinceEpoch(origPublishedStr);
+            String aestAdjustedStr = DateUtils.timeSinceEpochToString(publishedTime);
+            secondLineTextView.setText(aestAdjustedStr);
+        }
+        catch(ParseException pex) {
+            Log.w(TAG, "Couldn't parse date found in XML file", pex);
+            secondLineTextView.setText("");
+        }
 
         String synopsis = entry.getSynopsis();
         if (synopsis != null) {

@@ -68,7 +68,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
                     .timeSinceEpochToString(lastModified)));
         }
 
-        showProgressMessage("Loading eSports...");
+        showProgressMessage(getString(R.string.loading_esport_list_progress_msg));
         GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag, lastModified);
         jobEngine.doJobAsync(job, //
                              new GetASDSuccessHandler(documentHref), //
@@ -84,7 +84,7 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_delete_cache) {
-            Log.i(TAG, "Clear cache");
+            Log.i(TAG, getString(R.string.action_clear_cache));
             SessionCache.getInstance().clear();
 
             // Restart the present activity with an empty cache

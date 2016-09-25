@@ -13,6 +13,7 @@ import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.util.List;
 
+import bailey.rod.esportsreader.R;
 import bailey.rod.esportsreader.adapter.AtomCollectionEntryListAdapter;
 import bailey.rod.esportsreader.cache.SessionCache;
 import bailey.rod.esportsreader.job.GetXmlDocumentJob;
@@ -66,7 +67,7 @@ public class ESportFeedListActivity extends ESportAsyncRequestingActivity {
                     .timeSinceEpochToString(lastModified)));
         }
 
-        showProgressMessage("Loading feed list...");
+        showProgressMessage(getString(R.string.loading_feed_list_progress_msg));
         GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag, lastModified);
         jobEngine.doJobAsync(job,//
                              new GetACDSuccessHandler(documentHref),//

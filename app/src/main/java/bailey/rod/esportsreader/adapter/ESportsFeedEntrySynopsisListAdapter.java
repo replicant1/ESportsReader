@@ -63,7 +63,7 @@ public class ESportsFeedEntrySynopsisListAdapter extends ArrayAdapter<ESportsFee
         if (synopsis != null) {
             thirdLineTextView.setText(Html.fromHtml(synopsis));
         } else {
-            thirdLineTextView.setText("No synopsis available");
+            thirdLineTextView.setText(getContext().getString(R.string.placeholder_text_no_synopsis));
         }
 
         convertView.setTag(position);

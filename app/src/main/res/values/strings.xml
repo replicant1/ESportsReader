@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ESportsReader</string>
+    <string name="action_clear_cache">Clear cache</string>
+    <string name="loading_esport_list_progress_msg">Loading eSports...</string>
+    <string name="loading_feed_list_progress_msg">Loading feed list...</string>
+    <string name="loading_feed_progress_msg">Loading feed...</string>
+    <string name="placeholder_text_no_synopsis">No synopsis available</string>
 </resources>

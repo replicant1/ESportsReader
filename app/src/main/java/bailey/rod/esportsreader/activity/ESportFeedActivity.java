@@ -69,7 +69,7 @@ public class ESportFeedActivity extends ESportAsyncRequestingActivity {
                     .timeSinceEpochToString(lastModified)));
         }
 
-        showProgressMessage("Loading feed...");
+        showProgressMessage(getString(R.string.loading_feed_progress_msg));
         GetXmlDocumentJob job = new GetXmlDocumentJob(documentHref, etag, lastModified);
         IJobFailureHandler failureHandler = new GetFeedDocumentFailureHandler();
         IJobSuccessHandler successHandler = new GetFeedDocumentSuccessHandler(documentHref, failureHandler);

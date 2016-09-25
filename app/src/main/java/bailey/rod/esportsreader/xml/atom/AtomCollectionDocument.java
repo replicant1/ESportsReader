@@ -32,7 +32,7 @@ public class AtomCollectionDocument extends AbstractCacheable {
         StringBuffer  buf = new StringBuffer();
         buf.append("title=" + title);
         buf.append(",url=" + getURL());
-        buf.append(",etag=" + getEtag());
+        buf.append(",lastModified=" + getEtag());
         buf.append(",entries=[");
         for (AtomCollectionEntry entry : entries) {
             buf.append("[" + entry.toString() + "],");

@@ -58,14 +58,15 @@ public class GetXmlDocumentJob implements IJob {
         urlConnection.setRequestMethod("GET");
         urlConnection.setInstanceFollowRedirects(true);
 
+        // We do the cacheing ourselves in SessionCache
+        urlConnection.setUseCaches(false);
+
         // For reasons unknown, the feed at feed.esportsreader.com insists on a User-Agent being supplied,
         // otherwise it fails.
         urlConnection.setRequestProperty("User-Agent", USER_AGENT);
 
         // Version is 1.1, server likes to have it.
         urlConnection.setRequestProperty("v", "11");
-
-//        urlConnection.setRequestProperty("Accept-Encoding", "gzip, deflate");
 
         if (etag != null) {
             urlConnection.setRequestProperty("If-None-Match", etag);

@@ -7,6 +7,7 @@ text labels : a name and a brief description
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="vertical"
+              android:background="@android:drawable/list_selector_background"
               android:paddingBottom="8dp"
               android:paddingLeft="16dp"
               android:paddingRight="16dp"
@@ -18,6 +19,7 @@ text labels : a name and a brief description
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
         android:textColor="@color/Black"
         android:textSize="18sp"/>
 
@@ -29,7 +31,7 @@ text labels : a name and a brief description
         android:layout_height="wrap_content"
         android:layout_alignStart="@id/text2"
         android:layout_below="@id/text2"
-
+        android:background="@android:color/transparent"
         android:textColor="@color/Gray"
         android:textSize="16sp"/>
 

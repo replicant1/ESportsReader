@@ -5,6 +5,7 @@ Item in a list of news items. Each news item has a title, a date line and a syno
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:background="@android:drawable/list_selector_background"
               android:orientation="vertical"
               android:paddingBottom="8dp"
               android:paddingLeft="16dp"

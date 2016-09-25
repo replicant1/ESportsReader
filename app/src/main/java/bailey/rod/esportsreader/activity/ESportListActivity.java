@@ -22,7 +22,6 @@ import bailey.rod.esportsreader.job.IJobSuccessHandler;
 import bailey.rod.esportsreader.job.JobEngineSingleton;
 import bailey.rod.esportsreader.job.TimestampedXmlDocument;
 import bailey.rod.esportsreader.util.ConfigSingleton;
-import bailey.rod.esportsreader.util.DateUtils;
 import bailey.rod.esportsreader.xml.atom.AtomServiceCollection;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocument;
 import bailey.rod.esportsreader.xml.atom.AtomServiceDocumentParser;
@@ -108,7 +107,6 @@ public class ESportListActivity extends ESportAsyncRequestingActivity {
     private void updateDisplayPerCachedServiceDocument(String documentHref) {
         showListView();
         AtomServiceDocument serviceDocument = (AtomServiceDocument) SessionCache.getInstance().get(documentHref);
-
         List<AtomServiceCollection> collections = serviceDocument.getCollections();
         AtomServiceCollectionListAdapter adapter = new AtomServiceCollectionListAdapter(ESportListActivity.this,
                                                                                         collections);

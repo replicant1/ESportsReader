@@ -5,7 +5,7 @@ Sunday 25 September 2016
 
 ## Summary
 
-This is my answer to the coding challenge for UBank.
+This is my answer to the coding challenge for _company name redacted_.
 
 ## Philosophy
 

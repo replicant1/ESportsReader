@@ -1,13 +1,13 @@
-#ESportsReader
+# ESportsReader
 
 Rod Bailey
 Sunday 25 September 2016
 
-##Summary
+## Summary
 
 This is my answer to the coding challenge for UBank.
 
-##Philosophy
+## Philosophy
 
 I have tried to use as few external libraries as possible, so as to focus on what I can do rather than what the libraries can do. Only one library is used, and that is JUnit.
 
